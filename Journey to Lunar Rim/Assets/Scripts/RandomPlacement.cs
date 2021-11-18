@@ -6,19 +6,25 @@ using Random = UnityEngine.Random;
 
 public class RandomPlacement : MonoBehaviour
 {
-    public List<GameObject> objs;
+    public int x, y, z;
+    public int xOffset, yOffset, zOffset;
+    public int radius;
+    public int delta;
+    public int numberOfObjects;
+    public int maxNumberOfTrys;
+    public List<GameObject> objects;
     
     private GameObject[] _gameObjects;
     List<Vector3> _points;
     
     private void Start()
     {
-        _points = RandomPoints(1000, 400, 1000, 20, 20, 500, 30, -500, -20, -500);
+        _points = RandomPoints(x, y, z, radius, delta, numberOfObjects, maxNumberOfTrys, xOffset, yOffset, zOffset);
         if (_points == null) return;
-        _gameObjects = objs.ToArray();
+        _gameObjects = objects.ToArray();
         foreach (var point in _points)
         {
-            Instantiate(_gameObjects[Random.Range(0, objs.Count)], point, Random.rotation);
+            Instantiate(_gameObjects[Random.Range(0, objects.Count)], point, Random.rotation);
         }
     }
 
