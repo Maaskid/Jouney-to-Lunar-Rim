@@ -13,7 +13,7 @@ public class RandomPlacement : MonoBehaviour
     
     private void Start()
     {
-        _points = RandomPoints(1000, 400, 1000, 20, 20, 500, 30, 0, 0, 0);
+        _points = RandomPoints(1000, 400, 1000, 20, 20, 500, 30, -500, -20, -500);
         if (_points == null) return;
         _gameObjects = objs.ToArray();
         foreach (var point in _points)
@@ -38,9 +38,9 @@ public class RandomPlacement : MonoBehaviour
             while (trying && counter <= numMaxTry)
             {
                 
-                xPos = Random.Range(0, width);
-                yPos = Random.Range(0, height);
-                zPos = Random.Range(0, depth);
+                xPos = Random.Range(0, width) + xOff;
+                yPos = Random.Range(0, height) + yOff;
+                zPos = Random.Range(0, depth) + zOff;
 
                 for (int j = 0; j < points.Count; j++)
                 {
