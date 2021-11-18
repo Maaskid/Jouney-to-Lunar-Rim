@@ -4,18 +4,23 @@ using UnityEngine;
 
 public class player_movement : MonoBehaviour
 {
+    public GameObject playerCam;
     public int speed = 500;
     public int sidewaysspeed = 50;
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        transform.Translate(Vector3.forward * speed * Time.deltaTime);
+        //man rotiert den Vorwärts Vector (0,0,1) mit der Rotation der Kamera. Man verschiebt den Spieler entlang der Vectors
+        Vector3 forwardVector = Quaternion.Euler(playerCam.transform.localRotation.eulerAngles) * Vector3.forward;
+        transform.Translate(forwardVector * speed * Time.deltaTime);
 
-        if(transform.localEulerAngles.z < 15 || transform.localEulerAngles.z > 345){
+        //Schwellenwert wann man nach links oder rechts bewegt. Innerhalb 15° nach links oder rechts geneigt passiert nichts. (Man nimmt die rotation der Kamera, nicht des Spielers)
+        if(playerCam.transform.localRotation.eulerAngles.z < 15 || playerCam.transform.localRotation.eulerAngles.z > 345){
         }
+        //wird über 15° geneigt wird nur geprüft, ob man den Kopf nach links oder rechts neigt und bewegt dann den Spieler
         else{
-            if(transform.localEulerAngles.z < 180){
+            if(playerCam.transform.localRotation.eulerAngles.z < 180){
                 transform.Translate(Vector3.left * speed * Time.deltaTime);
             }
             else{

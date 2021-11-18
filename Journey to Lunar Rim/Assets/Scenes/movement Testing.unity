@@ -1106,6 +1106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d951861c0d22b342990a8f0f65eca3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerCam: {fileID: 1034095515}
   speed: 1
   sidewaysspeed: 2
 --- !u!1 &878114260
@@ -1488,6 +1489,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 980684188}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1034095515 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3687598896761482648, guid: 13b600ef701928a43976d5096de4f9f4, type: 3}
+  m_PrefabInstance: {fileID: 1776678271}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1089247564
 GameObject:
   m_ObjectHideFlags: 0
@@ -2937,7 +2943,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc11ef2f15d058641a019f3d874d807c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 838167846}
+  player: {fileID: 1034095515}
   txtX: {fileID: 671552234}
   txtY: {fileID: 655114362}
   txtZ: {fileID: 572202606}
