@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
+
 
 public class PlayingfieldTest : MonoBehaviour
 {
@@ -9,10 +11,23 @@ public class PlayingfieldTest : MonoBehaviour
     public Vector2 regionSize = Vector2.one;
     public int rejectionRadius = 30;
     public float displayRadius = 1;
+    public List<GameObject> objs;
 
     List<Vector2> _points;
+    private GameObject[] _gameObjects;
 
-    void OnValidate()
+    private void Start()
+    {
+        _points = PoissonDiscSample.GeneratePoints(radius, regionSize, rejectionRadius);
+        if (_points == null) return;
+        _gameObjects = objs.ToArray();
+        foreach (var point in _points)
+        {
+            Instantiate(_gameObjects[Random.Range(0, objs.Count)], point, Random.rotation);
+        }
+    }
+
+    /*void OnValidate()
     {
         _points = PoissonDiscSample.GeneratePoints(radius, regionSize, rejectionRadius);
     }
@@ -25,5 +40,5 @@ public class PlayingfieldTest : MonoBehaviour
         {
             Gizmos.DrawSphere(point, displayRadius);
         }
-    }
+    }*/
 }

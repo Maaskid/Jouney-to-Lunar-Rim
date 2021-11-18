@@ -25,7 +25,7 @@ public static class PoissonDiscSample
             for (int i = 0; i < samplesBeforeRejection; i++)
             {
                 float angle = Random.value * Mathf.PI * 2;
-                Vector2 dir = new Vector2(Mathf.Sin(angle), Mathf.Cos(angle));
+                Vector2 dir = new Vector2(Mathf.Sin(angle), Mathf.Cos(angle)); 
                 Vector2 candidate = spawnCentre + dir * Random.Range(radius /* min spawn distance */, 2 * radius /* max spawn distance */);
                 if (IsValid(candidate, sampleRegionSize, cellSize, radius, points, grid))
                 {
@@ -63,14 +63,15 @@ public static class PoissonDiscSample
                     if (pointIndex != -1)
                     {
                         float sqrDist = (candidate - points[pointIndex]).sqrMagnitude;
-                        if (sqrDist < radius)
+                        if (sqrDist < radius * radius)
                         {
                             return false;
                         }
                     }
                 }
             }
+            return true;
         }
-        return true;
+        return false;
     }
 }
