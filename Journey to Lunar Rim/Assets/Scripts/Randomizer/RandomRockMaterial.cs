@@ -15,6 +15,6 @@ public class RandomRockMaterial : MonoBehaviour
 
     void ApplyMaterial()
     {
-        GetComponent<Renderer>().material = materials[Random.Range(0,2)];
+        GetComponent<Renderer>().material = materials[Random.Range(0,3)];
     }
 }

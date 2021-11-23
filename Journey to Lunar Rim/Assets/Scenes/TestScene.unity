@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -325,24 +325,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 1644600882}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7450fb71c4d70af409d752f468fc1e65, type: 3}
+  m_Script: {fileID: 11500000, guid: 27d7abd4cc0041a4a8ab1c40aed5c55e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 100
-  regionSize: {x: 1000, y: 1000}
-  rejectionRadius: 30
-  displayRadius: 1
-  objs:
-  - {fileID: 919132149155446097, guid: 7787e51bbe41c204c8fd20aeae242aea, type: 3}
-  - {fileID: 919132149155446097, guid: 202ff2c3f7dd42747a4fa7a9c3b13c75, type: 3}
-  - {fileID: 919132149155446097, guid: 0ee2a7cee37612a48b961d15b558cff5, type: 3}
-  - {fileID: 919132149155446097, guid: b84023f51b3262641a755147d650ded1, type: 3}
-  - {fileID: 919132149155446097, guid: 8ab7bbf7ecd55da4db65d890a0c7836a, type: 3}
-  - {fileID: 919132149155446097, guid: 576a907fbbc71804b86690eac390f7b6, type: 3}
-  - {fileID: 919132149155446097, guid: ba6328d7400feaf459ac6f0cb08869a1, type: 3}
-  - {fileID: 919132149155446097, guid: fcbe5f12ad86ead469132fde0052c0d8, type: 3}
-  - {fileID: 919132149155446097, guid: 3b1a5d3e0a76dfc48be4d255505f4738, type: 3}
-  - {fileID: 919132149155446097, guid: 9f00fc5b72aae8d49b639bd34a663471, type: 3}
+  x: 11111
+  y: 1111
+  z: 11111
+  numberOfAsteroids: 1111
+  asteroids:
+  - {fileID: 7950313416819077489, guid: 6676773ca38f0b049a3f115ea92ba73a, type: 3}
+  - {fileID: 797011283537164161, guid: b90591e314e23c64e95e62ef16c383a9, type: 3}
+  - {fileID: 6101260364697178947, guid: f37c882ff23cb794983a38ea3616b005, type: 3}
+  - {fileID: 3483566030698161121, guid: 6fc0836b40cdb4e48b857740dcf9850e, type: 3}
+  - {fileID: 4583582382463577362, guid: 1f5212116ca0cbe49802a9627dba4cdf, type: 3}
+  - {fileID: 467925644241314342, guid: ad4ef4d224bfddc479f88a83124c1c79, type: 3}
+  - {fileID: 3758850063878304703, guid: 59bf4fed059a4ff42a4c016544b3f0d2, type: 3}
+  - {fileID: 7064125151310054179, guid: b3cd393c9a67d2f42917715c800d7cec, type: 3}
+  - {fileID: 6576562661872307475, guid: 89c8516ad5b8e714084872aa2a6d30ae, type: 3}
+  - {fileID: 6212257529923484149, guid: 0d7a887e266b0ae4a97a6f394658c04d, type: 3}
 --- !u!4 &1644600884
 Transform:
   m_ObjectHideFlags: 0

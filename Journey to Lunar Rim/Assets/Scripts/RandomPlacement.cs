@@ -8,27 +8,30 @@ public class RandomPlacement : MonoBehaviour
 {
     public int x, y, z;
     public int xOffset, yOffset, zOffset;
-    public int radius;
-    public int delta;
     public int numberOfObjects;
     public int maxNumberOfTrys;
     public List<GameObject> objects;
-    
-    private GameObject[] _gameObjects;
-    List<Vector3> _points;
+     
+    private List<GameObject> _gameObjects = new List<GameObject>();
+    private List<Vector3> _points;
     
     private void Start()
     {
-        _points = RandomPoints(x, y, z, radius, delta, numberOfObjects, maxNumberOfTrys, xOffset, yOffset, zOffset);
-        if (_points == null) return;
-        _gameObjects = objects.ToArray();
-        foreach (var point in _points)
+        
+        for (int i = 0; i < numberOfObjects; i++)
         {
-            Instantiate(_gameObjects[Random.Range(0, objects.Count)], point, Random.rotation);
+            _gameObjects[i] = objects[0];
+            Debug.Log("WORKING");
+        }
+        _points = RandomPoints(x, y, z, numberOfObjects, maxNumberOfTrys, xOffset, yOffset, zOffset);
+        if (_points == null) return;
+        for (int i = 0; i < _points.Count; i++)
+        {
+            Instantiate(_gameObjects[i], _points[i], Random.rotation);
         }
     }
 
-    public List<Vector3> RandomPoints(int width, int height, int depth, int radius, int delta, int numPoints, int numMaxTry, int xOff, int yOff, int zOff)
+    public List<Vector3> RandomPoints(int width, int height, int depth, int numPoints, int numMaxTry, int xOff, int yOff, int zOff)
     {
         if (numMaxTry < 10 || numMaxTry > 1000) return null;
         
@@ -36,33 +39,30 @@ public class RandomPlacement : MonoBehaviour
         
         for (int i = 0; i < numPoints; i++)
         {
-            bool trying = true;
-            int counter = 0;
-            int xPos = 0;
-            int yPos = 0;
-            int zPos = 0;
-            while (trying && counter <= numMaxTry)
+            int xPos = Random.Range(0, width) + xOff;
+            int yPos = Random.Range(0, height) + yOff;
+            int zPos = Random.Range(0, depth) + zOff;
+            if (i == 0)
             {
-                
-                xPos = Random.Range(0, width) + xOff;
-                yPos = Random.Range(0, height) + yOff;
-                zPos = Random.Range(0, depth) + zOff;
-
-                for (int j = 0; j < points.Count; j++)
+                Debug.Log("WTF");
+                Vector3 colliderMax = _gameObjects[i - 1].GetComponent<Collider>().bounds.max;
+                while (xPos + colliderMax.magnitude < colliderMax.x || xPos - colliderMax.magnitude > colliderMax.x&& zPos < colliderMax.z)
                 {
-                    Vector3 point = points[j];
-                    if (point.x + 2*radius + delta < xPos ||
-                        point.y + 2*radius + delta < yPos ||
-                        point.z + 2*radius + delta < zPos)
-                    {
-                        trying = false;
-                    }
+                    xPos = Random.Range(0, width) + xOff;
                 }
-                counter++;
+
+                while (yPos + colliderMax.magnitude < colliderMax.y || yPos + colliderMax.magnitude > colliderMax.y)
+                {
+                    yPos = Random.Range(0, height) + yOff;
+                }
+                
+                while (zPos + colliderMax.magnitude < colliderMax.z || zPos + colliderMax.magnitude > colliderMax.z)
+                {
+                    zPos = Random.Range(0, depth) + zOff;
+                }
             }
             points.Add(new Vector3(xPos, yPos, zPos));
         }
-
         return points;
     }
 }
