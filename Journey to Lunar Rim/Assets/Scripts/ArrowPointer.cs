@@ -10,6 +10,5 @@ public class ArrowPointer : MonoBehaviour
     void Update()
     {
         transform.LookAt(lookTarget);
-        transform.Rotate(new Vector3(0, -90, 0));
     }
 }
