@@ -17,11 +17,15 @@ public class RotationTracker : MonoBehaviour
     [SerializeField]
     public Text txtZ;
 
+    [SerializeField]
+    public Text lives;
+
     // Update is called once per frame
     void Update()
     {
         txtX.text = player.transform.localEulerAngles.x.ToString();
         txtY.text = player.transform.localEulerAngles.y.ToString();
         txtZ.text = player.transform.localEulerAngles.z.ToString();
+        lives.text = player.GetComponent<player_movement>().lives.ToString();
     }
 }

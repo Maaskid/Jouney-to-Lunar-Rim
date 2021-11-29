@@ -65,7 +65,7 @@ public class PlaceAsteroids : MonoBehaviour
 
         for (int i = 0; i < numberOfAsteroids; i++)
         {
-            Instantiate(gameObjects[i], pos[i], Random.rotation);
+            Instantiate(gameObjects[i], pos[i], Random.rotation, this.transform);
         }
     }
 }

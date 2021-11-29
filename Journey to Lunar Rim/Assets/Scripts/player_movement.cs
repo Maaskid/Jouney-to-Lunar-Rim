@@ -4,13 +4,22 @@ using UnityEngine;
 
 public class player_movement : MonoBehaviour
 {
+    [Header("=== Ship Important Settings ===")]
     public GameObject playerCam;
+
+    [Header("=== Ship Movement Settings ===")]
     public int speed = 500;
     public int sidewaysspeed = 50;
 
-    // Update is called once per frame
+    [Header("=== Ship Values ===")]
+    public int lives = 3;
+
     void FixedUpdate()
     {
+        HandleMovement();
+    }
+
+    void HandleMovement(){
         //man rotiert den Vorwärts Vector (0,0,1) mit der Rotation der Kamera. Man verschiebt den Spieler entlang der Vectors
         Vector3 forwardVector = Quaternion.Euler(playerCam.transform.localRotation.eulerAngles) * Vector3.forward;
         transform.Translate(forwardVector * speed * Time.deltaTime);
@@ -26,6 +35,18 @@ public class player_movement : MonoBehaviour
             else{
                 transform.Translate(Vector3.right * speed * Time.deltaTime);
             }
+        }
+
+        if(lives <= 0){
+            speed = 0;
+        }
+    }
+
+    void OnCollisionEnter(Collision collision){
+            Debug.Log(collision.collider.name);
+            if(collision.collider.tag == "Rock"){
+                Debug.Log("IMPACT!!");
+                lives = lives - 1;
         }
     }
 }
