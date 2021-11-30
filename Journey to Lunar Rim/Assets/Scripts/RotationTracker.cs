@@ -23,9 +23,9 @@ public class RotationTracker : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        txtX.text = player.GetComponent<player_movement>().playerCam.transform.localEulerAngles.x.ToString();
-        txtY.text = player.GetComponent<player_movement>().playerCam.transform.localEulerAngles.y.ToString();
-        txtZ.text = player.GetComponent<player_movement>().playerCam.transform.localEulerAngles.z.ToString();
+        txtX.text = player.GetComponent<player_movement>().playerCam.transform.localEulerAngles.x.ToString("F");
+        txtY.text = player.GetComponent<player_movement>().playerCam.transform.localEulerAngles.y.ToString("F");
+        txtZ.text = player.GetComponent<player_movement>().playerCam.transform.localEulerAngles.z.ToString("F");
         /*txtX.text = player.transform.localEulerAngles.x.ToString();
         txtY.text = player.transform.localEulerAngles.y.ToString();
         txtZ.text = player.transform.localEulerAngles.z.ToString();*/

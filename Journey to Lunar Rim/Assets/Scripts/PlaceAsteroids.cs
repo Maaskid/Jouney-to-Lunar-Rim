@@ -14,6 +14,7 @@ public class PlaceAsteroids : MonoBehaviour
     void Start()
     {
         Place(x, y, z);
+        this.transform.SetPositionAndRotation(new Vector3(-500,-500,50), Quaternion.identity);
     }
 
     void Place(int x, int y, int z)
