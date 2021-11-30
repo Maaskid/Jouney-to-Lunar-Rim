@@ -6,7 +6,6 @@ using UnityEngine;
 public class PlaceAsteroids : MonoBehaviour
 {
     public int x, y, z;
-    public int xOff, yOff, zOff;
     public int numberOfAsteroids;
 
     public List<GameObject> asteroids;
@@ -27,9 +26,9 @@ public class PlaceAsteroids : MonoBehaviour
         } 
         for (int i = 0; i < numberOfAsteroids; i++)
         {
-            int xPos = Random.Range(0, x) + xOff;
-            int yPos = Random.Range(0, y) + yOff;
-            int zPos = Random.Range(0, z) + zOff;
+            int xPos = Random.Range(0, x);
+            int yPos = Random.Range(0, y);
+            int zPos = Random.Range(0, z);
             for (int j = 0; j < i; j++)
             {
                 int counter = 0;
@@ -37,7 +36,7 @@ public class PlaceAsteroids : MonoBehaviour
             
                 while (!(xPos + colliderMax.magnitude < colliderMax.x && xPos - colliderMax.magnitude < colliderMax.x) && counter < 30)
                 {
-                    xPos = Random.Range(0, x) + xOff;
+                    xPos = Random.Range(0, x);
                     counter++;
                 }
 
@@ -45,7 +44,7 @@ public class PlaceAsteroids : MonoBehaviour
 
                 while (!(yPos + colliderMax.magnitude < colliderMax.y && yPos + colliderMax.magnitude < colliderMax.y) && counter < 30)
                 {
-                    yPos = Random.Range(0, y) + yOff;
+                    yPos = Random.Range(0, y);
                     counter++;
                 }
 
@@ -53,7 +52,7 @@ public class PlaceAsteroids : MonoBehaviour
             
                 while (!(zPos + colliderMax.magnitude < colliderMax.z && zPos + colliderMax.magnitude < colliderMax.z) && counter < 30)
                 {
-                    zPos = Random.Range(0, z) + zOff;
+                    zPos = Random.Range(0, z);
                     counter++;
                 }
                 
@@ -65,7 +64,7 @@ public class PlaceAsteroids : MonoBehaviour
 
         for (int i = 0; i < numberOfAsteroids; i++)
         {
-            Instantiate(gameObjects[i], pos[i], Random.rotation);
+            Instantiate(gameObjects[i], pos[i], Random.rotation, this.transform);
         }
     }
 }
