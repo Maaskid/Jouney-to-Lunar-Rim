@@ -11,6 +11,12 @@ public class RandomRockMaterial : MonoBehaviour
     void Start()
     {
         ApplyMaterial();
+        ApplyRandomRotation();
+    }
+
+    private void ApplyRandomRotation()
+    {
+        transform.rotation = Random.rotation;
     }
 
     void ApplyMaterial()
