@@ -46,7 +46,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 10, y: 10, z: 10}
-  m_Center: {x: 0, y: 0, z: 50}
+  m_Center: {x: 0, y: 0, z: 5}
 --- !u!114 &3253221490747457646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59,7 +59,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16608b79a9c92dc40bf5e1f970634475, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  asteroids: {fileID: 7251822509528108970, guid: 9d441927d4cbb6d4abf9a30b411e4c7c, type: 3}
 --- !u!1 &7050142158115516862
 GameObject:
   m_ObjectHideFlags: 0

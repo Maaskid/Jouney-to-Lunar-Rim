@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlaceAsteroids : MonoBehaviour
 {
     public int x, y, z;
+    public int offX, offY, offZ;
     public int numberOfAsteroids;
 
     public List<GameObject> asteroids;
@@ -55,16 +56,16 @@ public class PlaceAsteroids : MonoBehaviour
                     zPos = Random.Range(0, z);
                     counter++;
                 }
-                
             }
-            positions.Add(new Vector3(xPos, yPos, zPos));
+            positions.Add(new Vector3(xPos + offX, yPos + offY, zPos + offZ+ gameObject.transform.GetChild(0).position.z));
+            Debug.Log(gameObject.transform.GetChild(0));
         }
 
         Vector3[] pos = positions.ToArray();
 
         for (int i = 0; i < numberOfAsteroids; i++)
         {
-            Instantiate(gameObjects[i], pos[i], Random.rotation, this.transform);
+            Instantiate(gameObjects[i], pos[i], Random.rotation, transform);
         }
     }
 }
