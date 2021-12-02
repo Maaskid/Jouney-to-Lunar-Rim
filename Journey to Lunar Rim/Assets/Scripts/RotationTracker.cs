@@ -20,6 +20,12 @@ public class RotationTracker : MonoBehaviour
     [SerializeField]
     public Text lives;
 
+    [SerializeField]
+    public Text hitti;
+
+    [SerializeField]
+    public Text speed;
+
     // Update is called once per frame
     void Update()
     {
@@ -30,5 +36,7 @@ public class RotationTracker : MonoBehaviour
         txtY.text = player.transform.localEulerAngles.y.ToString();
         txtZ.text = player.transform.localEulerAngles.z.ToString();*/
         lives.text = player.GetComponent<player_movement>().lives.ToString();
+        hitti.text = player.GetComponent<player_movement>().collisionState.ToString();
+        speed.text = player.GetComponent<player_movement>().shipSpeed.ToString();
     }
 }
