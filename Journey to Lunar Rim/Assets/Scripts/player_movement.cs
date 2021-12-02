@@ -8,6 +8,9 @@ public class player_movement : MonoBehaviour
     public int speed = 500;
     public int sidewaysspeed = 50;
 
+    private bool dead = false;
+
+    private float counter = 0;
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -26,6 +29,15 @@ public class player_movement : MonoBehaviour
             else{
                 transform.Translate(Vector3.right * speed * Time.deltaTime);
             }
+        }
+
+        counter += Time.deltaTime;
+        if (counter > 10) dead = true;
+        Debug.Log(counter);
+
+        if (dead)
+        {
+            FindObjectOfType<AudioManager>().Play("PlayerDeath");
         }
     }
 }
