@@ -9,13 +9,23 @@ public class AsteridField : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        asteroidSpawner = FindObjectOfType<AsteroidSpawner>();
+        asteroidSpawner = GetComponentInParent<AsteroidSpawner>();
     }
 
     private void OnTriggerExit(Collider other)
     {
-        asteroidSpawner.SpawnAsteroidField();
-        Destroy(gameObject, 2);
         Debug.Log("WORKING!");
+        String dir = other.tag switch
+        {
+            "ColliderRight" => "NextSpawnRight",
+            "ColliderLeft" => "NextSpawnLeft",
+            "ColliderTop" => "NextSpawnTop",
+            "ColliderDown" => "NextSpawnDown",
+            "ColliderBack" => "NextSpawnBack",
+            "ColliderFront" => "NextSpawnFront",
+            _ => "NONE"
+        };
+        asteroidSpawner.SpawnAsteroidField(dir);
+        Destroy(gameObject, 2);
     }
 }

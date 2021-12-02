@@ -6,13 +6,18 @@ using UnityEngine;
 public class PlaceAsteroids : MonoBehaviour
 {
     public int x, y, z;
-    public int offX, offY, offZ;
+    float xOff;
+    float yOff;
+    float zOff;
     public int numberOfAsteroids;
 
     public List<GameObject> asteroids;
     // Start is called before the first frame update
     void Start()
     {
+        xOff = transform.position.x;
+        yOff = transform.position.y;
+        zOff = transform.position.z;
         Place(x, y, z);
     }
 
@@ -27,14 +32,14 @@ public class PlaceAsteroids : MonoBehaviour
         } 
         for (int i = 0; i < numberOfAsteroids; i++)
         {
-            int xPos = Random.Range(0, x);
-            int yPos = Random.Range(0, y);
-            int zPos = Random.Range(0, z);
+            float xPos = Random.Range(0, x);
+            float yPos = Random.Range(0, y);
+            float zPos = Random.Range(0, z);
             for (int j = 0; j < i; j++)
             {
                 int counter = 0;
                 Vector3 colliderMax = gameObjects[i - 1].GetComponent<Collider>().bounds.max;
-            
+
                 while (!(xPos + colliderMax.magnitude < colliderMax.x && xPos - colliderMax.magnitude < colliderMax.x) && counter < 30)
                 {
                     xPos = Random.Range(0, x);
@@ -50,22 +55,22 @@ public class PlaceAsteroids : MonoBehaviour
                 }
 
                 counter = 0;
-            
+
                 while (!(zPos + colliderMax.magnitude < colliderMax.z && zPos + colliderMax.magnitude < colliderMax.z) && counter < 30)
                 {
                     zPos = Random.Range(0, z);
                     counter++;
                 }
+
             }
-            positions.Add(new Vector3(xPos + offX, yPos + offY, zPos + offZ+ gameObject.transform.GetChild(0).position.z));
-            Debug.Log(gameObject.transform.GetChild(0));
+            positions.Add(new Vector3(xPos + xOff, yPos + yOff, zPos + zOff));
         }
 
         Vector3[] pos = positions.ToArray();
 
         for (int i = 0; i < numberOfAsteroids; i++)
         {
-            Instantiate(gameObjects[i], pos[i], Random.rotation, transform);
+            Instantiate(gameObjects[i], pos[i], Random.rotation, this.transform);
         }
     }
 }
