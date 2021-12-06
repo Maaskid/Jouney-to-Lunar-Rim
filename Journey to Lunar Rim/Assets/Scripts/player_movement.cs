@@ -11,6 +11,8 @@ public class player_movement : MonoBehaviour
     private bool dead = false;
 
     private float counter = 0;
+
+    private float counter2 = 0;
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -32,12 +34,23 @@ public class player_movement : MonoBehaviour
         }
 
         counter += Time.deltaTime;
-        if (counter > 10) dead = true;
-        Debug.Log(counter);
+        if (counter > 5)
+        {
+            dead = true;
+            counter = 0;
+        }
 
         if (dead)
         {
+            counter2 += Time.deltaTime;
             FindObjectOfType<AudioManager>().Play("PlayerDeath");
+            if (counter2 > 2)
+               
+            {
+                dead = false;
+                FindObjectOfType<AudioManager>().Stop("PlayerDeath");
+                counter2 = 0;
+            }
         }
     }
 }
