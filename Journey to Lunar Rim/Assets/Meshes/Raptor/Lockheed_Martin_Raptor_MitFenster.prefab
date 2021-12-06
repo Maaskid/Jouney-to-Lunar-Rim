@@ -258,7 +258,7 @@ GameObject:
   - component: {fileID: 5160821753640821038}
   - component: {fileID: 7933929697689731159}
   m_Layer: 0
-  m_Name: Window_Right
+  m_Name: Window_Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -305,7 +305,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0eeb34d73d16e4f4196fb34a6631fe96, type: 2}
+  - {fileID: 2100000, guid: bd361fd5cb1877544aa3cb64711a8795, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -502,7 +502,7 @@ GameObject:
   - component: {fileID: 4052631824635427777}
   - component: {fileID: 1791001759751974745}
   m_Layer: 0
-  m_Name: Window_Right.001
+  m_Name: Window_Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -549,7 +549,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4aba9d5212b1f68429122bdb010e385e, type: 2}
+  - {fileID: 2100000, guid: bd361fd5cb1877544aa3cb64711a8795, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
