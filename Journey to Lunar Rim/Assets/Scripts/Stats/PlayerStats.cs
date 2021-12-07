@@ -8,11 +8,14 @@ namespace Stats
     [CreateAssetMenu(fileName = "New Player Stats")]
     public class PlayerStats : ScriptableObject, ISerializationCallbackReceiver
     {
+        [Header("___Tank Einstellungen___")]
         public float tankInit;
         [NonSerialized] public float TankRuntime;
+        [NonSerialized] public int verbrauchsZeit = 2;
         
-        public float schadenInit;
+        [Header("___Schaden Einstellungen___")]
         public float schadenMax;
+        private float schadenInit = 0;
         [NonSerialized] public float SchadenRuntime;
         
 

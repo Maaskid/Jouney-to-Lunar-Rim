@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="edeeebc7-fdf5-4d19-907d-7ec5db58b2a0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Journey to Lunar Rim/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Journey to Lunar Rim/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/HannaSpielkasten.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/HannaSpielkasten.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stats/DisplayPlayerStats.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Stats/DisplayPlayerStats.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stats/PlayerStats.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Stats/PlayerStats.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/ApiUpdaterCheck.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/ApiUpdaterCheck.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker0-prev.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/AssetImportWorker0-prev.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/AssetImportWorker0.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-AssetImportWorker0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-AssetImportWorker0.log" afterDir="false" />
@@ -35,6 +38,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Stats/HandleTankStats.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/UIBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Stats/DisplayPlayerStats.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Coroutines/TankTimerCoroutine.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="210UTOUmHvquDF6wcrGdbBA3xay" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -51,7 +55,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="Inspections-C#" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
@@ -90,7 +94,7 @@
       <workItem from="1638268831578" duration="3141000" />
       <workItem from="1638283503532" duration="727000" />
       <workItem from="1638819519258" duration="7951000" />
-      <workItem from="1638870659499" duration="3627000" />
+      <workItem from="1638870659499" duration="9258000" />
     </task>
     <servers />
   </component>
