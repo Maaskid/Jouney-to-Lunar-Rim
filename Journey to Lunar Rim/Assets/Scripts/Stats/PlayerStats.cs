@@ -10,14 +10,17 @@ namespace Stats
     {
         [Header("___Tank Einstellungen___")]
         public float tankInit;
-        // [NonSerialized] 
+        // [NonSerialized]
         public float TankRuntime;
-        [NonSerialized] public float verbrauchsZeit = 2;
+        // [NonSerialized]
+        public float verbrauchsZeit = 2f;
 
         [Header("___Schaden Einstellungen___")]
         public float schadenMax;
+        public float selbstReparaturZeit = 5f;
         private float schadenInit = 0;
-        [NonSerialized] public float SchadenRuntime;
+        // [NonSerialized]
+        public float SchadenRuntime;
         
 
         public void OnBeforeSerialize()
