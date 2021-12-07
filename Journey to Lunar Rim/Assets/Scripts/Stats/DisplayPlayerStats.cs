@@ -14,6 +14,9 @@ namespace Stats
         public Material[] tankMaterials;
         public GameObject windowRight;
         public GameObject windowLeft;
+
+        public MeshRenderer rendererLeft;
+        public MeshRenderer rendererRight;
         public Material wlMaterial;
         public Material wrMaterial;
         public Material alphaMaterial;
@@ -35,22 +38,27 @@ namespace Stats
             if (runtime <= init * 0)
             {
                 GetComponentsInChildren<MeshRenderer>()[0].material = tankMaterials[0];
+                rendererLeft.material = tankMaterials[0];
             }
             else if (runtime <= init * 0.25)
             {
                 GetComponentsInChildren<MeshRenderer>()[0].material = tankMaterials[1];
+                rendererLeft.material = tankMaterials[1];
             }
             else if (runtime <= init * 0.5)
             {
                 GetComponentsInChildren<MeshRenderer>()[0].material = tankMaterials[2];
+                rendererLeft.material = tankMaterials[2];
             }
             else if (runtime <= init * 0.75)
             {
                 GetComponentsInChildren<MeshRenderer>()[0].material = tankMaterials[3];
+                rendererLeft.material = tankMaterials[3];
             }
             else if (runtime <= init)
             {
                 GetComponentsInChildren<MeshRenderer>()[0].material = tankMaterials[4];
+                rendererLeft.material = tankMaterials[4];
             }
         }
         public void UpdateSchadensanzeige()
@@ -64,24 +72,29 @@ namespace Stats
             if (runtime <= max * 0)
             {
                 GetComponentsInChildren<MeshRenderer>()[1].material = tankMaterials[0];
+                rendererRight.material = tankMaterials[0];
             }
             else if (runtime <= max * 0.25)
             {
                 GetComponentsInChildren<MeshRenderer>()[1].material = tankMaterials[1];
+                rendererRight.material = tankMaterials[1];
             }
             else if (runtime <= max * 0.5)
             {
                 GetComponentsInChildren<MeshRenderer>()[1].material = tankMaterials[2];
+                rendererRight.material = tankMaterials[2];
             }
             else if (runtime <= max * 0.75)
             {
                 GetComponentsInChildren<MeshRenderer>()[1].material = tankMaterials[3];
+                rendererRight.material = tankMaterials[3];
                 windowLeft.GetComponent<MeshRenderer>().material = wlMaterial;
                 windowRight.GetComponent<MeshRenderer>().material = wrMaterial;
             }
             else if (runtime <= max)
             {
                 GetComponentsInChildren<MeshRenderer>()[1].material = tankMaterials[4];
+                rendererRight.material = tankMaterials[4];
                 windowLeft.GetComponent<MeshRenderer>().material = wlMaterial;
                 windowRight.GetComponent<MeshRenderer>().material = wrMaterial;
             }
