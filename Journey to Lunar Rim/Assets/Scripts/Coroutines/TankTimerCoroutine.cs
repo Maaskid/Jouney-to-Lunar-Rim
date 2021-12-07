@@ -5,9 +5,6 @@ using UnityEngine;
 
 public class TankTimerCoroutine : MonoBehaviour
 {
-    // public GameObject objectToSpawn;
-    // public Transform spawnPoint;
-    // public float waitTime = 0.5f;
 
     private int _counter = 4;
     private IEnumerator _tankLeeren;
@@ -16,17 +13,21 @@ public class TankTimerCoroutine : MonoBehaviour
     {
         while (true)
         {
+            if (_counter < 0)
+                break;
             GetComponent<DisplayPlayerStats>().Tank(_counter);
             _counter--;
             yield return new WaitForSeconds(GetComponent<DisplayPlayerStats>().playerStats.verbrauchsZeit); // wait for one second and then start over
-            if (_counter < 0)
-            {
-                break;
-            }
         }
     }
+
+    public void TankFuellen()
+    {
+        StopCoroutine(_tankLeeren);
+        _counter = 4;
+        StartCoroutine(_tankLeeren);
+    }
     
-    // Start is called before the first frame update
     void Start()
     {
         _tankLeeren = TankLeeren();

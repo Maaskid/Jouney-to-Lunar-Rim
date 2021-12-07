@@ -5,17 +5,17 @@ namespace Stats
     public class HandleTankStats : MonoBehaviour
     {
         public PlayerStats playerStats;
-        public GameEvent.GameEvent gameEventSpritVerbraucht;
+        public GameEvent.GameEvent gameEventTankFuellen;
 
-        public void TankLeeren()
+        public void TankFuellen()
         {
-            playerStats.TankRuntime -= 5;
-            gameEventSpritVerbraucht.Raise();
+            playerStats.TankRuntime = playerStats.tankInit;
+            gameEventTankFuellen.Raise();
         }
 
         private void OnMouseDown()
         {
-            TankLeeren();
+            TankFuellen();
         }
     }
 }

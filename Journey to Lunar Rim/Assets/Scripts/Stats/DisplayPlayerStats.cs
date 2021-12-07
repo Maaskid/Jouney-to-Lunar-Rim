@@ -19,17 +19,33 @@ namespace Stats
         public Material wrMaterial;
         public Material alphaMaterial;
 
-        // Start is called before the first frame update
         void Start()
         {
             Tank(4);
-            // UpdateTankanzeige();
             UpdateSchadensanzeige();
         }
 
         public void Tank(int counter)
         {
             rendererLeft.material = tankMaterials[counter];
+            switch (counter)
+            {
+                case 0:
+                    playerStats.TankRuntime = playerStats.tankInit * 0f;
+                    break;
+                case 1:
+                    playerStats.TankRuntime = playerStats.tankInit * .25f;
+                    break;
+                case 2:
+                    playerStats.TankRuntime = playerStats.tankInit * .5f;
+                    break;
+                case 3:
+                    playerStats.TankRuntime = playerStats.tankInit * 0.75f;
+                    break;
+                case 4:
+                    playerStats.TankRuntime = playerStats.tankInit;
+                    break;
+            }
         }
         public void UpdateSchadensanzeige()
         {
