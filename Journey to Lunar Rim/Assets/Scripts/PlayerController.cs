@@ -120,7 +120,8 @@ public class PlayerController : MonoBehaviour
     void OnCollisionEnter(Collision collision){
             Debug.Log(collision.collider.name);
             if(collision.collider.tag == "Rock"){
-                Instantiate(rockExplosion, collision.collider.gameObject.transform.position, collision.collider.gameObject.transform.rotation);
+                ParticleSystem part = Instantiate(rockExplosion, collision.collider.gameObject.transform.position, collision.collider.gameObject.transform.rotation);
+                part.Play();
 
                 Destroy(collision.collider.gameObject);
 

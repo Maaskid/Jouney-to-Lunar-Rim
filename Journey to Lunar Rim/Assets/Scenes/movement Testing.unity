@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -716,6 +716,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 572202604}
   m_CullTransparentMesh: 1
+--- !u!1 &634735861 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 600182993274698919, guid: 13b600ef701928a43976d5096de4f9f4, type: 3}
+  m_PrefabInstance: {fileID: 1599904333}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &655114360
 GameObject:
   m_ObjectHideFlags: 0
@@ -879,6 +884,35 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3687598896645602868, guid: 13b600ef701928a43976d5096de4f9f4, type: 3}
   m_PrefabInstance: {fileID: 1599904333}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &671635187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 671635184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d53d4ff3759cbf342a13f27113209f7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tankMaterials:
+  - {fileID: 2100000, guid: daf4136df2c664f48a7019d6c8f146e9, type: 2}
+  - {fileID: 2100000, guid: 2816e8bb41cc78644b1a2000be7bb736, type: 2}
+  - {fileID: 2100000, guid: 5d5c32e6b6caf364fbada1a64d07ba53, type: 2}
+  - {fileID: 2100000, guid: ddf35dcdbe4d89947b6b899083b5f0f5, type: 2}
+  schildMaterials:
+  - {fileID: 2100000, guid: ad6d72a3081b2c14b998d8969e684f0a, type: 2}
+  - {fileID: 2100000, guid: 5019a02a8d15a824380a0805513371ce, type: 2}
+  - {fileID: 2100000, guid: 6e64ca0d939c99340a5eb92b8ef95b3d, type: 2}
+  - {fileID: 2100000, guid: db5f4b9581d7a4349a327452598ccb11, type: 2}
+  windowRight: {fileID: 787381962}
+  windowLeft: {fileID: 634735861}
+  rendererLeft: {fileID: 1449820502}
+  rendererRight: {fileID: 868916280}
+  wlMaterial: {fileID: 2100000, guid: 0eeb34d73d16e4f4196fb34a6631fe96, type: 2}
+  wrMaterial: {fileID: 2100000, guid: 4aba9d5212b1f68429122bdb010e385e, type: 2}
+  alphaMaterial: {fileID: 2100000, guid: bd361fd5cb1877544aa3cb64711a8795, type: 2}
 --- !u!54 &671635188
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1013,6 +1047,16 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 721642489}
   m_CullTransparentMesh: 1
+--- !u!1 &787381962 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1511612723614519098, guid: 13b600ef701928a43976d5096de4f9f4, type: 3}
+  m_PrefabInstance: {fileID: 1599904333}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &868916280 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 3912912223580117801, guid: 13b600ef701928a43976d5096de4f9f4, type: 3}
+  m_PrefabInstance: {fileID: 1599904333}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1037893384
 GameObject:
   m_ObjectHideFlags: 0
@@ -1208,6 +1252,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1278328426}
   m_CullTransparentMesh: 1
+--- !u!23 &1449820502 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 6837824893827061976, guid: 13b600ef701928a43976d5096de4f9f4, type: 3}
+  m_PrefabInstance: {fileID: 1599904333}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1501634431
 GameObject:
   m_ObjectHideFlags: 0
