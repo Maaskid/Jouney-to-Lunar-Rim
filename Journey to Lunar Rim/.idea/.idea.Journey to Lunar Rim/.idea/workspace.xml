@@ -3,16 +3,51 @@
   <component name="ChangeListManager">
     <list default="true" id="edeeebc7-fdf5-4d19-907d-7ec5db58b2a0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Journey to Lunar Rim/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Journey to Lunar Rim/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Raptor/Screens/Left/0.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Raptor/Screens/Left/0/LeftScreen_Diffuse.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Raptor/Screens/Left/0/LeftScreen_Diffuse.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Raptor/Screens/Left/0/LeftScreen_Glossy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Raptor/Screens/Left/0/LeftScreen_Glossy.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Raptor/Screens/Left/0/LeftScreen_Roughness.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Raptor/Screens/Left/0/LeftScreen_Roughness.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Raptor/Screens/Left/0/Tankanzeige_0.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Raptor/Screens/Left/0/Tankanzeige_0.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Raptor/Screens/Left/1/LeftScreen_Diffuse.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Raptor/Screens/Left/1/LeftScreen_Diffuse.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Raptor/Screens/Left/1/LeftScreen_Glossy.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Raptor/Screens/Left/1/LeftScreen_Glossy.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Raptor/Screens/Left/1/LeftScreen_Roughness.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Raptor/Screens/Left/1/LeftScreen_Roughness.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Raptor/Screens/Left/2/LeftScreen_Diffuse.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Raptor/Screens/Left/2/LeftScreen_Diffuse.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Raptor/Screens/Left/2/LeftScreen_Glossy.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Raptor/Screens/Left/2/LeftScreen_Glossy.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Raptor/Screens/Left/2/LeftScreen_Roughness.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Raptor/Screens/Left/2/LeftScreen_Roughness.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Raptor/Screens/Left/3/LeftScreen_Diffuse.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Raptor/Screens/Left/3/LeftScreen_Diffuse.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Raptor/Screens/Left/3/LeftScreen_Glossy.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Raptor/Screens/Left/3/LeftScreen_Glossy.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Raptor/Screens/Left/3/LeftScreen_Roughness.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Raptor/Screens/Left/3/LeftScreen_Roughness.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Raptor/Screens/Left/4/LeftScreen_Diffuse.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Raptor/Screens/Left/4/LeftScreen_Diffuse.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Raptor/Screens/Left/4/LeftScreen_Diffuse.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Raptor/Screens/Left/4/LeftScreen_Diffuse.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Raptor/Screens/Left/4/LeftScreen_Glossy.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Raptor/Screens/Left/4/LeftScreen_Glossy.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Raptor/Screens/Left/4/LeftScreen_Glossy.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Raptor/Screens/Left/4/LeftScreen_Glossy.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Raptor/Screens/Left/4/LeftScreen_Roughness.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Raptor/Screens/Left/4/LeftScreen_Roughness.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Raptor/Screens/Left/4/LeftScreen_Roughness.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Raptor/Screens/Left/4/LeftScreen_Roughness.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Raptor/Screens/Right/RightScreen.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Raptor/Screens/Right/RightScreen.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Raptor/Screens/Right/RightScreen_Diffuse.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Raptor/Screens/Right/RightScreen_Diffuse.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Raptor/Screens/Right/RightScreen_Glossy 1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Raptor/Screens/Right/RightScreen_Glossy 1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Raptor/Screens/Right/RightScreen_Roughness.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Raptor/Screens/Right/RightScreen_Roughness.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Raptor/Windows/Left/Left_Alpha.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Raptor/Windows/Left/Left_Alpha.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Raptor/Windows/Left/Left_Alpha.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Raptor/Windows/Left/Left_Alpha.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Raptor/Windows/Right/Right_Alpha.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Raptor/Windows/Right/Right_Alpha.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Raptor/Windows/Right/Right_Alpha.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Raptor/Windows/Right/Right_Alpha.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/HannaSpielkasten.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/HannaSpielkasten.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Coroutines/TankTimerCoroutine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Coroutines/TimedCoroutines.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Coroutines/TankTimerCoroutine.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Coroutines/TimedCoroutines.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/PlayerStats.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/PlayerStats.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Coroutines/TimedCoroutines.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Coroutines/TimedCoroutines.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stats/DisplayPlayerStats.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Stats/DisplayPlayerStats.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stats/HandleSchadenStats.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Stats/HandleSchadenStats.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stats/HandleTankStats.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Stats/HandleTankStats.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stats/PlayerStats.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Stats/PlayerStats.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker0-prev.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/AssetImportWorker0-prev.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker0.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-AssetImportWorker0.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/AssetImportWorker0.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-AssetImportWorker0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-AssetImportWorker0.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe0.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe1.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe1.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe2.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe2.log" afterDir="false" />
@@ -73,10 +108,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="12048">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="12048" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -100,6 +135,7 @@
       <workItem from="1638819519258" duration="7951000" />
       <workItem from="1638870659499" duration="9258000" />
       <workItem from="1638885505453" duration="9487000" />
+      <workItem from="1639043475381" duration="3626000" />
     </task>
     <servers />
   </component>

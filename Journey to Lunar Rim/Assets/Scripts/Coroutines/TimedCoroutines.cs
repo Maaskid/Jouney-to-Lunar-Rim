@@ -8,7 +8,7 @@ namespace Coroutines
     public class TimedCoroutines : MonoBehaviour
     {
         
-        private int _tankCounter = 4;
+        private int _tankCounter = 3;
 
         private Coroutine _tankLeeren;
         private Coroutine _schadenReparieren;
@@ -36,7 +36,7 @@ namespace Coroutines
         public void TankFuellen()
         {
             StopCoroutine(_tankLeeren);
-            _tankCounter = 4;
+            _tankCounter = 3;
             _tankLeeren = StartCoroutine(TankLeeren());
         }
 

@@ -29,7 +29,6 @@ namespace Stats
             {
                 playerStats.SchadenRuntime = 0;
             }
-            
         }
         
         private void OnMouseDown()

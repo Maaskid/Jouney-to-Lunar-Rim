@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace Stats
 {
@@ -10,6 +7,8 @@ namespace Stats
         public PlayerStats playerStats;
 
         public Material[] tankMaterials;
+        public Material[] schildMaterials;
+        
         public GameObject windowRight;
         public GameObject windowLeft;
 
@@ -21,8 +20,7 @@ namespace Stats
 
         void Start()
         {
-            TankLeeren(4);
-            // UpdateSchadensanzeige();
+            TankLeeren(3);
             Schaden();
         }
 
@@ -36,76 +34,49 @@ namespace Stats
             float runtime = playerStats.SchadenRuntime;
             float max = playerStats.schadenMax;
 
-            // [.., 0]
-            if (runtime <= 0) // max * 0 is always 0
+            // [0, 33%] → Schild volle Stärke = 3
+            if (0 <= runtime && runtime < max * 0.33) // max * 0 is always 0
             {
-                rendererRight.material = tankMaterials[0];
+                rendererRight.material = schildMaterials[3];
+                ShowWarning(0); // hide warning
             }
-            // [0+%, 25%]
-            else if (0 < runtime && runtime <= max * 0.25)
+            // [33+%, 66%]
+            else if (max * 0.33 <= runtime && runtime < max * 0.66)
             {
-                rendererRight.material = tankMaterials[1];
+                rendererRight.material = schildMaterials[2];
+                ShowWarning(0); // hide warning
             }
-            // [25+%, 50%]
-            else if (max * 0.25 < runtime && runtime <= max * 0.5)
+            // [66+%, 100%]
+            else if (max * 0.66 <= runtime && runtime < max)
             {
-                rendererRight.material = tankMaterials[2];
+                rendererRight.material = schildMaterials[1];
+                ShowWarning(1); // show warning
             }
-            // [50+%, 75%]
-            else if (max * 0.5 < runtime && runtime <= max * 0.75)
+            // [100+%, ..] → Schaden gravierend = 0, TODO Leben abziehen
+            else if (max <= runtime)
             {
-                rendererRight.material = tankMaterials[3];
-                windowLeft.GetComponent<MeshRenderer>().material = wlMaterial;
-                windowRight.GetComponent<MeshRenderer>().material = wrMaterial;
-            }
-            // [75+%, 100%]
-            else if (max * 0.75 < runtime && runtime <= max)
-            {
-                rendererRight.material = tankMaterials[4];
-                windowLeft.GetComponent<MeshRenderer>().material = wlMaterial;
-                windowRight.GetComponent<MeshRenderer>().material = wrMaterial;
+                rendererRight.material = schildMaterials[0];
+                ShowWarning(1); // show warning
             }
         }
-        
-        /*public void UpdateSchadensanzeige()
-        {
-            float runtime = playerStats.SchadenRuntime;
-            float max = playerStats.schadenMax;
 
-            // [.., 0]
-            if (runtime <= 0) // max * 0 is always 0
+        private void ShowWarning(int decision)
+        {
+            switch (decision)
             {
-                GetComponentsInChildren<MeshRenderer>()[0].material = tankMaterials[0];
-                rendererRight.material = tankMaterials[0];
+                case 0: // hide warning
+                    windowLeft.GetComponent<MeshRenderer>().material = alphaMaterial;
+                    windowRight.GetComponent<MeshRenderer>().material = alphaMaterial;
+                    break;
+                case 1: // show warning
+                    windowLeft.GetComponent<MeshRenderer>().material = wlMaterial;
+                    windowRight.GetComponent<MeshRenderer>().material = wrMaterial;
+                    break;
+                default:
+                    windowLeft.GetComponent<MeshRenderer>().material = alphaMaterial;
+                    windowRight.GetComponent<MeshRenderer>().material = alphaMaterial;
+                    break;
             }
-            // [0+%, 25%]
-            else if (0 < runtime && runtime <= max * 0.25)
-            {
-                GetComponentsInChildren<MeshRenderer>()[0].material = tankMaterials[1];
-                rendererRight.material = tankMaterials[1];
-            }
-            // [25+%, 50%]
-            else if (max * 0.25 < runtime && runtime <= max * 0.5)
-            {
-                GetComponentsInChildren<MeshRenderer>()[0].material = tankMaterials[2];
-                rendererRight.material = tankMaterials[2];
-            }
-            // [50+%, 75%]
-            else if (max * 0.5 < runtime && runtime <= max * 0.75)
-            {
-                GetComponentsInChildren<MeshRenderer>()[0].material = tankMaterials[3];
-                rendererRight.material = tankMaterials[3];
-                windowLeft.GetComponent<MeshRenderer>().material = wlMaterial;
-                windowRight.GetComponent<MeshRenderer>().material = wrMaterial;
-            }
-            // [75+%, 100%]
-            else if (max * 0.75 < runtime && runtime <= max)
-            {
-                GetComponentsInChildren<MeshRenderer>()[0].material = tankMaterials[4];
-                rendererRight.material = tankMaterials[4];
-                windowLeft.GetComponent<MeshRenderer>().material = wlMaterial;
-                windowRight.GetComponent<MeshRenderer>().material = wrMaterial;
-            }
-        }*/
+        }
     }
 }

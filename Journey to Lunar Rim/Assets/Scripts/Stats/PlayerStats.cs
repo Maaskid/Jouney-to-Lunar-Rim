@@ -15,7 +15,7 @@ namespace Stats
         // [NonSerialized]
         public float verbrauchsZeit = 2f;
 
-        [Header("___Schaden Einstellungen___")]
+        [Header("___Schild Einstellungen___")]
         public float schadenMax;
         public float selbstReparaturZeit = 5f;
         private float schadenInit = 0;

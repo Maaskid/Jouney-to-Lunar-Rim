@@ -262,11 +262,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerStats: {fileID: 11400000, guid: ed1c662b1e3bf7f4c8714b9121425476, type: 2}
   tankMaterials:
-  - {fileID: 2100000, guid: ad6d72a3081b2c14b998d8969e684f0a, type: 2}
   - {fileID: 2100000, guid: daf4136df2c664f48a7019d6c8f146e9, type: 2}
   - {fileID: 2100000, guid: 2816e8bb41cc78644b1a2000be7bb736, type: 2}
   - {fileID: 2100000, guid: 5d5c32e6b6caf364fbada1a64d07ba53, type: 2}
   - {fileID: 2100000, guid: ddf35dcdbe4d89947b6b899083b5f0f5, type: 2}
+  schildMaterials:
+  - {fileID: 2100000, guid: ad6d72a3081b2c14b998d8969e684f0a, type: 2}
+  - {fileID: 2100000, guid: 5019a02a8d15a824380a0805513371ce, type: 2}
+  - {fileID: 2100000, guid: 6e64ca0d939c99340a5eb92b8ef95b3d, type: 2}
+  - {fileID: 2100000, guid: db5f4b9581d7a4349a327452598ccb11, type: 2}
   windowRight: {fileID: 1318361817}
   windowLeft: {fileID: 1985658201}
   rendererLeft: {fileID: 668229317}
@@ -823,6 +827,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2046984920571993868, guid: e95c381c552ebdb489c416ca467c2645, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: db5f4b9581d7a4349a327452598ccb11, type: 2}
     - target: {fileID: 7069786029432320967, guid: e95c381c552ebdb489c416ca467c2645, type: 3}
       propertyPath: m_RootOrder
       value: 2
