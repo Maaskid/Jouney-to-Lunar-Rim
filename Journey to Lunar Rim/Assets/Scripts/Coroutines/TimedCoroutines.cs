@@ -7,15 +7,15 @@ namespace Coroutines
 {
     public class TimedCoroutines : MonoBehaviour
     {
-        private Coroutine _tankLeeren;
-        private Coroutine _schadenReparieren;
+/*        private Coroutine _tankLeeren;
+        private Coroutine _schadenReparieren;*/
 
         
         //___TANK_______________________________________________________________________________________________________
         /**
          * Starts TankLeeren coroutine immediately when scene is loaded
          */
-        void Start()
+ /*       void Start()
         {
             _tankLeeren = StartCoroutine(TankLeerenCoroutine());
         }
@@ -23,7 +23,7 @@ namespace Coroutines
         /**
          * Waits verbrauchsZeit, then continues to empty the tank and display changes. Breaks once tank is empty.
          */
-        IEnumerator TankLeerenCoroutine()
+/*        IEnumerator TankLeerenCoroutine()
         {
             while (true)
             {
@@ -41,7 +41,7 @@ namespace Coroutines
          * Restarts coroutine if tank is refilled,
          * Currently via Quad and onMouseDown TODO change to Asteroid and onCollisionEnter
          */
-        public void RestartTankCoroutine()
+/*        public void RestartTankCoroutine()
         {
             StopCoroutine(_tankLeeren);
             _tankLeeren = StartCoroutine(TankLeerenCoroutine());
@@ -51,7 +51,7 @@ namespace Coroutines
         /**
          * Called if ship is damaged TODO insert detection if damage is fully repaired and stop coroutine
          */
-        public void SchadenReparierenStarten()
+/*        public void SchadenReparierenStarten()
         {
             if (_schadenReparieren == null)
                 _schadenReparieren = StartCoroutine(SchadenReparierenCoroutine());
@@ -60,7 +60,7 @@ namespace Coroutines
         /**
          * Repairs damage and displays result. Waits selbstReparaturZeit
          */
-        IEnumerator SchadenReparierenCoroutine()
+ /*       IEnumerator SchadenReparierenCoroutine()
         {
             while (true)
             {
@@ -74,5 +74,5 @@ namespace Coroutines
                     new WaitForSeconds(GetComponent<DisplayPlayerStats>().playerStats.selbstReparaturZeit);
             }
         }
-    }
+    */}
 }

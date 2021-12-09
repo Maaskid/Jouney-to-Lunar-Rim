@@ -4,7 +4,7 @@ namespace Stats
 {
     public class DisplayPlayerStats : MonoBehaviour
     {
-        public PlayerStats playerStats;
+        //public PlayerStats playerStats;
 
         public Material[] tankMaterials;
         public Material[] schildMaterials;
@@ -33,8 +33,8 @@ namespace Stats
          */
         public void DisplayTankStats()
         {
-            float runtime = playerStats.TankRuntime;
-            float max = playerStats.tankInit;
+            float runtime = gameObject.GetComponent<PlayerController>().tank;
+            float max = gameObject.GetComponent<PlayerController>().maxTank;
             
             // [.., 0] → Tank leer, TODO invoke GameOverscreen
             if (runtime <= 0)
@@ -71,33 +71,29 @@ namespace Stats
          */
         public void DisplaySchadenStats()
         {
-            float runtime = playerStats.SchadenRuntime;
-            float max = playerStats.schadenMax;
+            int runtime = gameObject.GetComponent<PlayerController>().lives;
 
-            // [0, 33%] → Schild volle Stärke = 3
-            if (0 <= runtime && runtime < max * 0.33) // max * 0 is always 0
-            {
-                rendererRight.material = schildMaterials[3];
-                ShowWarning(0); // hide warning
+            Debug.Log("Lives: " + runtime);
+
+            switch(runtime){
+                case 0:
+                    rendererRight.material = schildMaterials[0];
+                    ShowWarning(1);
+                break;
+                case 1:
+                    rendererRight.material = schildMaterials[1];
+                    ShowWarning(1);
+                break;
+                case 2:
+                    rendererRight.material = schildMaterials[2];
+                    ShowWarning(0);
+                break;
+                case 3:
+                    rendererRight.material = schildMaterials[3];
+                    ShowWarning(0);
+                break;
             }
-            // [33+%, 66%]
-            else if (max * 0.33 <= runtime && runtime < max * 0.66)
-            {
-                rendererRight.material = schildMaterials[2];
-                ShowWarning(0); // hide warning
-            }
-            // [66+%, 100%]
-            else if (max * 0.66 <= runtime && runtime < max)
-            {
-                rendererRight.material = schildMaterials[1];
-                ShowWarning(0); // show warning
-            }
-            // [100+%, ..] → Schaden gravierend = 0
-            else if (max <= runtime)
-            {
-                rendererRight.material = schildMaterials[0];
-                ShowWarning(1); // show warning
-            }
+
         }
 
         /**

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Stats;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -15,6 +16,7 @@ public class PlayerController : MonoBehaviour
     [Header("=== Ship Values ===")]
     public int lives = 3;
     public float tank = 500;
+    public float maxTank;
     [SerializeField, Range(0.5f, 5f)]
     public float tankConsumption = 0.5f;
 
@@ -27,6 +29,10 @@ public class PlayerController : MonoBehaviour
     public float collisionSpeed = 2f;
 
     public bool collisionState = false;
+
+    void Start(){
+        maxTank = tank;
+    }
 
     void FixedUpdate()
     {
@@ -93,7 +99,8 @@ public class PlayerController : MonoBehaviour
         else{
             tank = 0;
         }
-
+        
+        GetComponent<DisplayPlayerStats>().DisplayTankStats();
     }
 
     void GameLost(){
@@ -114,13 +121,15 @@ public class PlayerController : MonoBehaviour
             Debug.Log(collision.collider.name);
             if(collision.collider.tag == "Rock"){
                 Instantiate(rockExplosion, collision.collider.gameObject.transform.position, collision.collider.gameObject.transform.rotation);
-                
+
                 Destroy(collision.collider.gameObject);
 
                 collisionState = true;
 
                 Debug.Log("IMPACT!!");
                 lives = lives - 1;
+                
+                GetComponent<DisplayPlayerStats>().DisplaySchadenStats();
         }
     }
 
