@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a15247073f5b824dbb848c36cc755b9, type: 3}
+  m_Name: PlayerStats
+  m_EditorClassIdentifier: 
+  tankInit: 100
+  TankRuntime: 100
+  verbrauchsZeit: 2
+  schildInit: 100
+  schildRuntime: 100
+  schadenMax: 100
+  selbstReparaturZeit: 5
+  SchadenRuntime: 0
