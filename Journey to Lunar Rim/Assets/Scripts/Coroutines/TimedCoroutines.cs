@@ -7,53 +7,68 @@ namespace Coroutines
 {
     public class TimedCoroutines : MonoBehaviour
     {
-        
-        private int _tankCounter = 3;
-
         private Coroutine _tankLeeren;
         private Coroutine _schadenReparieren;
 
+        
+        //___TANK_______________________________________________________________________________________________________
+        /**
+         * Starts TankLeeren coroutine immediately when scene is loaded
+         */
         void Start()
         {
-            _tankLeeren = StartCoroutine(TankLeeren());
+            _tankLeeren = StartCoroutine(TankLeerenCoroutine());
         }
         
-        IEnumerator TankLeeren()
+        /**
+         * Waits verbrauchsZeit, then continues to empty the tank and display changes. Breaks once tank is empty.
+         */
+        IEnumerator TankLeerenCoroutine()
         {
             while (true)
             {
-                if (_tankCounter < 0)
+                if (GetComponent<DisplayPlayerStats>().playerStats.TankRuntime <= 0)
                     break;
-                
-                GetComponent<DisplayPlayerStats>().TankLeeren(_tankCounter);
-                GetComponentInChildren<HandleTankStats>().TankLeeren(_tankCounter);
-                _tankCounter--;
+
                 yield return
                     new WaitForSeconds(GetComponent<DisplayPlayerStats>().playerStats.verbrauchsZeit);
+                GetComponentInChildren<HandleTankStats>().TankLeeren();
+                GetComponent<DisplayPlayerStats>().DisplayTankStats();
             }
         }
 
-        public void TankFuellen()
+        /**
+         * Restarts coroutine if tank is refilled,
+         * Currently via Quad and onMouseDown TODO change to Asteroid and onCollisionEnter
+         */
+        public void RestartTankCoroutine()
         {
             StopCoroutine(_tankLeeren);
-            _tankCounter = 3;
-            _tankLeeren = StartCoroutine(TankLeeren());
+            _tankLeeren = StartCoroutine(TankLeerenCoroutine());
         }
 
+        //___SCHADEN____________________________________________________________________________________________________
+        /**
+         * Called if ship is damaged TODO insert detection if damage is fully repaired and stop coroutine
+         */
         public void SchadenReparierenStarten()
         {
             if (_schadenReparieren == null)
-                _schadenReparieren = StartCoroutine(SchadenReparieren());
+                _schadenReparieren = StartCoroutine(SchadenReparierenCoroutine());
         }
         
-        IEnumerator SchadenReparieren()
+        /**
+         * Repairs damage and displays result. Waits selbstReparaturZeit
+         */
+        IEnumerator SchadenReparierenCoroutine()
         {
             while (true)
             {
                 if (GetComponent<DisplayPlayerStats>().playerStats.SchadenRuntime <= 0)
                     break;
+                
                 GetComponentInChildren<HandleSchadenStats>().SchadenReparieren();
-                GetComponent<DisplayPlayerStats>().Schaden();
+                GetComponent<DisplayPlayerStats>().DisplaySchadenStats();
                 
                 yield return
                     new WaitForSeconds(GetComponent<DisplayPlayerStats>().playerStats.selbstReparaturZeit);

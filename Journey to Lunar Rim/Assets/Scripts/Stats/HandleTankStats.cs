@@ -7,31 +7,28 @@ namespace Stats
         public PlayerStats playerStats;
         public GameEvent.GameEvent gameEventTankFuellen;
 
+        /**
+         * Called by OnMouseDown over Quad to fill tank up.
+         * TODO change to OnCollisionEnter on TankGameObject.
+         */
         public void TankFuellen()
         {
             playerStats.TankRuntime = playerStats.tankInit;
+            GetComponentInParent<DisplayPlayerStats>().DisplayTankStats();
             gameEventTankFuellen.Raise();
         }
 
-        public void TankLeeren(int current)
+        /**
+         * Called in intervals by the TankLeeren Coroutine.
+         * Subtracts 25% of max/initial filling or sets the tank on empty if lower boundary is crashed.
+         */
+        public void TankLeeren()
         {
-            switch (current)
+            playerStats.TankRuntime -= playerStats.tankInit * .25f;
+
+            if (playerStats.TankRuntime < 0)
             {
-                case 0:
-                    playerStats.TankRuntime = playerStats.tankInit * 0f;
-                    break;
-                case 1:
-                    playerStats.TankRuntime = playerStats.tankInit * .25f;
-                    break;
-                case 2:
-                    playerStats.TankRuntime = playerStats.tankInit * .5f;
-                    break;
-                case 3:
-                    playerStats.TankRuntime = playerStats.tankInit * 0.75f;
-                    break;
-                case 4:
-                    playerStats.TankRuntime = playerStats.tankInit;
-                    break;
+                playerStats.TankRuntime = 0;
             }
         }
         

@@ -18,18 +18,56 @@ namespace Stats
         public Material wrMaterial;
         public Material alphaMaterial;
 
+        /**
+         * Displays both, Tank and Schaden stats, once in the beginning
+         */
         void Start()
         {
-            TankLeeren(3);
-            Schaden();
+            DisplayTankStats();
+            DisplaySchadenStats();
         }
 
-        public void TankLeeren(int counter)
+        /**
+         * Called if TankStats change to update their display.
+         * Fetches tankRuntime to decide which material to display.
+         */
+        public void DisplayTankStats()
         {
-            rendererLeft.material = tankMaterials[counter];
+            float runtime = playerStats.TankRuntime;
+            float max = playerStats.tankInit;
+            
+            // [.., 0] → Tank leer, TODO invoke GameOverscreen
+            if (runtime <= 0)
+            {
+                Debug.Log("GameOver");
+            }
+            // [0+, 25%] → Tank 1/4 = 1
+            else if (0 < runtime && runtime <= max * 0.25) // max * 0 is always 0
+            {
+                rendererLeft.material = tankMaterials[0];
+            }
+            // [25+%, 50%] → Tank 1/2 = 2
+            else if (max * 0.25 < runtime && runtime <= max * 0.5)
+            {
+                rendererLeft.material = tankMaterials[1];
+            }
+            // [50+%, 75%] → Tank 3/4 = 3
+            else if (max * 0.5 < runtime && runtime <= max * 0.75)
+            {
+                rendererLeft.material = tankMaterials[2];
+            }
+            // [75+%, 100%] → Tank 1 = 4
+            else if (max * 0.75 < runtime && runtime <= max)
+            {
+                rendererLeft.material = tankMaterials[3];
+            }
         }
 
-        public void Schaden()
+        /**
+         * Called if SchadenStats change to update their display.
+         * Fetches schadenRuntime to decide which material to display.
+         */
+        public void DisplaySchadenStats()
         {
             float runtime = playerStats.SchadenRuntime;
             float max = playerStats.schadenMax;
@@ -60,6 +98,10 @@ namespace Stats
             }
         }
 
+        /**
+         * Extra function for better readability within calling functions.
+         * Either shows or hides warning on the windows, depenting on the current damage.
+         */
         private void ShowWarning(int decision)
         {
             switch (decision)

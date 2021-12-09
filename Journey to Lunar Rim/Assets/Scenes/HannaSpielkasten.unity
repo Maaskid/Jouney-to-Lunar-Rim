@@ -424,7 +424,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 265289835}
         m_TargetAssemblyTypeName: TankTimerCoroutine, Assembly-CSharp
-        m_MethodName: TankFuellen
+        m_MethodName: RestartTankCoroutine
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -627,7 +627,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 265289836}
         m_TargetAssemblyTypeName: Stats.DisplayPlayerStats, Assembly-CSharp
-        m_MethodName: Schaden
+        m_MethodName: DisplaySchadenStats
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
