@@ -17,6 +17,7 @@
 //-----------------------------------------------------------------------
 
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
@@ -24,7 +25,8 @@ using UnityEngine;
 /// </summary>
 public class CameraPointer : MonoBehaviour
 {
-    private const float _maxDistance = 10;
+    public List<GameObject> menuItems;
+    private const float _maxDistance = 30;
     private GameObject _gazedAtObject = null;
 
     /// <summary>
@@ -45,12 +47,15 @@ public class CameraPointer : MonoBehaviour
                 _gazedAtObject = hit.transform.gameObject;
                 _gazedAtObject.SendMessage("OnPointerEnter");
             }
+            ChangeSize(0.005f, .5f);
+            MenuItemPressed(_gazedAtObject);
         }
         else
         {
             // No GameObject detected in front of the camera.
             _gazedAtObject?.SendMessage("OnPointerExit");
             _gazedAtObject = null;
+            ResetSize(0.01f);
         }
 
         // Checks for screen touches.
@@ -58,5 +63,21 @@ public class CameraPointer : MonoBehaviour
         {
             _gazedAtObject?.SendMessage("OnPointerClick");
         }
+    }
+
+    private void MenuItemPressed(GameObject gazedAtObject)
+    {
+        //object specific suff in objects
+    }
+
+    private void ResetSize(float resizeBy)
+    {
+        transform.localScale = new Vector3(resizeBy, resizeBy, resizeBy);
+    }
+
+    private void ChangeSize(float changeBy, float capAt)
+    {
+        if (transform.localScale.x > capAt) return;
+        transform.localScale += new Vector3(changeBy, changeBy, changeBy);
     }
 }
