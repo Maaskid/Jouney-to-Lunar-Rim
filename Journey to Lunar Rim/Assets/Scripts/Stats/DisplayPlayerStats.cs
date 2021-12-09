@@ -40,11 +40,13 @@ namespace Stats
             if (runtime <= 0)
             {
                 Debug.Log("GameOver");
+                ShowWarning(1); // show warning
             }
             // [0+, 25%] → Tank 1/4 = 1
             else if (0 < runtime && runtime <= max * 0.25) // max * 0 is always 0
             {
                 rendererLeft.material = tankMaterials[0];
+                ShowWarning(1); // show warning
             }
             // [25+%, 50%] → Tank 1/2 = 2
             else if (max * 0.25 < runtime && runtime <= max * 0.5)
@@ -88,9 +90,9 @@ namespace Stats
             else if (max * 0.66 <= runtime && runtime < max)
             {
                 rendererRight.material = schildMaterials[1];
-                ShowWarning(1); // show warning
+                ShowWarning(0); // show warning
             }
-            // [100+%, ..] → Schaden gravierend = 0, TODO Leben abziehen
+            // [100+%, ..] → Schaden gravierend = 0
             else if (max <= runtime)
             {
                 rendererRight.material = schildMaterials[0];

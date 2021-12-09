@@ -25,7 +25,7 @@ namespace Stats
             {
                 playerStats.SchadenRuntime += 10;
             }
-            GetComponentInParent<TimedCoroutines>().SchadenReparierenStarten();
+            // GetComponentInParent<TimedCoroutines>().SchadenReparierenStarten();
             gameEventSchadenGenommen.Raise();
         }
 
