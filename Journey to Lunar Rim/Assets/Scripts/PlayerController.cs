@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class player_movement : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     [Header("=== Ship Important Settings ===")]
     public GameObject playerCam;
@@ -14,6 +14,10 @@ public class player_movement : MonoBehaviour
 
     [Header("=== Ship Values ===")]
     public int lives = 3;
+    public float tank = 500;
+    [SerializeField, Range(0.5f, 5f)]
+    public float tankConsumption = 0.5f;
+
 
     [Header("=== Collision ==")]
     public ParticleSystem rockExplosion;
@@ -27,6 +31,7 @@ public class player_movement : MonoBehaviour
     void FixedUpdate()
     {
         HandleMovement();
+        GameLost();
     }
 
     Vector3 GetDirection(){
@@ -48,6 +53,7 @@ public class player_movement : MonoBehaviour
     float GetSpeed(){
         if (collisionState == false){
             shipSpeed = speed;
+            SetFuel();
         }
         else{
             shipSpeed = shipSpeed * collisionAccele;
@@ -78,10 +84,30 @@ public class player_movement : MonoBehaviour
                 transform.Translate(Vector3.right * speed * Time.deltaTime);
             }
         }
+    }
 
-        if(lives <= 0){
-            speed = 0;
+    void SetFuel(){
+        if(tank > 0){
+            tank -= tankConsumption;
         }
+        else{
+            tank = 0;
+        }
+
+    }
+
+    void GameLost(){
+        if(lives == 0){
+            speed = 0;
+            Debug.Log("GAME LOST!!");
+            return;
+        }
+        if(tank == 0){
+            speed = 0;
+            Debug.Log("GAME LOST!!");
+            return;
+        }
+        return;
     }
 
     void OnCollisionEnter(Collision collision){

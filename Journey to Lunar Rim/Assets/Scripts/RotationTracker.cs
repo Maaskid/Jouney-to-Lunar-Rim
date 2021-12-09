@@ -26,17 +26,21 @@ public class RotationTracker : MonoBehaviour
     [SerializeField]
     public Text speed;
 
+    [SerializeField]
+    public Text tank;
+
     // Update is called once per frame
     void Update()
     {
-        txtX.text = player.GetComponent<player_movement>().playerCam.transform.localEulerAngles.x.ToString("F");
-        txtY.text = player.GetComponent<player_movement>().playerCam.transform.localEulerAngles.y.ToString("F");
-        txtZ.text = player.GetComponent<player_movement>().playerCam.transform.localEulerAngles.z.ToString("F");
+        txtX.text = player.GetComponent<PlayerController>().playerCam.transform.localEulerAngles.x.ToString("F");
+        txtY.text = player.GetComponent<PlayerController>().playerCam.transform.localEulerAngles.y.ToString("F");
+        txtZ.text = player.GetComponent<PlayerController>().playerCam.transform.localEulerAngles.z.ToString("F");
         /*txtX.text = player.transform.localEulerAngles.x.ToString();
         txtY.text = player.transform.localEulerAngles.y.ToString();
         txtZ.text = player.transform.localEulerAngles.z.ToString();*/
-        lives.text = player.GetComponent<player_movement>().lives.ToString();
-        hitti.text = player.GetComponent<player_movement>().collisionState.ToString();
-        speed.text = player.GetComponent<player_movement>().shipSpeed.ToString();
+        lives.text = player.GetComponent<PlayerController>().lives.ToString();
+        hitti.text = player.GetComponent<PlayerController>().collisionState.ToString();
+        speed.text = player.GetComponent<PlayerController>().shipSpeed.ToString();
+        tank.text = player.GetComponent<PlayerController>().tank.ToString();
     }
 }
