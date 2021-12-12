@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
+    [System.Serializable]
 public class PlaceAsteroids : MonoBehaviour
 {
     public int size;
@@ -14,14 +15,22 @@ public class PlaceAsteroids : MonoBehaviour
     public float collisionBoxSizeMod = 0.1f;
 
     public List<GameObject> asteroids;
-    // Start is called before the first frame update
-    void Start()
+    
+    public PlaceAsteroids(int size, Vector3 position, int amountAsteroids, float collBoxMod){
+        this.size = size;
+        this.xOff = position.x;
+        this.yOff = position.y;
+        this.zOff = position.z;
+        this.numberOfAsteroids = amountAsteroids;
+        this.collisionBoxSizeMod = collBoxMod;
+    }
+
+    void Awake()
     {
         xOff = transform.position.x;
         yOff = transform.position.y;
         zOff = transform.position.z;
         Place(size);
-        CreateTriggerBox(size);
     }
 
     //Erstellt und platziert die Meteoriten
@@ -76,46 +85,5 @@ public class PlaceAsteroids : MonoBehaviour
         {
             Instantiate(gameObjects[i], pos[i], Random.rotation, this.transform);
         }
-    }
-
-    //Erstellt, skaliert und platziert die Rand Kollider
-    void CreateTriggerBox(int size){
-        //Create Colliders
-        BoxCollider norCol = gameObject.AddComponent(typeof(BoxCollider)) as BoxCollider;
-        BoxCollider easCol = gameObject.AddComponent(typeof(BoxCollider)) as BoxCollider;
-        BoxCollider souCol = gameObject.AddComponent(typeof(BoxCollider)) as BoxCollider;
-        BoxCollider wesCol = gameObject.AddComponent(typeof(BoxCollider)) as BoxCollider;
-        BoxCollider topCol = gameObject.AddComponent(typeof(BoxCollider)) as BoxCollider;
-        BoxCollider botCol = gameObject.AddComponent(typeof(BoxCollider)) as BoxCollider;
-
-        norCol.isTrigger = true;
-        souCol.isTrigger = true;
-        easCol.isTrigger = true;
-        wesCol.isTrigger = true;
-        topCol.isTrigger = true;
-        botCol.isTrigger = true;
-
-        //Set specific Size for the colliders
-        //norden und süden, muss größe z kleiner sein
-        norCol.size = new Vector3(size, size, size*collisionBoxSizeMod);
-        souCol.size = new Vector3(size, size, size*collisionBoxSizeMod);
-        //osten und westen muss x kleiner sein
-        easCol.size = new Vector3(size*collisionBoxSizeMod, size, size);
-        wesCol.size = new Vector3(size*collisionBoxSizeMod, size, size);
-        //oben und unten muss y kleiner sein
-        topCol.size = new Vector3(size, size*collisionBoxSizeMod, size);
-        botCol.size = new Vector3(size, size*collisionBoxSizeMod, size);
-
-        //Setzt Position der Collider
-        norCol.center = new Vector3(0, 0, ( (size/2) - (size*collisionBoxSizeMod)/2 ) );
-        souCol.center = new Vector3(0, 0, -( (size/2) - (size*collisionBoxSizeMod)/2 ));
-        easCol.center = new Vector3(( (size/2) - (size*collisionBoxSizeMod)/2 ), 0, 0);
-        wesCol.center = new Vector3(-( (size/2) - (size*collisionBoxSizeMod)/2 ), 0, 0);
-        topCol.center = new Vector3(0, ( (size/2) - (size*collisionBoxSizeMod)/2 ), 0);
-        botCol.center = new Vector3(0, -( (size/2) - (size*collisionBoxSizeMod)/2 ), 0);
-    }
-
-    void OnTriggerEnter(Collider col){
-        Debug.Log(col);
     }
 }
