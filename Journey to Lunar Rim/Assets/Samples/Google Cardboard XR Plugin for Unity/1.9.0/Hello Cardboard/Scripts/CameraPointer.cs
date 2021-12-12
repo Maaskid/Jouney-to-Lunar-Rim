@@ -25,9 +25,22 @@ using UnityEngine;
 /// </summary>
 public class CameraPointer : MonoBehaviour
 {
+    public Material inactiveMaterial;
+    public Material activeMaterial;
     public List<GameObject> menuItems;
+    
     private const float _maxDistance = 30;
+    private const float _capSizeGrowing = 1;
+    private const float _growRate = .5f;
+    private float _grownBy;
     private GameObject _gazedAtObject = null;
+    private Renderer _myRenderer;
+    
+    public void Start()
+    {
+        _myRenderer = GetComponent<Renderer>();
+        SetMaterial(false);
+    }
 
     /// <summary>
     /// Update is called once per frame.
@@ -40,6 +53,7 @@ public class CameraPointer : MonoBehaviour
         if (Physics.Raycast(transform.position, transform.forward, out hit, _maxDistance))
         {
             // GameObject detected in front of the camera.
+            SetMaterial(true);
             if (_gazedAtObject != hit.transform.gameObject)
             {
                 // New GameObject.
@@ -47,15 +61,23 @@ public class CameraPointer : MonoBehaviour
                 _gazedAtObject = hit.transform.gameObject;
                 _gazedAtObject.SendMessage("OnPointerEnter");
             }
-            ChangeSize(0.005f, .5f);
-            MenuItemPressed(_gazedAtObject);
+            ChangeSize(_growRate * Time.deltaTime, _capSizeGrowing);
+            _grownBy += _growRate * Time.deltaTime;
+            if (_grownBy > _capSizeGrowing)
+            {
+                MenuItemPressed(_gazedAtObject);
+                _grownBy = 0;
+            }
         }
         else
         {
             // No GameObject detected in front of the camera.
+            SetMaterial(false);
             _gazedAtObject?.SendMessage("OnPointerExit");
             _gazedAtObject = null;
-            ResetSize(0.01f);
+            // Resets
+            _grownBy = 0;
+            ResetSize(.5f);
         }
 
         // Checks for screen touches.
@@ -67,7 +89,17 @@ public class CameraPointer : MonoBehaviour
 
     private void MenuItemPressed(GameObject gazedAtObject)
     {
-        //object specific suff in objects
+        switch (gazedAtObject.tag)
+        {
+            case "play":
+                foreach (GameObject g in menuItems)
+                {
+                    if (g != gazedAtObject) g.SetActive(false);
+                }
+                break;
+            case "load": /* open load scene */break;
+            case "options": /* open options scene */ break;
+        }
     }
 
     private void ResetSize(float resizeBy)
@@ -79,5 +111,14 @@ public class CameraPointer : MonoBehaviour
     {
         if (transform.localScale.x > capAt) return;
         transform.localScale += new Vector3(changeBy, changeBy, changeBy);
+    }
+
+    private void SetMaterial(bool isEntered)
+    {
+        if (inactiveMaterial != null && activeMaterial != null)
+        {
+            _myRenderer.material = isEntered ? activeMaterial : inactiveMaterial;
+
+        } 
     }
 }
