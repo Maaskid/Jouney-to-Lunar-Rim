@@ -11,8 +11,9 @@ public class AsteroidsColliders : MonoBehaviour
     float collisionBoxSizeMod;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
+        theParent = transform.parent.parent.gameObject;
         size = theParent.GetComponent<PlaceAsteroids>().size;
         collisionBoxSizeMod = theParent.GetComponent<PlaceAsteroids>().collisionBoxSizeMod;
         SetTriggerBox(size, colName);
@@ -21,7 +22,6 @@ public class AsteroidsColliders : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
     }
 
     //Erstellt, skaliert und platziert die Rand Kollider
@@ -71,38 +71,113 @@ public class AsteroidsColliders : MonoBehaviour
         //Debug.Log("Set Bot");
         break;
         }
+        BoxCollider coll = GetComponent<BoxCollider>();
+        coll.enabled = true;
+    }
 
+    void disableCloseHitbox(Transform newArea){
+            foreach(Transform allAstCol1 in newArea){
+                
+                foreach(GameObject allAstCol2 in GameObject.FindGameObjectsWithTag("AsteroidCollision")){
+                    
+                    if(allAstCol1 == allAstCol2){
+                        Debug.Log("Da war was gleich!");
+                        break;
+                    }
+                    else if(allAstCol1.transform.parent.parent == allAstCol2.transform.parent.parent){
+                        Debug.Log("Alabama!");
+                        break;
+                    }
+                    else{
+                        float distance = Vector3.Distance(allAstCol1.transform.position, allAstCol2.transform.position);
+
+                        BoxCollider col1 = allAstCol1.GetComponent<BoxCollider>();
+                        BoxCollider col2 = allAstCol2.GetComponent<BoxCollider>();
+
+                        if(distance <= size*collisionBoxSizeMod+1){
+                            col1.enabled = false;
+                            col2.enabled = false;
+                        }
+                        else{
+                            //col1.enabled = true;
+                            //col2.enabled = true;
+                        }
+                        Debug.Log("Distanz: " + distance + "Bei All1: + " + allAstCol1 + " und All2: " + allAstCol2);
+                    }
+        
+            }            
+        }
     }
     
     void OnTriggerEnter(Collider other){
         Debug.Log("Is Drinne");
 
-        //public PlaceAsteroids newField = new PlaceAsteroids(size, new Vector3(100, 100, 100), 100, 0.2);
+        Vector3 newPosition = theParent.transform.position;
+        GameObject newAsteroids = Instantiate(theParent, new Vector3(0,0,0), theParent.transform.rotation);
+        
+        int numOfAst = theParent.GetComponent<PlaceAsteroids>().numberOfAsteroids;
+
+        for(int i = 1; i <= numOfAst; i++){
+            Destroy(newAsteroids.transform.GetChild(i).gameObject);
+            //Debug.Log("I deleted stuff");
+        }
+
+        Transform allCollFromNew = newAsteroids.transform.GetChild(0);
+        //BoxCollider specificCol = allCollFromNew.GetChild(0).GetComponent<BoxCollider>();
+
+        //BoxCollider coll = GetComponent<BoxCollider>();
+        //coll.enabled = false;
 
         switch(colName){
             case ColliderName.North:
+            newPosition.z = newPosition.z + size;
+            newAsteroids.transform.position = newPosition;
+            //Süd Collider vom neuen AsteoridenObjekt
+            //specificCol = allCollFromNew.GetChild(2).GetComponent<BoxCollider>();
             Debug.Log("Places North");
             break;
 
             case ColliderName.East:
+            newPosition.x = newPosition.x + size;
+            newAsteroids.transform.position = newPosition;
+            //West Collider vom neuen AsteoridenObjekt
+            //specificCol = allCollFromNew.GetChild(3).GetComponent<BoxCollider>();
             Debug.Log("Places East");
             break;
 
             case ColliderName.South:
+            newPosition.z = newPosition.z - size;
+            newAsteroids.transform.position = newPosition;
+            //Nord Collider vom neuen AsteoridenObjekt
+            //specificCol = allCollFromNew.GetChild(0).GetComponent<BoxCollider>();
             Debug.Log("Places South");
             break;
 
             case ColliderName.West:
+            newPosition.x = newPosition.x - size;
+            newAsteroids.transform.position = newPosition;
+            //Ost Collider vom neuen AsteoridenObjekt
+            //specificCol = allCollFromNew.GetChild(1).GetComponent<BoxCollider>();
             Debug.Log("Places West");
             break;
 
             case ColliderName.Top:
+            newPosition.y = newPosition.y + size;
+            newAsteroids.transform.position = newPosition;
+            //Bot Collider vom neuen AsteoridenObjekt
+            //specificCol = allCollFromNew.GetChild(5).GetComponent<BoxCollider>();
             Debug.Log("Places Top");
             break;
 
             case ColliderName.Bot:
+            newPosition.y = newPosition.y - size;
+            newAsteroids.transform.position = newPosition;
+            //Top Collider vom neuen AsteoridenObjekt
+            //specificCol = allCollFromNew.GetChild(4).GetComponent<BoxCollider>();
             Debug.Log("Places Bot");
             break;
         }
+        disableCloseHitbox(allCollFromNew);
+        //specificCol.enabled = false;
     }
 }

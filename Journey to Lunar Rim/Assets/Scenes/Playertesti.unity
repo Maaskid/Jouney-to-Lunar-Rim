@@ -259,7 +259,7 @@ GameObject:
   - component: {fileID: 245841967}
   m_Layer: 0
   m_Name: East
-  m_TagString: Untagged
+  m_TagString: AsteroidCollision
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -317,7 +317,7 @@ GameObject:
   - component: {fileID: 291897773}
   m_Layer: 0
   m_Name: Asteroids
-  m_TagString: Untagged
+  m_TagString: MasterRoid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -334,8 +334,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27d7abd4cc0041a4a8ab1c40aed5c55e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size: 100
-  numberOfAsteroids: 0
+  player: {fileID: 671635184}
+  size: 200
+  numberOfAsteroids: 50
   collisionBoxSizeMod: 0.2
   asteroids:
   - {fileID: 7950313416819077489, guid: 6676773ca38f0b049a3f115ea92ba73a, type: 3}
@@ -376,7 +377,7 @@ GameObject:
   - component: {fileID: 296945261}
   m_Layer: 0
   m_Name: West
-  m_TagString: Untagged
+  m_TagString: AsteroidCollision
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -514,7 +515,7 @@ GameObject:
   - component: {fileID: 391635882}
   m_Layer: 0
   m_Name: South
-  m_TagString: Untagged
+  m_TagString: AsteroidCollision
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1238,7 +1239,7 @@ GameObject:
   - component: {fileID: 746451629}
   m_Layer: 0
   m_Name: Bot
-  m_TagString: Untagged
+  m_TagString: AsteroidCollision
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1302,7 +1303,7 @@ GameObject:
   - component: {fileID: 983305694}
   m_Layer: 0
   m_Name: North
-  m_TagString: Untagged
+  m_TagString: AsteroidCollision
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1637,7 +1638,7 @@ GameObject:
   - component: {fileID: 1510952374}
   m_Layer: 0
   m_Name: Top
-  m_TagString: Untagged
+  m_TagString: AsteroidCollision
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

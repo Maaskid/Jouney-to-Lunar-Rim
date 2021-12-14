@@ -6,6 +6,8 @@ using UnityEngine;
     [System.Serializable]
 public class PlaceAsteroids : MonoBehaviour
 {
+    public GameObject player;
+
     public int size;
     float xOff;
     float yOff;
@@ -25,12 +27,16 @@ public class PlaceAsteroids : MonoBehaviour
         this.collisionBoxSizeMod = collBoxMod;
     }
 
-    void Awake()
+    void Start()
     {
         xOff = transform.position.x;
         yOff = transform.position.y;
         zOff = transform.position.z;
         Place(size);
+    }
+
+    void Update(){
+        DestroyOnFarAway();
     }
 
     //Erstellt und platziert die Meteoriten
@@ -85,5 +91,13 @@ public class PlaceAsteroids : MonoBehaviour
         {
             Instantiate(gameObjects[i], pos[i], Random.rotation, this.transform);
         }
+    }
+
+    void DestroyOnFarAway(){
+        float distance = Vector3.Distance(this.transform.position, player.transform.position);
+            if(distance >= size * 2){
+                Destroy(this.gameObject);
+            }
+        
     }
 }
