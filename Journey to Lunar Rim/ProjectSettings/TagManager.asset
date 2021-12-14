@@ -7,6 +7,10 @@ TagManager:
   - Rock
   - play
   - options
+  - archiv
+  - exit
+  - pillar
+  - volume
   layers:
   - Default
   - TransparentFX

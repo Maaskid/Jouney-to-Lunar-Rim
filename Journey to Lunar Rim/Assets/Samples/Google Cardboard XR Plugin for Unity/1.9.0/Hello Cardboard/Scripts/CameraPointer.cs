@@ -19,6 +19,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// Sends messages to gazed GameObject.
@@ -27,7 +28,8 @@ public class CameraPointer : MonoBehaviour
 {
     public Material inactiveMaterial;
     public Material activeMaterial;
-    public List<GameObject> menuItems;
+    public List<GameObject> items;
+    public List<GameObject> ignore;
     
     private const float _maxDistance = 30;
     private const float _capSizeGrowing = 1;
@@ -53,7 +55,6 @@ public class CameraPointer : MonoBehaviour
         if (Physics.Raycast(transform.position, transform.forward, out hit, _maxDistance))
         {
             // GameObject detected in front of the camera.
-            SetMaterial(true);
             if (_gazedAtObject != hit.transform.gameObject)
             {
                 // New GameObject.
@@ -61,6 +62,20 @@ public class CameraPointer : MonoBehaviour
                 _gazedAtObject = hit.transform.gameObject;
                 _gazedAtObject.SendMessage("OnPointerEnter");
             }
+
+            foreach (GameObject g in ignore)
+            {
+                if (g == _gazedAtObject)
+                {
+                    _gazedAtObject.SendMessage("OnPointerExit");
+                    _grownBy = 0;
+                    SetMaterial(false);
+                    ResetSize(.5f);
+                    _gazedAtObject = null;
+                    return;
+                }
+            }
+            SetMaterial(true);
             ChangeSize(_growRate * Time.deltaTime, _capSizeGrowing);
             _grownBy += _growRate * Time.deltaTime;
             if (_grownBy > _capSizeGrowing)
@@ -92,13 +107,19 @@ public class CameraPointer : MonoBehaviour
         switch (gazedAtObject.tag)
         {
             case "play":
-                foreach (GameObject g in menuItems)
+                foreach (GameObject g in items)
                 {
                     if (g != gazedAtObject) g.SetActive(false);
                 }
                 break;
-            case "load": /* open load scene */break;
+            case "archiv":
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                break;
+            case "exit":
+                Application.Quit();
+                break;
             case "options": /* open options scene */ break;
+            case "pillar": /*zoom to item on pillar*/ break;
         }
     }
 
