@@ -100,7 +100,7 @@ public class PlayerController : MonoBehaviour
             tank = 0;
         }
         
-        GetComponent<DisplayPlayerStats>().DisplayTankStats();
+        GetComponent<DisplayPlayerStats>().DisplayTankStats(tank, maxTank);
     }
 
     void GameLost(){
@@ -118,7 +118,7 @@ public class PlayerController : MonoBehaviour
     }
 
     void OnCollisionEnter(Collision collision){
-            Debug.Log(collision.collider.name);
+            //Debug.Log(collision.collider.name);
             if(collision.collider.tag == "Rock"){
                 ParticleSystem part = Instantiate(rockExplosion, collision.collider.gameObject.transform.position, collision.collider.gameObject.transform.rotation);
                 part.Play();
@@ -130,7 +130,7 @@ public class PlayerController : MonoBehaviour
                 Debug.Log("IMPACT!!");
                 lives = lives - 1;
                 
-                GetComponent<DisplayPlayerStats>().DisplaySchadenStats();
+                GetComponent<DisplayPlayerStats>().DisplaySchadenStats(lives);
         }
     }
 

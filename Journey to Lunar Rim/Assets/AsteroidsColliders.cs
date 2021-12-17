@@ -76,51 +76,69 @@ public class AsteroidsColliders : MonoBehaviour
     }
 
     void disableCloseHitbox(Transform newArea){
-            foreach(Transform allAstCol1 in newArea){
+        List<GameObject> areTooClose = new List<GameObject>();
+
+        foreach(GameObject allAstCol1 in GameObject.FindGameObjectsWithTag("AsteroidCollision")){
+                            
+            BoxCollider col1 = allAstCol1.GetComponent<BoxCollider>();
+            //Debug.Log("col1 ist: " + col1);
+            BoxCollider col2 = null;
+            
+            foreach(GameObject allAstCol2 in GameObject.FindGameObjectsWithTag("AsteroidCollision")){
                 
-                foreach(GameObject allAstCol2 in GameObject.FindGameObjectsWithTag("AsteroidCollision")){
+                if(allAstCol1 == allAstCol2){
+                    Debug.Log("Da war was gleich!");
+                }
+                else if(allAstCol1.transform.parent.parent == allAstCol2.transform.parent.parent){
+                    Debug.Log("Alabama!");
+                }
+                else{
                     
-                    if(allAstCol1 == allAstCol2){
-                        Debug.Log("Da war was gleich!");
+                    col2 = allAstCol2.GetComponent<BoxCollider>();
+                    //Debug.Log("col2 ist: " + col2);
+
+                    float distance = Vector3.Distance(allAstCol1.transform.position, allAstCol2.transform.position);
+                    //Debug.Log("Distanz: " + distance + " Bei All1: + " + col1 + " und All2: " + col2);
+
+                    if(distance <= size*collisionBoxSizeMod+1){
+                        areTooClose.Add(allAstCol1);
+                        areTooClose.Add(allAstCol2);
                         break;
                     }
-                    else if(allAstCol1.transform.parent.parent == allAstCol2.transform.parent.parent){
-                        Debug.Log("Alabama!");
-                        break;
-                    }
-                    else{
-                        float distance = Vector3.Distance(allAstCol1.transform.position, allAstCol2.transform.position);
-
-                        BoxCollider col1 = allAstCol1.GetComponent<BoxCollider>();
-                        BoxCollider col2 = allAstCol2.GetComponent<BoxCollider>();
-
-                        if(distance <= size*collisionBoxSizeMod+1){
-                            col1.enabled = false;
-                            col2.enabled = false;
-                        }
-                        else{
-                            //col1.enabled = true;
-                            //col2.enabled = true;
-                        }
-                        Debug.Log("Distanz: " + distance + "Bei All1: + " + allAstCol1 + " und All2: " + allAstCol2);
-                    }
+                }
         
-            }            
+            }
+
+            if(areTooClose.Contains(allAstCol1)){
+                col1.enabled = false;
+            }
+            else{
+                //col1.enabled = true;
+            }
         }
+        
+        foreach(var x in areTooClose){
+            Debug.Log(x.ToString());
+        }
+
     }
     
     void OnTriggerEnter(Collider other){
         Debug.Log("Is Drinne");
 
         Vector3 newPosition = theParent.transform.position;
+
         GameObject newAsteroids = Instantiate(theParent, new Vector3(0,0,0), theParent.transform.rotation);
+
+        foreach(Transform child in newAsteroids.transform){
+            if(child.tag == "Rock"){
+                Destroy(child.gameObject);
+            }
+        }
         
         int numOfAst = theParent.GetComponent<PlaceAsteroids>().numberOfAsteroids;
 
-        for(int i = 1; i <= numOfAst; i++){
-            Destroy(newAsteroids.transform.GetChild(i).gameObject);
-            //Debug.Log("I deleted stuff");
-        }
+        newAsteroids.Place(numOfAst);
 
         Transform allCollFromNew = newAsteroids.transform.GetChild(0);
         //BoxCollider specificCol = allCollFromNew.GetChild(0).GetComponent<BoxCollider>();
@@ -177,7 +195,9 @@ public class AsteroidsColliders : MonoBehaviour
             Debug.Log("Places Bot");
             break;
         }
+        
         disableCloseHitbox(allCollFromNew);
+        //Debug.Log("Places at: " + newPosition.ToString());
         //specificCol.enabled = false;
     }
 }

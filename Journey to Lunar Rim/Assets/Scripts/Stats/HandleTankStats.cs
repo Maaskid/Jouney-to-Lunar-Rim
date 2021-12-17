@@ -14,7 +14,7 @@ namespace Stats
         public void TankFuellen()
         {
             playerStats.TankRuntime = playerStats.tankInit;
-            GetComponentInParent<DisplayPlayerStats>().DisplayTankStats();
+            //GetComponentInParent<DisplayPlayerStats>().DisplayTankStats();
             gameEventTankFuellen.Raise();
         }
 

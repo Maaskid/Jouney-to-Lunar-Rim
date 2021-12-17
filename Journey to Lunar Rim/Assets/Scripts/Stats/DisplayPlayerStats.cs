@@ -23,19 +23,14 @@ namespace Stats
          */
         void Start()
         {
-            DisplayTankStats();
-            DisplaySchadenStats();
         }
 
         /**
          * Called if TankStats change to update their display.
          * Fetches tankRuntime to decide which material to display.
          */
-        public void DisplayTankStats()
-        {
-            float runtime = gameObject.GetComponent<PlayerController>().tank;
-            float max = gameObject.GetComponent<PlayerController>().maxTank;
-            
+        public void DisplayTankStats(float runtime, float max)
+        {            
             // [.., 0] → Tank leer, TODO invoke GameOverscreen
             if (runtime <= 0)
             {
@@ -69,9 +64,8 @@ namespace Stats
          * Called if SchadenStats change to update their display.
          * Fetches schadenRuntime to decide which material to display.
          */
-        public void DisplaySchadenStats()
+        public void DisplaySchadenStats(int runtime)
         {
-            int runtime = gameObject.GetComponent<PlayerController>().lives;
 
             Debug.Log("Lives: " + runtime);
 
