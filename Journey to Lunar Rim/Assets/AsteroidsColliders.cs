@@ -13,8 +13,6 @@ public class AsteroidsColliders : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        size = theParent.GetComponent<PlaceAsteroids>().size;
-        collisionBoxSizeMod = theParent.GetComponent<PlaceAsteroids>().collisionBoxSizeMod;
         SetTriggerBox(size, colName);
     }
 

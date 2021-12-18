@@ -6,31 +6,27 @@ using UnityEngine;
     [System.Serializable]
 public class PlaceAsteroids : MonoBehaviour
 {
-    public int size;
-    float xOff;
-    float yOff;
-    float zOff;
+
+    public GameObject player;
+
+    public int radius;
     public int numberOfAsteroids;
-    [SerializeField, Range(0.1f, 0.5f)]
-    public float collisionBoxSizeMod = 0.1f;
 
     public List<GameObject> asteroids;
-    
-    public PlaceAsteroids(int size, Vector3 position, int amountAsteroids, float collBoxMod){
-        this.size = size;
-        this.xOff = position.x;
-        this.yOff = position.y;
-        this.zOff = position.z;
-        this.numberOfAsteroids = amountAsteroids;
-        this.collisionBoxSizeMod = collBoxMod;
+
+    SphereCollider s_collider;
+
+    void Start()
+    {
+        s_collider = gameObject.AddComponent<SphereCollider>();
+        s_collider.radius = radius;
+        s_collider.isTrigger = true;
+        Place(radius*2);
+        DestroyFarAsteroids();
     }
 
-    void Awake()
-    {
-        xOff = transform.position.x;
-        yOff = transform.position.y;
-        zOff = transform.position.z;
-        Place(size);
+    void Update(){
+        this.transform.position = player.transform.position;
     }
 
     //Erstellt und platziert die Meteoriten
@@ -76,14 +72,24 @@ public class PlaceAsteroids : MonoBehaviour
                 }
                 
             }
-            positions.Add(new Vector3(xPos + xOff - size/2, yPos + yOff - size/2, zPos + zOff - size/2));
+            positions.Add(new Vector3(xPos + this.transform.position.x - radius, yPos + this.transform.position.y - radius, zPos + this.transform.position.z - radius));
         }
 
         Vector3[] pos = positions.ToArray();
 
         for (int i = 0; i < numberOfAsteroids; i++)
         {
-            Instantiate(gameObjects[i], pos[i], Random.rotation, this.transform);
+            GameObject newAsteroid = Instantiate(gameObjects[i], pos[i], Random.rotation);
+        }
+    }
+
+    void DestroyFarAsteroids(){
+        foreach(GameObject asteroid in GameObject.FindGameObjectsWithTag("Rock")){
+            float distance = Vector3.Distance(player.transform.position, asteroid.transform.position);
+            if(distance > radius){
+                Destroy(asteroid.gameObject);
+                Debug.Log("Destroyed because Distance: "+ distance);
+            }
         }
     }
 }
