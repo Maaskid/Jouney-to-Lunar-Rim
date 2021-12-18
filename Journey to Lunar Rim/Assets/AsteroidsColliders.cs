@@ -124,21 +124,17 @@ public class AsteroidsColliders : MonoBehaviour
     }
     
     void OnTriggerEnter(Collider other){
-        Debug.Log("Is Drinne");
+        //Debug.Log("Is Drinne");
 
         Vector3 newPosition = theParent.transform.position;
 
         GameObject newAsteroids = Instantiate(theParent, new Vector3(0,0,0), theParent.transform.rotation);
 
-        foreach(Transform child in newAsteroids.transform){
-            if(child.tag == "Rock"){
-                Destroy(child.gameObject);
-            }
-        }
-        
         int numOfAst = theParent.GetComponent<PlaceAsteroids>().numberOfAsteroids;
 
-        newAsteroids.Place(numOfAst);
+        for(int i = 1; i <= numOfAst; i++){
+            Destroy(newAsteroids.transform.GetChild(i).gameObject);
+        }
 
         Transform allCollFromNew = newAsteroids.transform.GetChild(0);
         //BoxCollider specificCol = allCollFromNew.GetChild(0).GetComponent<BoxCollider>();
