@@ -13,6 +13,13 @@ TagManager:
   - volume+
   - volume-
   - back
+  - Boost
+  - Fuel
+  - Shield
+  - level1
+  - level2
+  - level3
+  - startLevel
   layers:
   - Default
   - TransparentFX

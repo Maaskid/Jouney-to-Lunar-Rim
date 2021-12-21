@@ -289,8 +289,11 @@ MonoBehaviour:
   - {fileID: 7064125151310054179, guid: b3cd393c9a67d2f42917715c800d7cec, type: 3}
   - {fileID: 6576562661872307475, guid: 89c8516ad5b8e714084872aa2a6d30ae, type: 3}
   - {fileID: 6212257529923484149, guid: 0d7a887e266b0ae4a97a6f394658c04d, type: 3}
+<<<<<<< Updated upstream
   spawnAngle: 45
   spawnFrequence: 3
+=======
+>>>>>>> Stashed changes
 --- !u!4 &291897774
 Transform:
   m_ObjectHideFlags: 0
@@ -1049,11 +1052,14 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 721642489}
   m_CullTransparentMesh: 1
+<<<<<<< Updated upstream
 --- !u!4 &738093826 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7010863543419874228, guid: 4178e8bd97c58804eab6572d1397c974, type: 3}
   m_PrefabInstance: {fileID: 1185360189}
   m_PrefabAsset: {fileID: 0}
+=======
+>>>>>>> Stashed changes
 --- !u!23 &854881507 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 3912912223580117801, guid: 13b600ef701928a43976d5096de4f9f4, type: 3}
@@ -1175,6 +1181,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1175874871}
   m_CullTransparentMesh: 1
+<<<<<<< Updated upstream
 --- !u!1001 &1185360189
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1244,6 +1251,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4178e8bd97c58804eab6572d1397c974, type: 3}
+=======
+>>>>>>> Stashed changes
 --- !u!1 &1278328426
 GameObject:
   m_ObjectHideFlags: 0
@@ -1510,18 +1519,24 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3564614813446033405, guid: 13b600ef701928a43976d5096de4f9f4, type: 3}
+<<<<<<< Updated upstream
       propertyPath: shipSpeed
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3564614813446033405, guid: 13b600ef701928a43976d5096de4f9f4, type: 3}
+=======
+>>>>>>> Stashed changes
       propertyPath: rockExplosion
       value: 
       objectReference: {fileID: 4959020532501313367, guid: b3ec2e5aca56db6478cb0d7445da70e0, type: 3}
     - target: {fileID: 3564614813446033405, guid: 13b600ef701928a43976d5096de4f9f4, type: 3}
+<<<<<<< Updated upstream
       propertyPath: sidewaysspeed
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3564614813446033405, guid: 13b600ef701928a43976d5096de4f9f4, type: 3}
+=======
+>>>>>>> Stashed changes
       propertyPath: collisionSpeed
       value: 1
       objectReference: {fileID: 0}
@@ -1582,6 +1597,7 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3687598896761482627, guid: 13b600ef701928a43976d5096de4f9f4, type: 3}
+<<<<<<< Updated upstream
       propertyPath: m_ClearFlags
       value: 1
       objectReference: {fileID: 0}
@@ -1598,6 +1614,8 @@ PrefabInstance:
       value: 0.03137255
       objectReference: {fileID: 0}
     - target: {fileID: 3687598896761482627, guid: 13b600ef701928a43976d5096de4f9f4, type: 3}
+=======
+>>>>>>> Stashed changes
       propertyPath: m_CullingMask.m_Bits
       value: 55
       objectReference: {fileID: 0}
@@ -1612,7 +1630,11 @@ PrefabInstance:
     - target: {fileID: 4610561516488558791, guid: 13b600ef701928a43976d5096de4f9f4, type: 3}
       propertyPath: lookTarget
       value: 
+<<<<<<< Updated upstream
       objectReference: {fileID: 738093826}
+=======
+      objectReference: {fileID: 1765041277}
+>>>>>>> Stashed changes
     - target: {fileID: 6446006418213751030, guid: 13b600ef701928a43976d5096de4f9f4, type: 3}
       propertyPath: lookTarget
       value: 

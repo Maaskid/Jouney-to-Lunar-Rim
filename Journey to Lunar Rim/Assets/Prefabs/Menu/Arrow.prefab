@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1939187899077009761}
   m_Layer: 0
-  m_Name: Back
+  m_Name: Arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 1939187899550844398}
   - component: {fileID: 1939187899550844393}
   - component: {fileID: 1939187899550844392}
+  - component: {fileID: 8858124696214122063}
   m_Layer: 0
   m_Name: Arrow
   m_TagString: back
@@ -126,3 +127,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8858124696214122063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1939187899550844394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb0fad8e3b2754aaeb18724ea18d2a3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InactiveMaterial: {fileID: 2100000, guid: 13705f8bab8cef247b8e549ca1cc6834, type: 2}
+  GazedAtMaterial: {fileID: 2100000, guid: c27520f3ee1eec345a31e65fe03b33a3, type: 2}

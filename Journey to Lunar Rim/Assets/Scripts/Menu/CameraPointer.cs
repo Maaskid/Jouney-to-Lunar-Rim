@@ -31,6 +31,9 @@ public class CameraPointer : MonoBehaviour
     public List<GameObject> items;
     public List<GameObject> ignore;
     public List<GameObject> volumeBars;
+    public GameObject level1;
+    public GameObject level2;
+    public GameObject level3;
     
     private const float _maxDistance = 30;
     private const float _capSizeGrowing = 1;
@@ -40,6 +43,9 @@ public class CameraPointer : MonoBehaviour
     private Renderer _myRenderer;
     private bool _options = false;
     private bool _archiv = false;
+    private bool _level1 = false;
+    private bool _level2 = false;
+    private bool _level3 = false;
     private int _volume = -1;
     
     private AudioManager _audioManager;
@@ -165,6 +171,35 @@ public class CameraPointer : MonoBehaviour
                     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
                 _options = false;
                 _archiv = false;
+                break;
+            case "level1":
+                if (level2.active) level2.SetActive(false);
+                if (level3.active) level3.SetActive(false);
+                level1.SetActive(true);
+                _level1 = true;
+                _level3 = false;
+                _level3 = false;
+                break;
+            case "level2": 
+                if (level1.active) level1.SetActive(false);
+                if (level3.active) level3.SetActive(false);
+                level2.SetActive(true);
+                _level1 = false;
+                _level2 = true;
+                _level3 = false;
+                break;
+            case "level3":
+                if (level2.active) level2.SetActive(false);
+                if (level1.active) level1.SetActive(false);
+                level3.SetActive(true);
+                _level1 = false;
+                _level2 = false;
+                _level3 = true;
+                break;
+            case "startLevel":
+                if (_level1) Debug.Log("LOAD LEVEL 1");
+                if (_level2) Debug.Log("LOAD LEVEL 2");
+                if (_level2) Debug.Log("LOAD LEVEL 3"); 
                 break;
         }
     }
