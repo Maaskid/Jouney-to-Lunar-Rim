@@ -179,8 +179,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb0fad8e3b2754aaeb18724ea18d2a3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InactiveMaterial: {fileID: 2100000, guid: 0e979bd1fb820b44fb8fe86ed0eebca0, type: 2}
-  GazedAtMaterial: {fileID: 2100000, guid: 0e979bd1fb820b44fb8fe86ed0eebca0, type: 2}
+  InactiveMaterial: {fileID: 2100000, guid: db22c17e8afe3834db6f59105d32c038, type: 2}
+  GazedAtMaterial: {fileID: 2100000, guid: 80353e3a822709f45859c8b967dc689f, type: 2}
 --- !u!1001 &1116526494
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -357,8 +357,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb0fad8e3b2754aaeb18724ea18d2a3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InactiveMaterial: {fileID: 2100000, guid: b43cce253f30f194cb88a1db70524733, type: 2}
-  GazedAtMaterial: {fileID: 2100000, guid: b43cce253f30f194cb88a1db70524733, type: 2}
+  InactiveMaterial: {fileID: 2100000, guid: de27017236d556e4db8f4ddebcf1d734, type: 2}
+  GazedAtMaterial: {fileID: 2100000, guid: 80436de866c3b994f9f68b29db2df455, type: 2}
 --- !u!1 &1596538137 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7074983697349273016, guid: 52acf221c11c6fe4eba7389741dc7263, type: 3}

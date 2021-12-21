@@ -31,6 +31,7 @@ public class CameraPointer : MonoBehaviour
     public List<GameObject> items;
     public List<GameObject> ignore;
     public List<GameObject> volumeBars;
+    public List<GameObject> sfxBars;
     public GameObject level1;
     public GameObject level2;
     public GameObject level3;
@@ -47,6 +48,7 @@ public class CameraPointer : MonoBehaviour
     private bool _level2 = false;
     private bool _level3 = false;
     private int _volume = -1;
+    private int _sfx = -1;
     
     private AudioManager _audioManager;
     
@@ -121,16 +123,13 @@ public class CameraPointer : MonoBehaviour
         switch (gazedAtObject.tag)
         {
             case "play":
-                /* open level scene */
-                foreach (GameObject g in items)
-                {
-                    if (g != gazedAtObject) g.SetActive(false);
-                }
+                /* open level scene 1 */
+                SceneManager.LoadScene(4);
                 break;
             case "archiv":
                 /* load "archiv" scene */
                 _archiv = true;
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                SceneManager.LoadScene(1);
                 break;
             case "pillar": /*zoom to item on pillar*/ break;
             case "exit":
@@ -140,7 +139,7 @@ public class CameraPointer : MonoBehaviour
             case "options":
                 /* load "options" scene */
                 _options = true;
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+                SceneManager.LoadScene(2);
                 break;
             case "volume+":
                 /* make next bar visible */
@@ -159,6 +158,25 @@ public class CameraPointer : MonoBehaviour
                 {
                     volumeBars[_volume].SetActive(false);
                     _volume--;
+                }
+                Reset();
+                _audioManager.VolumeUp("soundtrack");
+                break;
+            case "sfx+": 
+                if (_sfx < 5)
+                {
+                    _sfx++;
+                    sfxBars[_sfx].SetActive(true);
+                }
+                // _gazedAtObject = null;
+                Reset();
+                _audioManager.VolumeUp("soundtrack");
+                break;
+            case "sfx-": 
+                if (_sfx >= 0)
+                {
+                    sfxBars[_sfx].SetActive(false);
+                    _sfx--;
                 }
                 Reset();
                 _audioManager.VolumeUp("soundtrack");
@@ -197,9 +215,9 @@ public class CameraPointer : MonoBehaviour
                 _level3 = true;
                 break;
             case "startLevel":
-                if (_level1) Debug.Log("LOAD LEVEL 1");
-                if (_level2) Debug.Log("LOAD LEVEL 2");
-                if (_level2) Debug.Log("LOAD LEVEL 3"); 
+                if (_level1) SceneManager.LoadScene(3);
+                if (_level2) SceneManager.LoadScene(4);
+                if (_level2) SceneManager.LoadScene(5); 
                 break;
         }
     }
