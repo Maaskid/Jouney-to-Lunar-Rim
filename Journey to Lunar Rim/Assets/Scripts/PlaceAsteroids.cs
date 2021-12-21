@@ -3,25 +3,48 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
+    [System.Serializable]
 public class PlaceAsteroids : MonoBehaviour
 {
-    public int size;
-    float xOff;
-    float yOff;
-    float zOff;
+
+    public GameObject player;
+
+    public int radius;
     public int numberOfAsteroids;
-    [SerializeField, Range(0.1f, 0.5f)]
-    public float collisionBoxSizeMod = 0.1f;
 
     public List<GameObject> asteroids;
-    // Start is called before the first frame update
+
+    SphereCollider s_collider;
+
+    public int spawnAngle = 45;
+    public float spawnFrequence = 3;
+    float spawnTimer = 0;
+
     void Start()
     {
-        xOff = transform.position.x;
-        yOff = transform.position.y;
-        zOff = transform.position.z;
-        Place(size);
-        CreateTriggerBox(size);
+        s_collider = gameObject.AddComponent<SphereCollider>();
+        s_collider.radius = radius;
+        s_collider.isTrigger = true;
+        Place(radius*2);
+        DestroyFarAsteroids();
+    }
+
+    void Update(){
+        this.transform.position = player.transform.position;
+
+        spawnTimer += Time.deltaTime;
+
+        if(spawnTimer < spawnFrequence){
+
+            if(GameObject.FindGameObjectsWithTag("Rock").Length <= numberOfAsteroids){
+                Debug.Log(GameObject.FindGameObjectsWithTag("Rock").Length);
+                SpawnNewAsteroids();
+            }
+        
+        DestroyFarAsteroids();
+
+        spawnTimer = 0;
+        }
     }
 
     //Erstellt und platziert die Meteoriten
@@ -67,55 +90,67 @@ public class PlaceAsteroids : MonoBehaviour
                 }
                 
             }
-            positions.Add(new Vector3(xPos + xOff - size/2, yPos + yOff - size/2, zPos + zOff - size/2));
+            positions.Add(new Vector3(xPos + this.transform.position.x - radius, yPos + this.transform.position.y - radius, zPos + this.transform.position.z - radius));
         }
 
         Vector3[] pos = positions.ToArray();
 
         for (int i = 0; i < numberOfAsteroids; i++)
         {
-            Instantiate(gameObjects[i], pos[i], Random.rotation, this.transform);
+            GameObject newAsteroid = Instantiate(gameObjects[i], pos[i], Random.rotation);
         }
     }
 
-    //Erstellt, skaliert und platziert die Rand Kollider
-    void CreateTriggerBox(int size){
-        //Create Colliders
-        BoxCollider norCol = gameObject.AddComponent(typeof(BoxCollider)) as BoxCollider;
-        BoxCollider easCol = gameObject.AddComponent(typeof(BoxCollider)) as BoxCollider;
-        BoxCollider souCol = gameObject.AddComponent(typeof(BoxCollider)) as BoxCollider;
-        BoxCollider wesCol = gameObject.AddComponent(typeof(BoxCollider)) as BoxCollider;
-        BoxCollider topCol = gameObject.AddComponent(typeof(BoxCollider)) as BoxCollider;
-        BoxCollider botCol = gameObject.AddComponent(typeof(BoxCollider)) as BoxCollider;
-
-        norCol.isTrigger = true;
-        souCol.isTrigger = true;
-        easCol.isTrigger = true;
-        wesCol.isTrigger = true;
-        topCol.isTrigger = true;
-        botCol.isTrigger = true;
-
-        //Set specific Size for the colliders
-        //norden und süden, muss größe z kleiner sein
-        norCol.size = new Vector3(size, size, size*collisionBoxSizeMod);
-        souCol.size = new Vector3(size, size, size*collisionBoxSizeMod);
-        //osten und westen muss x kleiner sein
-        easCol.size = new Vector3(size*collisionBoxSizeMod, size, size);
-        wesCol.size = new Vector3(size*collisionBoxSizeMod, size, size);
-        //oben und unten muss y kleiner sein
-        topCol.size = new Vector3(size, size*collisionBoxSizeMod, size);
-        botCol.size = new Vector3(size, size*collisionBoxSizeMod, size);
-
-        //Setzt Position der Collider
-        norCol.center = new Vector3(0, 0, ( (size/2) - (size*collisionBoxSizeMod)/2 ) );
-        souCol.center = new Vector3(0, 0, -( (size/2) - (size*collisionBoxSizeMod)/2 ));
-        easCol.center = new Vector3(( (size/2) - (size*collisionBoxSizeMod)/2 ), 0, 0);
-        wesCol.center = new Vector3(-( (size/2) - (size*collisionBoxSizeMod)/2 ), 0, 0);
-        topCol.center = new Vector3(0, ( (size/2) - (size*collisionBoxSizeMod)/2 ), 0);
-        botCol.center = new Vector3(0, -( (size/2) - (size*collisionBoxSizeMod)/2 ), 0);
+    void DestroyFarAsteroids(){
+        foreach(GameObject asteroid in GameObject.FindGameObjectsWithTag("Rock")){
+            float distance = Vector3.Distance(player.transform.position, asteroid.transform.position);
+            if(distance > radius){
+                Destroy(asteroid.gameObject);
+                //Debug.Log("Destroyed because Distance: "+ distance);
+            }
+        }
+        foreach(GameObject shield in GameObject.FindGameObjectsWithTag("Shield")){
+            float distance = Vector3.Distance(player.transform.position, shield.transform.position);
+            if(distance > radius){
+                Destroy(shield.gameObject);
+                //Debug.Log("Destroyed because Distance: "+ distance);
+            }
+        }
+        foreach(GameObject boost in GameObject.FindGameObjectsWithTag("Boost")){
+            float distance = Vector3.Distance(player.transform.position, boost.transform.position);
+            if(distance > radius){
+                Destroy(boost.gameObject);
+                //Debug.Log("Destroyed because Distance: "+ distance);
+            }
+        }
+        foreach(GameObject fuel in GameObject.FindGameObjectsWithTag("Fuel")){
+            float distance = Vector3.Distance(player.transform.position, fuel.transform.position);
+            if(distance > radius){
+                Destroy(fuel.gameObject);
+                //Debug.Log("Destroyed because Distance: "+ distance);
+            }
+        }
     }
 
-    void OnTriggerEnter(Collider col){
-        Debug.Log(col);
+    void SpawnNewAsteroids(){
+
+        GameObject newAsteroid = asteroids[Random.Range(0, asteroids.Count - 1)];
+
+        //Damuss man die Rotation der Camera nehmen
+        Vector3 playerForward = player.transform.GetChild(0).transform.forward;
+        Vector3 randomRotation = new Vector3(Random.Range(-spawnAngle , spawnAngle), Random.Range(-spawnAngle , spawnAngle), Random.Range(-spawnAngle , spawnAngle));
+
+        Vector3 newDirection = playerForward.normalized + randomRotation.normalized;
+
+        //Debug.Log("Direction: " + newDirection.ToString());
+        //Debug.Log("Forward: " + player.transform.GetChild(0).transform.forward);
+
+        Vector3 targetPosition = transform.position + (newDirection.normalized * radius);
+
+        //Debug.Log("transform.position: " + transform.position);
+
+        Instantiate(newAsteroid, targetPosition, Random.rotation);
+        //Debug.Log("Spawnt neu an: " + targetPosition.ToString());
+
     }
 }

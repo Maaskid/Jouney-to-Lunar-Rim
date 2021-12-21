@@ -275,9 +275,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27d7abd4cc0041a4a8ab1c40aed5c55e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size: 100
-  numberOfAsteroids: 100
-  collisionBoxSizeMod: 0.2
+  player: {fileID: 671635184}
+  radius: 500
+  numberOfAsteroids: 500
   asteroids:
   - {fileID: 7950313416819077489, guid: 6676773ca38f0b049a3f115ea92ba73a, type: 3}
   - {fileID: 797011283537164161, guid: b90591e314e23c64e95e62ef16c383a9, type: 3}
@@ -1431,7 +1431,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3564614813446033405, guid: 13b600ef701928a43976d5096de4f9f4, type: 3}
       propertyPath: speed
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3564614813446033405, guid: 13b600ef701928a43976d5096de4f9f4, type: 3}
       propertyPath: rockExplosion
