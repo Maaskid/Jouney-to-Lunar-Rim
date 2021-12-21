@@ -15,10 +15,18 @@ public class PlayerController : MonoBehaviour
 
     [Header("=== Ship Values ===")]
     public int lives = 3;
+    int maxLives;
     public float tank = 500;
     public float maxTank;
     [SerializeField, Range(0.5f, 5f)]
     public float tankConsumption = 0.5f;
+
+    [Header("=== Power Ups ===")]
+    public int lifeGet = 1;
+    public float boostGet;
+    public int boostDuration = 5;
+    float boostTimer;
+    bool isBoosting = false;
 
 
     [Header("=== Collision ==")]
@@ -32,6 +40,8 @@ public class PlayerController : MonoBehaviour
 
     void Start(){
         maxTank = tank;
+        maxLives = lives;
+        boostGet = speed * 2;
     }
 
     void FixedUpdate()
@@ -57,18 +67,31 @@ public class PlayerController : MonoBehaviour
     }
 
     float GetSpeed(){
-        if (collisionState == false){
-            shipSpeed = speed;
-            SetFuel();
+
+        if(collisionState == true){
+
+            shipSpeed = shipSpeed * collisionAccele;
+            
+            if(shipSpeed <= collisionSpeed){
+                shipSpeed = speed;
+                collisionState = false;
+                //Debug.Log("Reduce Speed");
+            }
+        }
+        else if(isBoosting == true){
+            boostTimer += Time.deltaTime;
+
+            if(boostTimer < boostDuration){
+                shipSpeed = boostGet;
+            }
+            else{
+                isBoosting = false;
+                boostTimer = 0;
+            }
         }
         else{
-            shipSpeed = shipSpeed * collisionAccele;
-        }
-
-        if(shipSpeed <= collisionSpeed){
             shipSpeed = speed;
-            collisionState = false;
-            Debug.Log("Reduce Speed");
+            SetFuel();
         }
 
         return shipSpeed;
@@ -131,7 +154,24 @@ public class PlayerController : MonoBehaviour
                 lives = lives - 1;
                 
                 GetComponent<DisplayPlayerStats>().DisplaySchadenStats();
-        }
+            }
+
+            if(collision.collider.tag == "Boost"){
+                isBoosting = true;
+                Destroy(collision.collider.gameObject);
+            }
+
+            if(collision.collider.tag == "Fuel"){
+                tank = maxTank;
+                Destroy(collision.collider.gameObject);
+            }
+
+            if(collision.collider.tag == "Shield"){
+                if(lives < maxLives){
+                    lives += lifeGet;
+                }
+                Destroy(collision.collider.gameObject);
+            }
     }
 
 }
