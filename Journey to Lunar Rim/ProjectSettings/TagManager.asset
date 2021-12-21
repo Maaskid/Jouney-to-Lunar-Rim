@@ -5,6 +5,14 @@ TagManager:
   serializedVersion: 2
   tags:
   - Rock
+  - play
+  - options
+  - archiv
+  - exit
+  - pillar
+  - volume+
+  - volume-
+  - back
   layers:
   - Default
   - TransparentFX
