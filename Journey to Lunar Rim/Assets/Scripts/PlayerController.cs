@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     int maxLives;
     public float tank = 500;
     public float maxTank;
-    [SerializeField, Range(0.5f, 5f)]
+    [SerializeField, Range(0f, 5f)]
     public float tankConsumption = 0.5f;
 
     [Header("=== Power Ups ===")]

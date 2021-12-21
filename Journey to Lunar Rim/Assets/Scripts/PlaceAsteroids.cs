@@ -16,6 +16,10 @@ public class PlaceAsteroids : MonoBehaviour
 
     SphereCollider s_collider;
 
+    public int spawnAngle = 45;
+    public float spawnFrequence = 3;
+    float spawnTimer = 0;
+
     void Start()
     {
         s_collider = gameObject.AddComponent<SphereCollider>();
@@ -28,9 +32,19 @@ public class PlaceAsteroids : MonoBehaviour
     void Update(){
         this.transform.position = player.transform.position;
 
-        SpawnNewAsteroids();
+        spawnTimer += Time.deltaTime;
+
+        if(spawnTimer < spawnFrequence){
+
+            if(GameObject.FindGameObjectsWithTag("Rock").Length <= numberOfAsteroids){
+                Debug.Log(GameObject.FindGameObjectsWithTag("Rock").Length);
+                SpawnNewAsteroids();
+            }
         
         DestroyFarAsteroids();
+
+        spawnTimer = 0;
+        }
     }
 
     //Erstellt und platziert die Meteoriten
@@ -122,17 +136,21 @@ public class PlaceAsteroids : MonoBehaviour
 
         GameObject newAsteroid = asteroids[Random.Range(0, asteroids.Count - 1)];
 
-        Vector3 rayDirection = player.transform.GetChild(0).rotation.eulerAngles;
+        //Damuss man die Rotation der Camera nehmen
+        Vector3 playerForward = player.transform.GetChild(0).transform.forward;
+        Vector3 randomRotation = new Vector3(Random.Range(-spawnAngle , spawnAngle), Random.Range(-spawnAngle , spawnAngle), Random.Range(-spawnAngle , spawnAngle));
 
-        //Debug.Log("Direction: " + rayDirection.ToString());
+        Vector3 newDirection = playerForward.normalized + randomRotation.normalized;
 
-        Ray r = new Ray(transform.position, rayDirection);
+        //Debug.Log("Direction: " + newDirection.ToString());
+        //Debug.Log("Forward: " + player.transform.GetChild(0).transform.forward);
+
+        Vector3 targetPosition = transform.position + (newDirection.normalized * radius);
 
         //Debug.Log("transform.position: " + transform.position);
 
-        //Instantiate(newAsteroid, r.GetPoint(radius - 1), Random.rotation);
-        Debug.Log("Spawnt neu an: " + r.GetPoint(500000000));
-        Debug.DrawRay(transform.position, rayDirection);
+        Instantiate(newAsteroid, targetPosition, Random.rotation);
+        //Debug.Log("Spawnt neu an: " + targetPosition.ToString());
 
     }
 }
