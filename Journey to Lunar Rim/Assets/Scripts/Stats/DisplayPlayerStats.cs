@@ -40,28 +40,29 @@ namespace Stats
             if (runtime <= 0)
             {
                 Debug.Log("GameOver");
+                rendererLeft.material = tankMaterials[0];
                 ShowWarning(1); // show warning
             }
             // [0+, 25%] → Tank 1/4 = 1
             else if (0 < runtime && runtime <= max * 0.25) // max * 0 is always 0
             {
-                rendererLeft.material = tankMaterials[0];
+                rendererLeft.material = tankMaterials[1];
                 ShowWarning(1); // show warning
             }
             // [25+%, 50%] → Tank 1/2 = 2
             else if (max * 0.25 < runtime && runtime <= max * 0.5)
             {
-                rendererLeft.material = tankMaterials[1];
+                rendererLeft.material = tankMaterials[2];
             }
             // [50+%, 75%] → Tank 3/4 = 3
             else if (max * 0.5 < runtime && runtime <= max * 0.75)
             {
-                rendererLeft.material = tankMaterials[2];
+                rendererLeft.material = tankMaterials[3];
             }
             // [75+%, 100%] → Tank 1 = 4
             else if (max * 0.75 < runtime && runtime <= max)
             {
-                rendererLeft.material = tankMaterials[3];
+                rendererLeft.material = tankMaterials[4];
             }
         }
 

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 9182671463465620928}
   - component: {fileID: 9182671463465620929}
   - component: {fileID: 9182671463465620930}
+  - component: {fileID: 2517788741848126031}
   m_Layer: 0
   m_Name: Boost
   m_TagString: Boost
@@ -95,3 +96,15 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2517788741848126031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9182671463465620931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55c3e8557f16de74d9845ffc9c03b08b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

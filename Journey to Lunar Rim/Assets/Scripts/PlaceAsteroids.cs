@@ -55,7 +55,7 @@ public class PlaceAsteroids : MonoBehaviour
 
         for (int i = 0; i < numberOfAsteroids; i++)
         {
-            gameObjects[i] = asteroids[Random.Range(0, asteroids.Count - 1)];
+            gameObjects[i] = asteroids[Random.Range(0, asteroids.Count)];
         } 
         for (int i = 0; i < numberOfAsteroids; i++)
         {

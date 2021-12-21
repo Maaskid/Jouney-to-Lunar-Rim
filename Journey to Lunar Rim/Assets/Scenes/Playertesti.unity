@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: f531e09e2ad2fb440b4eed7605863143, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.029458782, g: 0.07821836, b: 0.16818932, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -200,6 +200,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
+    - target: {fileID: 6733650506364223560, guid: 151d92a523d32ff4ca404b061ef797e7, type: 3}
+      propertyPath: sounds.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6733650506364223560, guid: 151d92a523d32ff4ca404b061ef797e7, type: 3}
+      propertyPath: sounds.Array.data[0].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: b4db65761009f4e42bf832e216c10fc8, type: 3}
+    - target: {fileID: 6733650506364223560, guid: 151d92a523d32ff4ca404b061ef797e7, type: 3}
+      propertyPath: sounds.Array.data[0].name
+      value: Death
+      objectReference: {fileID: 0}
+    - target: {fileID: 6733650506364223560, guid: 151d92a523d32ff4ca404b061ef797e7, type: 3}
+      propertyPath: sounds.Array.data[1].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: a9309a130f9b4374db3d0f56586151a1, type: 3}
+    - target: {fileID: 6733650506364223560, guid: 151d92a523d32ff4ca404b061ef797e7, type: 3}
+      propertyPath: sounds.Array.data[1].name
+      value: Flying
+      objectReference: {fileID: 0}
+    - target: {fileID: 6733650506364223560, guid: 151d92a523d32ff4ca404b061ef797e7, type: 3}
+      propertyPath: sounds.Array.data[0].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6733650506364223560, guid: 151d92a523d32ff4ca404b061ef797e7, type: 3}
+      propertyPath: sounds.Array.data[1].volume
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6733650506364223561, guid: 151d92a523d32ff4ca404b061ef797e7, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -277,18 +305,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 671635184}
   radius: 500
-  numberOfAsteroids: 500
+  numberOfAsteroids: 2500
   asteroids:
-  - {fileID: 7950313416819077489, guid: 6676773ca38f0b049a3f115ea92ba73a, type: 3}
-  - {fileID: 797011283537164161, guid: b90591e314e23c64e95e62ef16c383a9, type: 3}
-  - {fileID: 6101260364697178947, guid: f37c882ff23cb794983a38ea3616b005, type: 3}
-  - {fileID: 3483566030698161121, guid: 6fc0836b40cdb4e48b857740dcf9850e, type: 3}
-  - {fileID: 4583582382463577362, guid: 1f5212116ca0cbe49802a9627dba4cdf, type: 3}
-  - {fileID: 467925644241314342, guid: ad4ef4d224bfddc479f88a83124c1c79, type: 3}
-  - {fileID: 3758850063878304703, guid: 59bf4fed059a4ff42a4c016544b3f0d2, type: 3}
-  - {fileID: 7064125151310054179, guid: b3cd393c9a67d2f42917715c800d7cec, type: 3}
-  - {fileID: 6576562661872307475, guid: 89c8516ad5b8e714084872aa2a6d30ae, type: 3}
-  - {fileID: 6212257529923484149, guid: 0d7a887e266b0ae4a97a6f394658c04d, type: 3}
+  - {fileID: 7089314591742070049, guid: 61910ec6de0cd794b929726a7df32b5f, type: 3}
+  - {fileID: 1833976401982922949, guid: 49d493f0d81032e4c85f5e12cb6d445b, type: 3}
+  - {fileID: 3166235851871172318, guid: 87b251d3213930f4290ad0e619268530, type: 3}
+  - {fileID: 7431235946948726786, guid: 6f6bb13a1ec9e894692ef694d7f9d7df, type: 3}
+  - {fileID: 7154499100858461240, guid: a45d6b61943c1c14292bcad5bf39a7be, type: 3}
+  - {fileID: 6992004118960778716, guid: c502b0a9dde873945a8a11264060b99c, type: 3}
+  - {fileID: 716121936269105197, guid: c1b5c98a102261148a223723dbd948cb, type: 3}
+  - {fileID: 4406693539666290224, guid: 9f7ef1124786725418708fb1038ff216, type: 3}
+  - {fileID: 1660006460796033614, guid: 439731bcaa4800f438a87df0ad753819, type: 3}
+  - {fileID: 4090580716204520952, guid: 2525e99d1dfa5c044b4232ac69ba2b51, type: 3}
+  - {fileID: 9182671463465620931, guid: f3d32583e149ffc4b98f214e31a48e5f, type: 3}
+  - {fileID: 6740873531160166940, guid: dd5ea4927778c58438a96c5b6cbb1bb4, type: 3}
+  - {fileID: 6475571753557092403, guid: 0efaead1798e9464e8b47b33c1723f41, type: 3}
+  spawnAngle: 45
+  spawnFrequence: 3
 --- !u!4 &291897774
 Transform:
   m_ObjectHideFlags: 0
@@ -897,6 +930,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tankMaterials:
+  - {fileID: 2100000, guid: 0e1d2810068be5b42bca7d201c3b8773, type: 2}
   - {fileID: 2100000, guid: daf4136df2c664f48a7019d6c8f146e9, type: 2}
   - {fileID: 2100000, guid: 2816e8bb41cc78644b1a2000be7bb736, type: 2}
   - {fileID: 2100000, guid: 5d5c32e6b6caf364fbada1a64d07ba53, type: 2}
@@ -1426,17 +1460,25 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3564614813446033405, guid: 13b600ef701928a43976d5096de4f9f4, type: 3}
+      propertyPath: tank
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 3564614813446033405, guid: 13b600ef701928a43976d5096de4f9f4, type: 3}
       propertyPath: lives
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3564614813446033405, guid: 13b600ef701928a43976d5096de4f9f4, type: 3}
       propertyPath: speed
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3564614813446033405, guid: 13b600ef701928a43976d5096de4f9f4, type: 3}
       propertyPath: rockExplosion
       value: 
       objectReference: {fileID: 4959020532501313367, guid: b3ec2e5aca56db6478cb0d7445da70e0, type: 3}
+    - target: {fileID: 3564614813446033405, guid: 13b600ef701928a43976d5096de4f9f4, type: 3}
+      propertyPath: sidewaysspeed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3564614813446033405, guid: 13b600ef701928a43976d5096de4f9f4, type: 3}
       propertyPath: collisionSpeed
       value: 1
@@ -1447,7 +1489,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3564614813446033405, guid: 13b600ef701928a43976d5096de4f9f4, type: 3}
       propertyPath: tankConsumption
-      value: 0.5
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 3687598896645602868, guid: 13b600ef701928a43976d5096de4f9f4, type: 3}
       propertyPath: m_Name
@@ -1496,6 +1538,22 @@ PrefabInstance:
     - target: {fileID: 3687598896645602875, guid: 13b600ef701928a43976d5096de4f9f4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3687598896761482627, guid: 13b600ef701928a43976d5096de4f9f4, type: 3}
+      propertyPath: m_ClearFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3687598896761482627, guid: 13b600ef701928a43976d5096de4f9f4, type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0.084905684
+      objectReference: {fileID: 0}
+    - target: {fileID: 3687598896761482627, guid: 13b600ef701928a43976d5096de4f9f4, type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3687598896761482627, guid: 13b600ef701928a43976d5096de4f9f4, type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0.030661484
       objectReference: {fileID: 0}
     - target: {fileID: 3687598896761482627, guid: 13b600ef701928a43976d5096de4f9f4, type: 3}
       propertyPath: m_CullingMask.m_Bits

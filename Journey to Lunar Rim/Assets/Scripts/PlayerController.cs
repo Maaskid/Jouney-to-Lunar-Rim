@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("=== Power Ups ===")]
     public int lifeGet = 1;
-    public float boostGet;
+    float boostGet;
     public int boostDuration = 5;
     float boostTimer;
     bool isBoosting = false;
