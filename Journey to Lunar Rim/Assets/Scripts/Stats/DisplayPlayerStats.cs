@@ -8,13 +8,15 @@ namespace Stats
 
         public Material[] tankMaterials;
         public Material[] schildMaterials;
-        
-        public GameObject windowRight;
+
         public GameObject windowLeft;
+        public GameObject windowMiddle;
+        public GameObject windowRight;
 
         public MeshRenderer rendererLeft;
         public MeshRenderer rendererRight;
         public Material wlMaterial;
+        public Material wmMaterial;
         public Material wrMaterial;
         public Material alphaMaterial;
 
@@ -107,14 +109,17 @@ namespace Stats
             {
                 case 0: // hide warning
                     windowLeft.GetComponent<MeshRenderer>().material = alphaMaterial;
+                    windowMiddle.GetComponent<MeshRenderer>().material = alphaMaterial;
                     windowRight.GetComponent<MeshRenderer>().material = alphaMaterial;
                     break;
                 case 1: // show warning
                     windowLeft.GetComponent<MeshRenderer>().material = wlMaterial;
+                    windowMiddle.GetComponent<MeshRenderer>().material = wmMaterial;
                     windowRight.GetComponent<MeshRenderer>().material = wrMaterial;
                     break;
                 default:
                     windowLeft.GetComponent<MeshRenderer>().material = alphaMaterial;
+                    windowMiddle.GetComponent<MeshRenderer>().material = alphaMaterial;
                     windowRight.GetComponent<MeshRenderer>().material = alphaMaterial;
                     break;
             }
