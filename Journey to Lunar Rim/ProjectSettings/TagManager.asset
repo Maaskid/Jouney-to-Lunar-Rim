@@ -10,7 +10,9 @@ TagManager:
   - archiv
   - exit
   - pillar
-  - volume
+  - volume+
+  - volume-
+  - back
   layers:
   - Default
   - TransparentFX

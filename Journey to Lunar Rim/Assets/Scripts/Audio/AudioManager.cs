@@ -41,4 +41,18 @@ public class AudioManager : MonoBehaviour
         if (s == null) return;
         s.source.Stop();
     }
+
+    public void VolumeUp(string soundName)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == soundName);
+        if (s == null) return;
+        s.source.volume += .5f;
+    }
+    
+    public void VolumeDown(string soundName)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == soundName);
+        if (s == null) return;
+        s.source.volume -= .5f;
+    }
 }

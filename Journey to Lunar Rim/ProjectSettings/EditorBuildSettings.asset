@@ -11,5 +11,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Archiv.unity
     guid: dae678949ada91f4d914e551b726e2fe
+  - enabled: 1
+    path: Assets/Scenes/Options.unity
+    guid: e4a014bc5098fb543b885b0452f4a8d1
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 91d37d27f54765d4fb157119e8c49033, type: 2}
