@@ -77,7 +77,6 @@ public class CameraPointer : MonoBehaviour
                     _gazedAtObject.SendMessage("OnPointerExit");
                     Reset();
                     SetMaterial(false);
-                    _gazedAtObject = null;
                     return;
                 }
             }
@@ -87,15 +86,14 @@ public class CameraPointer : MonoBehaviour
             if (_grownBy >= _capSizeGrowing)
             {
                 MenuItemPressed(_gazedAtObject);
-                _gazedAtObject = null;
-                Reset();
+                
             }
             
-           if (_grownBy >= _capSizeGrowing)
+           /*if (_grownBy >= _capSizeGrowing)
            { 
               _gazedAtObject = null;
               Reset();   
-           }
+           }*/
         }
         else
         {
@@ -140,20 +138,23 @@ public class CameraPointer : MonoBehaviour
                 break;
             case "volume+":
                 /* make next bar visible */
-                if (_volume <= 5)
+                if (_volume < 5)
                 {
                     _volume++;
                     volumeBars[_volume].SetActive(true);
                 }
+                // _gazedAtObject = null;
+                Reset();
                 _audioManager.VolumeUp("soundtrack");
                 break;
             case "volume-":
                 /* make next bar invisible */
-                if (_volume  >= 0)
+                if (_volume >= 0)
                 {
-                    _volume--;
                     volumeBars[_volume].SetActive(false);
+                    _volume--;
                 }
+                Reset();
                 _audioManager.VolumeUp("soundtrack");
                 break;
             case "back":
@@ -170,6 +171,7 @@ public class CameraPointer : MonoBehaviour
 
     private void Reset()
     {
+        _gazedAtObject = null;
         _grownBy = 0;
         ResetSize(.5f);
     }
