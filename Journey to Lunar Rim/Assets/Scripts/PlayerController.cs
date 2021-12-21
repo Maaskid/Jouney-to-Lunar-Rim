@@ -170,6 +170,7 @@ public class PlayerController : MonoBehaviour
                 if(lives < maxLives){
                     lives += lifeGet;
                 }
+                GetComponent<DisplayPlayerStats>().DisplaySchadenStats();
                 Destroy(collision.collider.gameObject);
             }
     }
