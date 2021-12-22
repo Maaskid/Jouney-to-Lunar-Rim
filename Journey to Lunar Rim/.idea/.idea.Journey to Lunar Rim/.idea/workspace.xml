@@ -5,12 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="edeeebc7-fdf5-4d19-907d-7ec5db58b2a0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Journey to Lunar Rim/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Journey to Lunar Rim/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Archiv.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Archiv.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Options.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Options.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/level 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/level 1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/level 2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/level 2.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/level 3.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/level 3.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/menu.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Menu/CameraPointer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Menu/CameraPointer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe0.log" afterDir="false" />
@@ -19,7 +15,6 @@
       <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe3.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe3.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe4.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe4.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe5.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe5.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -66,10 +61,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="11076">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="11076" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -103,6 +98,7 @@
       <workItem from="1640122824191" duration="2680000" />
       <workItem from="1640127461831" duration="424000" />
       <workItem from="1640128328568" duration="3310000" />
+      <workItem from="1640173048568" duration="25000" />
     </task>
     <servers />
   </component>
