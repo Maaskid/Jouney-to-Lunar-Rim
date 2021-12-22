@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.029458782, g: 0.07821836, b: 0.16818932, a: 1}
+  m_IndirectSpecularColor: {r: 0.029457806, g: 0.07821678, b: 0.16818672, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -317,9 +317,9 @@ MonoBehaviour:
   - {fileID: 4406693539666290224, guid: 9f7ef1124786725418708fb1038ff216, type: 3}
   - {fileID: 1660006460796033614, guid: 439731bcaa4800f438a87df0ad753819, type: 3}
   - {fileID: 4090580716204520952, guid: 2525e99d1dfa5c044b4232ac69ba2b51, type: 3}
-  - {fileID: 9182671463465620931, guid: f3d32583e149ffc4b98f214e31a48e5f, type: 3}
-  - {fileID: 6740873531160166940, guid: dd5ea4927778c58438a96c5b6cbb1bb4, type: 3}
-  - {fileID: 6475571753557092403, guid: 0efaead1798e9464e8b47b33c1723f41, type: 3}
+  - {fileID: 874149384486236775, guid: ceee69f45ac8ef24c9122726230e916e, type: 3}
+  - {fileID: 2106513211297778314, guid: 6fae3ba45800e714c8414629c7b51b0c, type: 3}
+  - {fileID: 2542783482374130241, guid: 90bed39c2b105224c950aa2a84dfd678, type: 3}
   spawnAngle: 45
   spawnFrequence: 3
 --- !u!4 &291897774
@@ -940,11 +940,13 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 5019a02a8d15a824380a0805513371ce, type: 2}
   - {fileID: 2100000, guid: 6e64ca0d939c99340a5eb92b8ef95b3d, type: 2}
   - {fileID: 2100000, guid: db5f4b9581d7a4349a327452598ccb11, type: 2}
-  windowRight: {fileID: 452491396}
   windowLeft: {fileID: 1591867488}
+  windowMiddle: {fileID: 1599904335}
+  windowRight: {fileID: 452491396}
   rendererLeft: {fileID: 2098059492}
   rendererRight: {fileID: 854881507}
   wlMaterial: {fileID: 2100000, guid: 0eeb34d73d16e4f4196fb34a6631fe96, type: 2}
+  wmMaterial: {fileID: 2100000, guid: df3c98c262751bc4084dc69ad7f655b2, type: 2}
   wrMaterial: {fileID: 2100000, guid: 4aba9d5212b1f68429122bdb010e385e, type: 2}
   alphaMaterial: {fileID: 2100000, guid: bd361fd5cb1877544aa3cb64711a8795, type: 2}
 --- !u!54 &671635188
@@ -1659,6 +1661,11 @@ PrefabInstance:
 --- !u!20 &1599904334 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 3687598896761482627, guid: 13b600ef701928a43976d5096de4f9f4, type: 3}
+  m_PrefabInstance: {fileID: 1599904333}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1599904335 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1025474365703982244, guid: 13b600ef701928a43976d5096de4f9f4, type: 3}
   m_PrefabInstance: {fileID: 1599904333}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1612002462

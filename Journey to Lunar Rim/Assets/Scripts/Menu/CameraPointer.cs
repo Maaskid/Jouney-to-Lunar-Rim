@@ -94,14 +94,7 @@ public class CameraPointer : MonoBehaviour
             if (_grownBy >= _capSizeGrowing)
             {
                 MenuItemPressed(_gazedAtObject);
-                
             }
-            
-           /*if (_grownBy >= _capSizeGrowing)
-           { 
-              _gazedAtObject = null;
-              Reset();   
-           }*/
         }
         else
         {
@@ -168,7 +161,6 @@ public class CameraPointer : MonoBehaviour
                     _sfx++;
                     sfxBars[_sfx].SetActive(true);
                 }
-                // _gazedAtObject = null;
                 Reset();
                 _audioManager.VolumeUp("soundtrack");
                 break;
@@ -195,7 +187,7 @@ public class CameraPointer : MonoBehaviour
                 if (level3.active) level3.SetActive(false);
                 level1.SetActive(true);
                 _level1 = true;
-                _level3 = false;
+                _level2 = false;
                 _level3 = false;
                 break;
             case "level2": 
@@ -215,9 +207,12 @@ public class CameraPointer : MonoBehaviour
                 _level3 = true;
                 break;
             case "startLevel":
-                if (_level1) SceneManager.LoadScene(3);
-                if (_level2) SceneManager.LoadScene(4);
-                if (_level2) SceneManager.LoadScene(5); 
+                if (_level1)
+                    SceneManager.LoadScene(3);
+                if (_level2)
+                    SceneManager.LoadScene(4);
+                if (_level3)
+                    SceneManager.LoadScene(5);
                 break;
         }
     }

@@ -6,42 +6,21 @@
   <component name="ChangeListManager">
     <list default="true" id="edeeebc7-fdf5-4d19-907d-7ec5db58b2a0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Journey to Lunar Rim/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Journey to Lunar Rim/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Force_Fields/Tank.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Force_Fields/Tank/Wave.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Force_Fields/Tank/Wave.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Force_Fields/Tank/WaveAlpha.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Force_Fields/Tank/WaveAlpha.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Force_Fields/Tank/WaveDiffuse.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Force_Fields/Tank/WaveDiffuse.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Force_Fields/Tank/WaveGreenDiffuse.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Force_Fields/Tank/WaveGreenDiffuse.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Raptor/Screens/Left/0/LeftScreen_Diffuse.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Raptor/Screens/Left/0/LeftScreen_Diffuse.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Raptor/Screens/Left/0/LeftScreen_Diffuse.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Raptor/Screens/Left/0/LeftScreen_Diffuse.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Raptor/Screens/Left/0/LeftScreen_Glossy.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Raptor/Screens/Left/0/LeftScreen_Glossy.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Raptor/Screens/Left/0/LeftScreen_Glossy.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Raptor/Screens/Left/0/LeftScreen_Glossy.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Raptor/Screens/Left/0/LeftScreen_Roughness.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Raptor/Screens/Left/0/LeftScreen_Roughness.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Raptor/Screens/Left/0/LeftScreen_Roughness.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Raptor/Screens/Left/0/LeftScreen_Roughness.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Raptor/Screens/Left/0/Tankanzeige_0.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Raptor/Screens/Left/0/Tankanzeige_0.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Raptor/Screens/Left/0/tank_0_grad.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Raptor/Screens/Left/0/tank_0_grad.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Raptor/Windows/Middle/Alpha.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Raptor/Windows/Middle/Alpha.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Raptor/Windows/Middle/MiddleWindow.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Raptor/Windows/Middle/MiddleWindow.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Meshes/Force_Fields/Boost.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Meshes/Force_Fields/Boost.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Meshes/Force_Fields/Original Mesh/Tank.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Meshes/Force_Fields/Original Mesh/Tank.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Meshes/Force_Fields/Shield.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Meshes/Force_Fields/Shield.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Meshes/Force_Fields/Tank.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Meshes/Force_Fields/Tank.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Playertesti.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Playertesti.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Archiv.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Archiv.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Options.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Options.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/level 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/level 1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/level 2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/level 2.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/level 3.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/level 3.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/menu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Menu/CameraPointer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Menu/CameraPointer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe0.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe1.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe1.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe2.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe2.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe3.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe3.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe4.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe4.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe5.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe5.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +33,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/DisplayPillar.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/07c89f7520694139991332d3cf930d4813bc00/5a/50270211/GameObject.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/07c89f7520694139991332d3cf930d4813bc00/55/a976be2b/UnitySynchronizationContext.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="210UTOUmHvquDF6wcrGdbBA3xay" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -86,10 +66,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="11076">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="11076" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -122,6 +102,7 @@
       <workItem from="1640109739996" duration="1514000" />
       <workItem from="1640122824191" duration="2680000" />
       <workItem from="1640127461831" duration="424000" />
+      <workItem from="1640128328568" duration="3310000" />
     </task>
     <servers />
   </component>
