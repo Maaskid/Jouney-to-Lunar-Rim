@@ -35,6 +35,7 @@ public class CameraPointer : MonoBehaviour
     public GameObject level1;
     public GameObject level2;
     public GameObject level3;
+    public GameObject loadingScreen;
     
     private const float _maxDistance = 30;
     private const float _capSizeGrowing = 1;
@@ -49,6 +50,7 @@ public class CameraPointer : MonoBehaviour
     private bool _level3 = false;
     private int _volume = -1;
     private int _sfx = -1;
+    private LoadLevel _levelLoader;
     
     private AudioManager _audioManager;
     
@@ -56,6 +58,7 @@ public class CameraPointer : MonoBehaviour
     {
         _myRenderer = GetComponent<Renderer>();
         _audioManager = GetComponent<AudioManager>();
+        _levelLoader = GetComponent<LoadLevel>();
         SetMaterial(false);
     }
 
@@ -117,7 +120,7 @@ public class CameraPointer : MonoBehaviour
         {
             case "play":
                 /* open level scene 1 */
-                SceneManager.LoadScene(3);
+                _levelLoader.LevelLoad(3);
                 break;
             case "archiv":
                 /* load "archiv" scene */
@@ -208,11 +211,11 @@ public class CameraPointer : MonoBehaviour
                 break;
             case "startLevel":
                 if (_level1)
-                    SceneManager.LoadScene(3);
+                    _levelLoader.LevelLoad(3);
                 if (_level2)
-                    SceneManager.LoadScene(4);
+                    _levelLoader.LevelLoad(4);
                 if (_level3)
-                    SceneManager.LoadScene(5);
+                    _levelLoader.LevelLoad(5);
                 break;
         }
     }
