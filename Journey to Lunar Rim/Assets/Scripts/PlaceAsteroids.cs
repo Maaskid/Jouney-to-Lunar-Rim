@@ -1,11 +1,17 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
-    [System.Serializable]
+[System.Serializable]
 public class PlaceAsteroids : MonoBehaviour
 {
+    public static PlaceAsteroids CurrentPlaceAsteroids;
+    public float progress;
+    public bool isDone;
+    private int _count;
 
     public GameObject player;
 
@@ -19,6 +25,11 @@ public class PlaceAsteroids : MonoBehaviour
     public int spawnAngle = 45;
     public float spawnFrequence = 3;
     float spawnTimer = 0;
+
+    private void Awake()
+    {
+        CurrentPlaceAsteroids = this;
+    }
 
     void Start()
     {
@@ -37,13 +48,13 @@ public class PlaceAsteroids : MonoBehaviour
         if(spawnTimer < spawnFrequence){
 
             if(GameObject.FindGameObjectsWithTag("Rock").Length <= numberOfAsteroids){
-                Debug.Log(GameObject.FindGameObjectsWithTag("Rock").Length);
+                // Debug.Log(GameObject.FindGameObjectsWithTag("Rock").Length);
                 SpawnNewAsteroids();
             }
         
-        DestroyFarAsteroids();
+            DestroyFarAsteroids();
 
-        spawnTimer = 0;
+            spawnTimer = 0;
         }
     }
 
@@ -91,14 +102,21 @@ public class PlaceAsteroids : MonoBehaviour
                 
             }
             positions.Add(new Vector3(xPos + this.transform.position.x - radius, yPos + this.transform.position.y - radius, zPos + this.transform.position.z - radius));
+
+            _count++;
+            LoadLevel.CurrentLoadLevel.asteroidProgress = (float)_count / (numberOfAsteroids * 2);
         }
 
         Vector3[] pos = positions.ToArray();
 
         for (int i = 0; i < numberOfAsteroids; i++)
         {
+            _count++;
+            LoadLevel.CurrentLoadLevel.asteroidProgress = (float)_count / (numberOfAsteroids * 2);
+
             GameObject newAsteroid = Instantiate(gameObjects[i], pos[i], Random.rotation);
         }
+        isDone = true;
     }
 
     void DestroyFarAsteroids(){

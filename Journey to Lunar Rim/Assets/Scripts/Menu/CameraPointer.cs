@@ -54,6 +54,8 @@ public class CameraPointer : MonoBehaviour
     
     private AudioManager _audioManager;
     
+    private static int _sceneIndex;
+    
     public void Start()
     {
         _myRenderer = GetComponent<Renderer>();
@@ -211,11 +213,23 @@ public class CameraPointer : MonoBehaviour
                 break;
             case "startLevel":
                 if (_level1)
-                    _levelLoader.LevelLoad(3);
+                {
+                    _sceneIndex = 3;
+                    SceneManager.LoadScene(6);
+                    // _levelLoader.LevelLoad(3);
+                }
                 if (_level2)
-                    _levelLoader.LevelLoad(4);
+                {
+                    _sceneIndex = 4;
+                    SceneManager.LoadScene(6);
+                    // _levelLoader.LevelLoad(4);
+                }
                 if (_level3)
-                    _levelLoader.LevelLoad(5);
+                {
+                    _sceneIndex = 5;
+                    SceneManager.LoadScene(6);
+                    // _levelLoader.LevelLoad(5);
+                }
                 break;
         }
     }
@@ -245,5 +259,10 @@ public class CameraPointer : MonoBehaviour
             _myRenderer.material = isEntered ? activeMaterial : inactiveMaterial;
 
         } 
+    }
+
+    public static int GetSceneIndex()
+    {
+        return _sceneIndex;
     }
 }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 154109945}
   - component: {fileID: 154109944}
   - component: {fileID: 154109948}
+  - component: {fileID: 154109949}
   m_Layer: 0
   m_Name: LoadingBar
   m_TagString: Untagged
@@ -176,7 +177,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 344b50d94e11f02409dff99d1953636e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -232,7 +233,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8585447f5f9e7d64b98290a4eeae49a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  images: []
+  images:
+  - {fileID: 2100000, guid: 344b50d94e11f02409dff99d1953636e, type: 2}
+  - {fileID: 2100000, guid: bb207d1210abaf04cb4fc182a9a273a5, type: 2}
+  - {fileID: 2100000, guid: dadd7a7f232e2dd4da505f8d56c679ca, type: 2}
+  - {fileID: 2100000, guid: 36056927002e08444a62ae53b8d24e33, type: 2}
+  - {fileID: 2100000, guid: f22753eb5638e5343aae10635f614622, type: 2}
+  - {fileID: 2100000, guid: 1236cec1bb2bb0742984e33f7492b6b0, type: 2}
+  - {fileID: 2100000, guid: b5182c995fbe91f4aab00a6edc5e919b, type: 2}
+  - {fileID: 2100000, guid: bda2e6cf1afccda4594a612653498606, type: 2}
+  - {fileID: 2100000, guid: 34472f2e9673abb40a7f71f71a7365d1, type: 2}
+  - {fileID: 2100000, guid: 680e1fcf3ce7e244ba3f3f72d0b93fa7, type: 2}
+  - {fileID: 2100000, guid: 95d79292ad1f0db48b46d63f4762f657, type: 2}
+  - {fileID: 2100000, guid: f602e183ab9f3114a9f2a47433434678, type: 2}
+  - {fileID: 2100000, guid: 5c885f23f0d82424ba44e38b8d0d2780, type: 2}
+  - {fileID: 2100000, guid: 72defb4b06b40474a8d22072ce3281fc, type: 2}
+  - {fileID: 2100000, guid: f9e5711edafe29346b73697316444c28, type: 2}
+  - {fileID: 2100000, guid: 19b80112455f73d46bdb2c8ee7984840, type: 2}
+  - {fileID: 2100000, guid: d5867aedc8865c546a3ae5a9d86c0ab2, type: 2}
+  - {fileID: 2100000, guid: 8aa017d4bca76c24ebce811ab530907f, type: 2}
+  - {fileID: 2100000, guid: b358bf4bf2886d6479e2fd3c16ea0477, type: 2}
+--- !u!114 &154109949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 154109943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7191b7e7c0acb0549bb9a365fba8e93b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 0}
+  asteroidProgress: 0
 --- !u!1 &532880787
 GameObject:
   m_ObjectHideFlags: 0

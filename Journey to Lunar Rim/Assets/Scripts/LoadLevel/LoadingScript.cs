@@ -5,23 +5,40 @@ using UnityEngine;
 
 public class LoadingScript : MonoBehaviour
 {
-    public List<Texture> images;
+    public List<Material> images;
 
-    private int _pictureRange;
-    private float _loadingComplementary = .0f;
-    private int _index = 0;
+    private CameraPointer _cameraPointer;
+    
+    private float _pictureRange;
+    private int _index;
+    private LoadLevel _levelLoader;
 
     private void Start()
     {
-        _pictureRange = 1/images.Count;
+        _levelLoader = GetComponent<LoadLevel>();
+        _pictureRange = 1f/images.Count;
+        _levelLoader.LevelLoad(CameraPointer.GetSceneIndex());
     }
 
-    public void LoadingBar(float loading)
+    public void LoadingBar(float progress)
     {
-        gameObject.GetComponent<Material>().mainTexture = images[_index];
+        gameObject.GetComponent<MeshRenderer>().material = images[_index];
 
-        if (!(loading > _loadingComplementary + _pictureRange)) return;
-        _loadingComplementary += loading;
-        _index++;
+        if (progress > _pictureRange * (_index + 1))
+        {
+            _index++;
+        }
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }
