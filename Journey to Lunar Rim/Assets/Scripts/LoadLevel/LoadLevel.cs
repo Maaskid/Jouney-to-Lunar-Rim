@@ -11,7 +11,7 @@ public class LoadLevel : MonoBehaviour
 
     public static LoadLevel CurrentLoadLevel;
 
-    private float _totalSceneProgess, _totalSpawnProgress, _totalProgress;
+    private float _totalSceneProgress, _totalSpawnProgress, _totalProgress;
     public float asteroidProgress;
 
     private void Awake()
@@ -30,12 +30,12 @@ public class LoadLevel : MonoBehaviour
         _operation = SceneManager.LoadSceneAsync(sceneIndex);
         while (!_operation.isDone)
         {
-            _totalSceneProgess += _operation.progress;
-            _totalSceneProgess = Mathf.Clamp01(_totalSceneProgess);
+            _totalSceneProgress += _operation.progress;
+            _totalSceneProgress = Mathf.Clamp01(_totalSceneProgress);
             yield return null;
         }
 
-        _totalSceneProgess = 1;
+        _totalSceneProgress = 1;
     }
 
     private IEnumerator GetTotalProgress()
@@ -47,15 +47,17 @@ public class LoadLevel : MonoBehaviour
             if (PlaceAsteroids.CurrentPlaceAsteroids == null)
             {
                 _totalSpawnProgress = 0;
+                Debug.Log("if");
             }
             else
             {
-                _totalSpawnProgress = Mathf.Clamp01(asteroidProgress);
-                // _totalSpawnProgress = Mathf.Round(PlaceAsteroids.currentPlaceAsteroids.progress * 100f);
+                _totalSpawnProgress = Mathf.Clamp01(PlaceAsteroids.CurrentPlaceAsteroids.progress);
+                // _totalSpawnProgress = Mathf.Round(asteroidProgress);
+                Debug.Log("el");
             }
             
-            Debug.Log(PlaceAsteroids.CurrentPlaceAsteroids);
-            _totalProgress = Mathf.Clamp01((_totalSceneProgess + _totalSpawnProgress) / 2f);
+            Debug.Log(_totalSceneProgress + " " + _totalSpawnProgress);
+            _totalProgress = Mathf.Clamp01((_totalSceneProgress + _totalSpawnProgress) / 2f);
             // _totalProgress = Mathf.Round((_totalSceneProgess + _totalSpawnProgress) / 2f);
             UpdateProgressUI();
             yield return null;

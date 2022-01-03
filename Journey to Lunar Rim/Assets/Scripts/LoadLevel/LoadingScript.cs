@@ -24,6 +24,7 @@ public class LoadingScript : MonoBehaviour
     {
         gameObject.GetComponent<MeshRenderer>().material = images[_index];
 
+        Debug.LogError(progress + " <?> " + _pictureRange + " * " + (_index + 1));
         if (progress > _pictureRange * (_index + 1))
         {
             _index++;
