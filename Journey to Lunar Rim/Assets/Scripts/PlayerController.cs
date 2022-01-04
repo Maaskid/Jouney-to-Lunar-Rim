@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     [Header("=== Ship Important Settings ===")]
     public GameObject playerCam;
+    public bool isEnd = false;
 
     [Header("=== Ship Movement Settings ===")]
     public float speed = 5;
@@ -38,10 +39,14 @@ public class PlayerController : MonoBehaviour
 
     public bool collisionState = false;
 
+    [Header("===OtherStuff===")]
+    public GameObject endScreen;
+
     void Start(){
         maxTank = tank;
         maxLives = lives;
         boostGet = speed * 2;
+        endScreen.SetActive(false);
     }
 
     void FixedUpdate()
@@ -67,31 +72,35 @@ public class PlayerController : MonoBehaviour
     }
 
     float GetSpeed(){
+        if(isEnd == false){
+            if(collisionState == true){
 
-        if(collisionState == true){
-
-            shipSpeed = shipSpeed * collisionAccele;
-            
-            if(shipSpeed <= collisionSpeed){
-                shipSpeed = speed;
-                collisionState = false;
-                //Debug.Log("Reduce Speed");
+                shipSpeed = shipSpeed * collisionAccele;
+                
+                if(shipSpeed <= collisionSpeed){
+                    shipSpeed = speed;
+                    collisionState = false;
+                    //Debug.Log("Reduce Speed");
+                }
             }
-        }
-        else if(isBoosting == true){
-            boostTimer += Time.deltaTime;
+            else if(isBoosting == true){
+                boostTimer += Time.deltaTime;
 
-            if(boostTimer < boostDuration){
-                shipSpeed = boostGet;
+                if(boostTimer < boostDuration){
+                    shipSpeed = boostGet;
+                }
+                else{
+                    isBoosting = false;
+                    boostTimer = 0;
+                }
             }
             else{
-                isBoosting = false;
-                boostTimer = 0;
+                shipSpeed = speed;
+                SetFuel();
             }
         }
         else{
-            shipSpeed = speed;
-            SetFuel();
+            shipSpeed = 0;
         }
 
         return shipSpeed;
@@ -141,6 +150,7 @@ public class PlayerController : MonoBehaviour
     }
 
     void OnCollisionEnter(Collision collision){
+        Debug.Log("Collidiert");
             Debug.Log(collision.collider.name);
             if(collision.collider.tag == "Rock"){
                 ParticleSystem part = Instantiate(rockExplosion, collision.collider.gameObject.transform.position, collision.collider.gameObject.transform.rotation);
@@ -172,6 +182,14 @@ public class PlayerController : MonoBehaviour
                 }
                 GetComponent<DisplayPlayerStats>().DisplaySchadenStats();
                 Destroy(collision.collider.gameObject);
+            }
+
+            if(collision.collider.tag == "Artifact"){
+                Debug.Log("Artifact eingesammelt");
+                //Destroy(collision.collider.gameObject);
+                endScreen.SetActive(true);
+                //Hier dann die Fuktion ausführen, um den Dialog zu starten
+                isEnd = true;
             }
     }
 

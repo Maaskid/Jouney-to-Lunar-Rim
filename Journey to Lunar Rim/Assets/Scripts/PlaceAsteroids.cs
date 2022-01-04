@@ -37,7 +37,7 @@ public class PlaceAsteroids : MonoBehaviour
         if(spawnTimer < spawnFrequence){
 
             if(GameObject.FindGameObjectsWithTag("Rock").Length <= numberOfAsteroids){
-                Debug.Log(GameObject.FindGameObjectsWithTag("Rock").Length);
+                //Debug.Log(GameObject.FindGameObjectsWithTag("Rock").Length);
                 SpawnNewAsteroids();
             }
         

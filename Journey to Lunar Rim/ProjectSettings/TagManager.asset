@@ -22,6 +22,7 @@ TagManager:
   - startLevel
   - sfx+
   - sfx-
+  - Artifact
   layers:
   - Default
   - TransparentFX
