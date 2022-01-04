@@ -1,4 +1,6 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Stats
 {
@@ -8,6 +10,9 @@ namespace Stats
 
         public Material[] tankMaterials;
         public Material[] schildMaterials;
+        public Sprite[] dialogueSprites;
+
+        public Image freyaCore, ministerBaker;
 
         public GameObject windowLeft;
         public GameObject windowMiddle;
@@ -122,6 +127,24 @@ namespace Stats
                     windowMiddle.GetComponent<MeshRenderer>().material = alphaMaterial;
                     windowRight.GetComponent<MeshRenderer>().material = alphaMaterial;
                     break;
+            }
+        }
+
+        public IEnumerator ShowDialogues(int level)
+        {
+            var isDone = false;
+            var index = 0;
+            while (!isDone)
+            {
+                yield return new WaitForSeconds(3f);
+                freyaCore.sprite = dialogueSprites[index];
+
+                if (index == dialogueSprites.Length-1)
+                {
+                    isDone = true;
+                }
+
+                index++;
             }
         }
     }

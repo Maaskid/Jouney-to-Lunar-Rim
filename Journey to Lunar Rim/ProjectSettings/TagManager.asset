@@ -25,6 +25,7 @@ TagManager:
   - level4
   - level5
   - level6
+  - Artifact
   layers:
   - Default
   - TransparentFX

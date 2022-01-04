@@ -423,10 +423,14 @@ MonoBehaviour:
   tank: 500
   maxTank: 0
   tankConsumption: 0.5
+  lifeGet: 1
+  boostDuration: 5
   rockExplosion: {fileID: 0}
   collisionAccele: 0.5
   collisionSpeed: 2
   collisionState: 0
+  beginJourney: 0
+  loadingProgress: {fileID: 0}
 --- !u!54 &5320354676962744939
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -570,6 +574,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aebfb4b86b2e54606894da54f755db2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inactiveMaterial: {fileID: 0}
+  activeMaterial: {fileID: 0}
+  items: []
+  ignore: []
+  volumeBars: []
+  sfxBars: []
+  level1: {fileID: 0}
+  level2: {fileID: 0}
+  level3: {fileID: 0}
+  level4: {fileID: 0}
+  level5: {fileID: 0}
+  level6: {fileID: 0}
 --- !u!1 &3788836842011707564
 GameObject:
   m_ObjectHideFlags: 0
@@ -1084,7 +1100,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.018066933, g: 0.06255809, b: 0.13207549, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
