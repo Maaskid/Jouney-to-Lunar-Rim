@@ -132,7 +132,8 @@ public class CameraPointer : MonoBehaviour
         {
             case "play":
                 /* open level scene 1 */
-                _levelLoader.LevelLoad((int)SceneIndexes.Level1);
+                _sceneIndex = (int)SceneIndexes.Level1;
+                SceneManager.LoadScene(9);
                 break;
             case "archiv":
                 /* load "archiv" scene */

@@ -6,26 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="edeeebc7-fdf5-4d19-907d-7ec5db58b2a0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Journey to Lunar Rim/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Journey to Lunar Rim/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Displays/Materials/Arrow.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Displays/Materials/Arrow.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Archiv.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Archiv.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Playertesti.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Playertesti.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/level 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/level 1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/level 2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/level 2.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/level 3.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/level 3.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/level 4.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/level 4.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/level 5.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/level 5.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/level 6.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/level 6.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Menu/CameraPointer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Menu/CameraPointer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stats/DisplayPlayerStats.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Stats/DisplayPlayerStats.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe0.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe1.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe1.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe2.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe2.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe3.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe3.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe4.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe4.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe5.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe5.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -134,6 +121,7 @@
       <workItem from="1641290702306" duration="6323000" />
       <workItem from="1641308266857" duration="4396000" />
       <workItem from="1641315973739" duration="5295000" />
+      <workItem from="1641326108114" duration="201000" />
     </task>
     <servers />
   </component>
