@@ -1,4 +1,6 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Stats
 {
@@ -8,7 +10,10 @@ namespace Stats
 
         public Material[] tankMaterials;
         public Material[] schildMaterials;
+        public Sprite[] dialogSprites;
 
+        public Image freya, baker, dialogbox;
+        
         public GameObject windowLeft;
         public GameObject windowMiddle;
         public GameObject windowRight;
@@ -124,5 +129,22 @@ namespace Stats
                     break;
             }
         }
+        
+        public IEnumerator ShowDialogues(int level)
+        {
+            var isDone = false;
+            var index = 0;
+            while (!isDone)
+            {
+                yield return new WaitForSeconds(3f);
+                index++;
+                dialogbox.sprite = dialogSprites[index];
+
+                if (index==dialogSprites.Length-1)
+                {
+                    isDone = true;
+                }
+            }
+        } 
     }
 }

@@ -46,7 +46,7 @@ public class PlayerController : MonoBehaviour
         maxTank = tank;
         maxLives = lives;
         boostGet = speed * 2;
-        endScreen.SetActive(false);
+        // endScreen.SetActive(false);
     }
 
     void FixedUpdate()
@@ -188,6 +188,7 @@ public class PlayerController : MonoBehaviour
                 Debug.Log("Artifact eingesammelt");
                 //Destroy(collision.collider.gameObject);
                 endScreen.SetActive(true);
+                GetComponent<DisplayPlayerStats>().StartCoroutine(GetComponent<DisplayPlayerStats>().ShowDialogues(0));
                 //Hier dann die Fuktion ausführen, um den Dialog zu starten
                 isEnd = true;
             }

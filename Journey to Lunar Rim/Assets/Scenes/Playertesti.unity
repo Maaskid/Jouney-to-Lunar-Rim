@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.029458782, g: 0.07821836, b: 0.16818932, a: 1}
+  m_IndirectSpecularColor: {r: 0.029457806, g: 0.07821678, b: 0.16818672, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -123,78 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &13524619
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 13524620}
-  - component: {fileID: 13524622}
-  - component: {fileID: 13524621}
-  m_Layer: 5
-  m_Name: Hintergrund
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &13524620
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 13524619}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 246116947}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000061035, y: -0.000015259}
-  m_SizeDelta: {x: 1920, y: 1080}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &13524621
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 13524619}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.4768411, b: 0, a: 0.40392157}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Texture: {fileID: 0}
-  m_UVRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
---- !u!222 &13524622
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 13524619}
-  m_CullTransparentMesh: 1
 --- !u!1 &42984976
 GameObject:
   m_ObjectHideFlags: 0
@@ -361,13 +289,15 @@ GameObject:
   - component: {fileID: 246116949}
   - component: {fileID: 246116948}
   - component: {fileID: 246116950}
+  - component: {fileID: 246116952}
+  - component: {fileID: 246116951}
   m_Layer: 5
   m_Name: Dialog
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &246116944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -440,9 +370,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 13524620}
-  - {fileID: 820606305}
   - {fileID: 1723562908}
+  - {fileID: 820606305}
   - {fileID: 863377346}
   m_Father: {fileID: 0}
   m_RootOrder: 6
@@ -495,12 +424,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62b715a4ad590aa4bbf2ade1102a4962, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialog:
-    name: Peter
-    sentences:
-    - Ich bin Peter
-    - Du stinkst
-    - Geh duschen
+--- !u!114 &246116951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 246116943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0.47843137, b: 0, a: 0.40392157}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &246116952
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 246116943}
+  m_CullTransparentMesh: 1
 --- !u!1 &291897772
 GameObject:
   m_ObjectHideFlags: 0
@@ -1225,6 +1186,13 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 5019a02a8d15a824380a0805513371ce, type: 2}
   - {fileID: 2100000, guid: 6e64ca0d939c99340a5eb92b8ef95b3d, type: 2}
   - {fileID: 2100000, guid: db5f4b9581d7a4349a327452598ccb11, type: 2}
+  dialogSprites:
+  - {fileID: 21300000, guid: 7e3db015a30a3204d8af4b754fd9107a, type: 3}
+  - {fileID: 21300000, guid: 5ee58fda830b73640a967a0f1dadc5c9, type: 3}
+  - {fileID: 21300000, guid: ef5c4460e82653340b51ed6b11280f0d, type: 3}
+  freya: {fileID: 1723562909}
+  baker: {fileID: 820606306}
+  dialogbox: {fileID: 863377347}
   windowLeft: {fileID: 1591867488}
   windowMiddle: {fileID: 2048424835}
   windowRight: {fileID: 452491396}
@@ -1250,24 +1218,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &671635189
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 671635184}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62b715a4ad590aa4bbf2ade1102a4962, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialog:
-    name: Peter
-    sentences:
-    - Hi ich bin Peter
-    - Du stinks
-    - Geh duschen
 --- !u!1 &671819953
 GameObject:
   m_ObjectHideFlags: 0
@@ -1398,7 +1348,7 @@ GameObject:
   - component: {fileID: 820606307}
   - component: {fileID: 820606306}
   m_Layer: 5
-  m_Name: Mann 1
+  m_Name: Minister_Baker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1420,8 +1370,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -369.40002, y: 333.64}
-  m_SizeDelta: {x: 384.19995, y: 667.28}
+  m_AnchoredPosition: {x: -429.40002, y: 504.85}
+  m_SizeDelta: {x: 858.8, y: 1009.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &820606306
 MonoBehaviour:
@@ -1443,7 +1393,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c948ca85b9369cd49ac41a06474e87bd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5ee58fda830b73640a967a0f1dadc5c9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1496,12 +1446,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 246116947}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.11795, y: -259.6}
-  m_SizeDelta: {x: 790.5, y: 304.2}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: -66.799934, y: 257.9}
+  m_SizeDelta: {x: 816, y: 354.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &863377347
 MonoBehaviour:
@@ -2227,7 +2177,7 @@ GameObject:
   - component: {fileID: 1723562910}
   - component: {fileID: 1723562909}
   m_Layer: 5
-  m_Name: Mann 2
+  m_Name: Freya_Core
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2245,12 +2195,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 246116947}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 369.40002, y: 333.64}
-  m_SizeDelta: {x: 384.2, y: 667.28}
+  m_AnchoredPosition: {x: 362.59998, y: 504.9}
+  m_SizeDelta: {x: 725.2, y: 1009.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1723562909
 MonoBehaviour:
@@ -2272,7 +2222,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 313f348a7395963408cc9bf90b3f9ca1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7e3db015a30a3204d8af4b754fd9107a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

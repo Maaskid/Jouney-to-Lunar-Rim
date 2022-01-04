@@ -1,4 +1,3 @@
-using Coroutines;
 using UnityEngine;
 
 namespace Stats
@@ -42,7 +41,7 @@ namespace Stats
                 playerStats.SchadenRuntime = 0;
             }
         }
-        
+
         private void OnMouseDown()
         {
             SchadenErhoehen();
