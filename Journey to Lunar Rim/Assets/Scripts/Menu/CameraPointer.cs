@@ -35,9 +35,12 @@ public class CameraPointer : MonoBehaviour
     public GameObject level1;
     public GameObject level2;
     public GameObject level3;
-    public GameObject loadingScreen;
+    public GameObject level4;
+    public GameObject level5;
+    public GameObject level6;
+    // public GameObject loadingScreen;
     
-    private const float _maxDistance = 30;
+    private const float _maxDistance = 50;
     private const float _capSizeGrowing = 1;
     private const float _growRate = .5f;
     private float _grownBy;
@@ -48,6 +51,9 @@ public class CameraPointer : MonoBehaviour
     private bool _level1 = false;
     private bool _level2 = false;
     private bool _level3 = false;
+    private bool _level4;
+    private bool _level5;
+    private bool _level6;
     private int _volume = -1;
     private int _sfx = -1;
     private LoadLevel _levelLoader;
@@ -190,45 +196,129 @@ public class CameraPointer : MonoBehaviour
             case "level1":
                 if (level2.active) level2.SetActive(false);
                 if (level3.active) level3.SetActive(false);
+                if (level4.active) level4.SetActive(false);
+                if (level5.active) level5.SetActive(false);
+                if (level6.active) level6.SetActive(false);
                 level1.SetActive(true);
                 _level1 = true;
                 _level2 = false;
                 _level3 = false;
+                _level4 = false;
+                _level5 = false;
+                _level6 = false;
+                ignore.Remove(GameObject.Find("Start"));
+                // Reset();
                 break;
-            case "level2": 
+            case "level2":
                 if (level1.active) level1.SetActive(false);
                 if (level3.active) level3.SetActive(false);
+                if (level4.active) level4.SetActive(false);
+                if (level5.active) level5.SetActive(false);
+                if (level6.active) level6.SetActive(false);
                 level2.SetActive(true);
                 _level1 = false;
                 _level2 = true;
                 _level3 = false;
+                _level4 = false;
+                _level5 = false;
+                _level6 = false;
+                ignore.Remove(GameObject.Find("Start"));
+                // Reset();
                 break;
             case "level3":
-                if (level2.active) level2.SetActive(false);
                 if (level1.active) level1.SetActive(false);
+                if (level2.active) level2.SetActive(false);
+                if (level4.active) level4.SetActive(false);
+                if (level5.active) level5.SetActive(false);
+                if (level6.active) level6.SetActive(false);
                 level3.SetActive(true);
                 _level1 = false;
                 _level2 = false;
                 _level3 = true;
+                _level4 = false;
+                _level5 = false;
+                _level6 = false;
+                ignore.Remove(GameObject.Find("Start"));
+                // Reset();
+                break;
+            case "level4":
+                if (level1.active) level1.SetActive(false);
+                if (level2.active) level2.SetActive(false);
+                if (level3.active) level3.SetActive(false);
+                if (level5.active) level5.SetActive(false);
+                if (level6.active) level6.SetActive(false);
+                level4.SetActive(true);
+                _level1 = false;
+                _level2 = false;
+                _level3 = false;
+                _level4 = true;
+                _level5 = false;
+                _level6 = false;
+                ignore.Remove(GameObject.Find("Start"));
+                // Reset();
+                break;
+            case "level5":
+                if (level1.active) level1.SetActive(false);
+                if (level2.active) level2.SetActive(false);
+                if (level3.active) level3.SetActive(false);
+                if (level4.active) level4.SetActive(false);
+                if (level6.active) level6.SetActive(false);
+                level5.SetActive(true);
+                _level1 = false;
+                _level2 = false;
+                _level3 = false;
+                _level4 = false;
+                _level5 = true;
+                _level6 = false;
+                ignore.Remove(GameObject.Find("Start"));
+                // Reset();
+                break;
+            case "level6":
+                if (level1.active) level1.SetActive(false);
+                if (level2.active) level2.SetActive(false);
+                if (level3.active) level3.SetActive(false);
+                if (level4.active) level4.SetActive(false);
+                if (level5.active) level5.SetActive(false);
+                level6.SetActive(true);
+                _level1 = false;
+                _level2 = false;
+                _level3 = false;
+                _level4 = false;
+                _level5 = false;
+                _level6 = true;
+                ignore.Remove(GameObject.Find("Start"));
+                // Reset();
                 break;
             case "startLevel":
                 if (_level1)
                 {
                     _sceneIndex = 3;
-                    SceneManager.LoadScene(6);
-                    // _levelLoader.LevelLoad(3);
+                    SceneManager.LoadScene(9);
                 }
                 if (_level2)
                 {
                     _sceneIndex = 4;
-                    SceneManager.LoadScene(6);
-                    // _levelLoader.LevelLoad(4);
+                    SceneManager.LoadScene(9);
                 }
                 if (_level3)
                 {
                     _sceneIndex = 5;
-                    SceneManager.LoadScene(6);
-                    // _levelLoader.LevelLoad(5);
+                    SceneManager.LoadScene(9);
+                }
+                if (_level4)
+                {
+                    _sceneIndex = 6;
+                    SceneManager.LoadScene(9);
+                }
+                if (_level5)
+                {
+                    _sceneIndex = 7;
+                    SceneManager.LoadScene(9);
+                }
+                if (_level6)
+                {
+                    _sceneIndex = 8;
+                    SceneManager.LoadScene(9);
                 }
                 break;
         }

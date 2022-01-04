@@ -22,6 +22,9 @@ TagManager:
   - startLevel
   - sfx+
   - sfx-
+  - level4
+  - level5
+  - level6
   layers:
   - Default
   - TransparentFX
