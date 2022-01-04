@@ -1,7 +1,6 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LoadingScript : MonoBehaviour
 {
@@ -12,23 +11,35 @@ public class LoadingScript : MonoBehaviour
     private float _pictureRange;
     private int _index;
     private LoadLevel _levelLoader;
+    public Text currentStatus;
 
     private void Start()
     {
+        DontDestroyOnLoad(this);
         _levelLoader = GetComponent<LoadLevel>();
         _pictureRange = 1f/images.Count;
         _levelLoader.LevelLoad(CameraPointer.GetSceneIndex());
     }
 
-    public void LoadingBar(float progress)
+    public void LoadingBar(float progress, int count)
     {
-        gameObject.GetComponent<MeshRenderer>().material = images[_index];
-
-        Debug.LogError(progress + " <?> " + _pictureRange + " * " + (_index + 1));
+        Debug.Log(progress + " <?> " + _pictureRange + " * " + (_index + 1));
+        transform.GetChild(1).GetComponent<Image>().material = images[_index];
         if (progress > _pictureRange * (_index + 1))
         {
             _index++;
         }
+
+        if (progress > .5f)
+        {
+            currentStatus.text = "Spawning asteroids: " + count + "/2500";
+        }
+
+        if (progress > .95f)
+        {
+            currentStatus.text = "Have fun!";
+        }
+        
     }
     
     

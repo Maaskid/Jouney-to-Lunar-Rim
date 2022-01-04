@@ -1,16 +1,18 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using ScriptableObjects;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 [System.Serializable]
 public class PlaceAsteroids : MonoBehaviour
 {
+    public LoadingProgress loadingProgress;
     public static PlaceAsteroids CurrentPlaceAsteroids;
-    public float progress;
-    public bool isDone;
-    private int _count;
+    public int _count;
+    private GameObject[] _gameObjects;
+    private Vector3[] _pos;
 
     public GameObject player;
 
@@ -28,26 +30,23 @@ public class PlaceAsteroids : MonoBehaviour
     private void Awake()
     {
         CurrentPlaceAsteroids = this;
-    }
-
-    void Start()
-    {
+        loadingProgress.scriptActive = true;
+        StartCoroutine(Place(radius * 2));
         s_collider = gameObject.AddComponent<SphereCollider>();
         s_collider.radius = radius;
         s_collider.isTrigger = true;
-        Place(radius * 2);
         DestroyFarAsteroids();
     }
 
     void Update()
     {
-        this.transform.position = player.transform.position;
+        transform.position = player.transform.position;
 
         spawnTimer += Time.deltaTime;
 
         if (spawnTimer < spawnFrequence)
         {
-            if (GameObject.FindGameObjectsWithTag("Rock").Length <= numberOfAsteroids)
+            if (_count >= numberOfAsteroids*2 && GameObject.FindGameObjectsWithTag("Rock").Length <= numberOfAsteroids)
             {
                 // Debug.Log(GameObject.FindGameObjectsWithTag("Rock").Length);
                 SpawnNewAsteroids();
@@ -60,78 +59,81 @@ public class PlaceAsteroids : MonoBehaviour
     }
 
     //Erstellt und platziert die Meteoriten
-    IEnumerator Place(int size)
+    private IEnumerator Place(int size)
     {
-        GameObject[] gameObjects = new GameObject[numberOfAsteroids];
+        _gameObjects = new GameObject[numberOfAsteroids];
         List<Vector3> positions = new List<Vector3>(numberOfAsteroids);
-
-        while (_count < numberOfAsteroids*2)
+        
+        for (int i = 0; i < numberOfAsteroids; i++)
         {
-            for (int i = 0; i < numberOfAsteroids; i++)
+            _gameObjects[i] = asteroids[Random.Range(0, asteroids.Count)];
+        }
+        var index = 0;
+        while (_count < numberOfAsteroids)
+        {
+            float xPos = Random.Range(0, size);
+            float yPos = Random.Range(0, size);
+            float zPos = Random.Range(0, size);
+            for (int j = 0; j < index; j++)
             {
-                gameObjects[i] = asteroids[Random.Range(0, asteroids.Count)];
-            }
+                int counter = 0;
+                Vector3 colliderMax = _gameObjects[index - 1].GetComponent<Collider>().bounds.max;
 
-            for (int i = 0; i < numberOfAsteroids; i++)
-            {
-                float xPos = Random.Range(0, size);
-                float yPos = Random.Range(0, size);
-                float zPos = Random.Range(0, size);
-                for (int j = 0; j < i; j++)
+                while (!(xPos + colliderMax.magnitude < colliderMax.x &&
+                         xPos - colliderMax.magnitude < colliderMax.x) && counter < 30)
                 {
-                    int counter = 0;
-                    Vector3 colliderMax = gameObjects[i - 1].GetComponent<Collider>().bounds.max;
-
-                    while (!(xPos + colliderMax.magnitude < colliderMax.x &&
-                             xPos - colliderMax.magnitude < colliderMax.x) && counter < 30)
-                    {
-                        xPos = Random.Range(0, size);
-                        counter++;
-                    }
-
-                    counter = 0;
-
-                    while (!(yPos + colliderMax.magnitude < colliderMax.y &&
-                             yPos + colliderMax.magnitude < colliderMax.y) && counter < 30)
-                    {
-                        yPos = Random.Range(0, size);
-                        counter++;
-                    }
-
-                    counter = 0;
-
-                    while (!(zPos + colliderMax.magnitude < colliderMax.z &&
-                             zPos + colliderMax.magnitude < colliderMax.z) && counter < 30)
-                    {
-                        zPos = Random.Range(0, size);
-                        counter++;
-                    }
+                    xPos = Random.Range(0, size);
+                    counter++;
                 }
 
-                positions.Add(new Vector3(xPos + this.transform.position.x - radius,
-                    yPos + this.transform.position.y - radius, zPos + this.transform.position.z - radius));
+                counter = 0;
 
-                yield return new WaitForEndOfFrame();
-                progress = (float) _count / (numberOfAsteroids * 2);
-                _count++;
+                while (!(yPos + colliderMax.magnitude < colliderMax.y &&
+                         yPos + colliderMax.magnitude < colliderMax.y) && counter < 30)
+                {
+                    yPos = Random.Range(0, size);
+                    counter++;
+                }
+
+                counter = 0;
+
+                while (!(zPos + colliderMax.magnitude < colliderMax.z &&
+                         zPos + colliderMax.magnitude < colliderMax.z) && counter < 30)
+                {
+                    zPos = Random.Range(0, size);
+                    counter++;
+                }
             }
 
-            Vector3[] pos = positions.ToArray();
+            index++;
 
-            for (int i = 0; i < numberOfAsteroids; i++)
-            {
-                progress = (float) _count / (numberOfAsteroids * 2);
-
-                GameObject newAsteroid = Instantiate(gameObjects[i], pos[i], Random.rotation);
-
-                yield return new WaitForEndOfFrame();
-                _count++;
-            }
+            positions.Add(new Vector3(xPos + transform.position.x - radius,
+                yPos + transform.position.y - radius, zPos + transform.position.z - radius));
+            
+            yield return null;
+            loadingProgress.spawnProgress = (float) _count / numberOfAsteroids;
+            loadingProgress.count = _count;
+            _count++;
         }
 
-        yield return new WaitForSeconds(2f);
+        _pos = positions.ToArray();
+        StartCoroutine(PlaceAsteroidsAtPosition());
+        StopCoroutine(Place(size));
+    }
+
+    private IEnumerator PlaceAsteroidsAtPosition()
+    {
+        var i = 0;
+        while (_count < numberOfAsteroids*2)
+        {
+            GameObject newAsteroid = Instantiate(_gameObjects[i], _pos[i], Random.rotation);
+            _count++;
+            i++;
+        }
+        yield return new WaitForSeconds(.5f);
         
-        isDone = true;
+        loadingProgress.isDone = true;
+        StopCoroutine(PlaceAsteroidsAtPosition());
     }
 
     void DestroyFarAsteroids()

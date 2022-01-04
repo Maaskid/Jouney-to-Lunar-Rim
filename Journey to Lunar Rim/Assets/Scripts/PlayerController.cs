@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using ScriptableObjects;
 using Stats;
 using UnityEngine;
 
@@ -37,7 +38,9 @@ public class PlayerController : MonoBehaviour
     public float collisionSpeed = 2f;
 
     public bool collisionState = false;
-
+    public bool beginJourney;
+    public LoadingProgress loadingProgress;
+    
     void Start(){
         maxTank = tank;
         maxLives = lives;
@@ -46,6 +49,8 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (!loadingProgress.isDone)
+            return;
         HandleMovement();
         GameLost();
     }
