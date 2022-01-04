@@ -375,7 +375,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 993050560853973865, guid: b5e4587170f948041ac18469a0f61fc1, type: 3}
       propertyPath: ignore.Array.size
-      value: 5
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 993050560853973865, guid: b5e4587170f948041ac18469a0f61fc1, type: 3}
       propertyPath: items.Array.data[0]
@@ -420,7 +420,15 @@ PrefabInstance:
     - target: {fileID: 993050560853973865, guid: b5e4587170f948041ac18469a0f61fc1, type: 3}
       propertyPath: ignore.Array.data[5]
       value: 
-      objectReference: {fileID: 404136398}
+      objectReference: {fileID: 173925750}
+    - target: {fileID: 993050560853973865, guid: b5e4587170f948041ac18469a0f61fc1, type: 3}
+      propertyPath: ignore.Array.data[6]
+      value: 
+      objectReference: {fileID: 1611123708}
+    - target: {fileID: 993050560853973865, guid: b5e4587170f948041ac18469a0f61fc1, type: 3}
+      propertyPath: ignore.Array.data[7]
+      value: 
+      objectReference: {fileID: 1633477328}
     - target: {fileID: 993050560853973865, guid: b5e4587170f948041ac18469a0f61fc1, type: 3}
       propertyPath: menuItems.Array.data[0]
       value: 
@@ -1672,7 +1680,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7191b7e7c0acb0549bb9a365fba8e93b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 0}
+  loadingProgress: {fileID: 0}
   asteroidProgress: 0
 --- !u!1001 &55565496893019406
 PrefabInstance:
