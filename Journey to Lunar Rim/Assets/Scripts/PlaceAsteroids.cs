@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using ScriptableObjects;
 using UnityEngine;
+using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 [System.Serializable]
@@ -10,7 +11,7 @@ public class PlaceAsteroids : MonoBehaviour
 {
     public LoadingProgress loadingProgress;
     public static PlaceAsteroids CurrentPlaceAsteroids;
-    public int _count;
+    public int count;
     private GameObject[] _gameObjects;
     private Vector3[] _pos;
 
@@ -27,7 +28,8 @@ public class PlaceAsteroids : MonoBehaviour
     public float spawnFrequence = 3;
     float spawnTimer = 0;
 
-    private void Awake()
+
+    private void Start()
     {
         CurrentPlaceAsteroids = this;
         loadingProgress.scriptActive = true;
@@ -36,6 +38,7 @@ public class PlaceAsteroids : MonoBehaviour
         s_collider.radius = radius;
         s_collider.isTrigger = true;
         DestroyFarAsteroids();
+
     }
 
     void Update()
@@ -46,7 +49,7 @@ public class PlaceAsteroids : MonoBehaviour
 
         if (spawnTimer < spawnFrequence)
         {
-            if (_count >= numberOfAsteroids*2 && GameObject.FindGameObjectsWithTag("Rock").Length <= numberOfAsteroids)
+            if (count >= numberOfAsteroids*2 && GameObject.FindGameObjectsWithTag("Rock").Length <= numberOfAsteroids)
             {
                 // Debug.Log(GameObject.FindGameObjectsWithTag("Rock").Length);
                 SpawnNewAsteroids();
@@ -61,6 +64,7 @@ public class PlaceAsteroids : MonoBehaviour
     //Erstellt und platziert die Meteoriten
     private IEnumerator Place(int size)
     {
+        count = 0;
         _gameObjects = new GameObject[numberOfAsteroids];
         List<Vector3> positions = new List<Vector3>(numberOfAsteroids);
         
@@ -69,7 +73,7 @@ public class PlaceAsteroids : MonoBehaviour
             _gameObjects[i] = asteroids[Random.Range(0, asteroids.Count)];
         }
         var index = 0;
-        while (_count < numberOfAsteroids)
+        while (count < numberOfAsteroids)
         {
             float xPos = Random.Range(0, size);
             float yPos = Random.Range(0, size);
@@ -111,9 +115,9 @@ public class PlaceAsteroids : MonoBehaviour
                 yPos + transform.position.y - radius, zPos + transform.position.z - radius));
             
             yield return null;
-            loadingProgress.spawnProgress = (float) _count / numberOfAsteroids;
-            loadingProgress.count = _count;
-            _count++;
+            loadingProgress.spawnProgress = (float) count / numberOfAsteroids;
+            loadingProgress.count = count;
+            count++;
         }
 
         _pos = positions.ToArray();
@@ -124,10 +128,10 @@ public class PlaceAsteroids : MonoBehaviour
     private IEnumerator PlaceAsteroidsAtPosition()
     {
         var i = 0;
-        while (_count < numberOfAsteroids*2)
+        while (count < numberOfAsteroids*2)
         {
             GameObject newAsteroid = Instantiate(_gameObjects[i], _pos[i], Random.rotation);
-            _count++;
+            count++;
             i++;
         }
         yield return new WaitForSeconds(.5f);

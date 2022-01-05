@@ -56,8 +56,8 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        // if (!loadingProgress.isDone)
-            // return;
+        if (!loadingProgress.isDone)
+            return;
         HandleMovement();
         GameLost();
     }

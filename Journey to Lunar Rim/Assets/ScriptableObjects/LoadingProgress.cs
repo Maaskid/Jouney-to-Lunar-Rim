@@ -9,7 +9,7 @@ namespace ScriptableObjects
         public float sceneProgess, spawnProgress;
         public bool scriptActive, isDone;
         public int count;
-        
+
         public void Reset()
         {
             sceneProgess = 0;

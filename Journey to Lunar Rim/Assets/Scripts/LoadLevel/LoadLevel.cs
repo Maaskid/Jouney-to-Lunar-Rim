@@ -11,22 +11,18 @@ public class LoadLevel : MonoBehaviour
     private AsyncOperation _operation;
     public LoadingProgress loadingProgress;
 
-    public static LoadLevel CurrentLoadLevel;
 
     private float _totalSceneProgress, _totalSpawnProgress, _totalProgress;
-    public float asteroidProgress;
 
     private void Awake()
     {
-        CurrentLoadLevel = this;
         loadingProgress.Reset();
     }
 
     public void LevelLoad(int sceneIndex)
     {
-        // DontDestroyOnLoad(this);
         StartCoroutine(LoadAsync(sceneIndex));
-        StartCoroutine(GetTotalProgress(sceneIndex));
+        StartCoroutine(GetTotalProgress());
     }
 
     private IEnumerator LoadAsync(int sceneIndex)
@@ -39,27 +35,26 @@ public class LoadLevel : MonoBehaviour
             _totalSceneProgress = Mathf.Clamp01(_totalSceneProgress);
             yield return null;
         }
-
+        if (loadingProgress.scriptActive)
+        {
+            GetComponent<Canvas>().worldCamera = GameObject.Find("Player").transform.GetChild(0).GetComponent<Camera>();
+            GetComponent<Canvas>().planeDistance = 0.1f;
+        }
         _totalSceneProgress = 1;
-        
     }
 
-    private IEnumerator GetTotalProgress(int sceneIndex)
+    private IEnumerator GetTotalProgress()
     {
         _totalProgress = 0;
-        
         while (!loadingProgress.scriptActive || !loadingProgress.isDone)
         {
-            
             if (!loadingProgress.scriptActive)
             {
                 _totalSpawnProgress = 0;
-                Debug.Log("if");
             }
             else
             {
                 _totalSpawnProgress = Mathf.Clamp01(loadingProgress.spawnProgress);
-                Debug.Log("el");
             }
             
             Debug.Log(_totalSceneProgress + " " + _totalSpawnProgress);
@@ -67,10 +62,8 @@ public class LoadLevel : MonoBehaviour
             UpdateProgressUI();
             yield return null;
         }
-
         _totalProgress = 1;
         UpdateProgressUI();
-        Destroy(GameObject.Find("LoadingCanvas"));
     }
 
     private void UpdateProgressUI()

@@ -137,6 +137,7 @@ GameObject:
   - component: {fileID: 487046825}
   - component: {fileID: 487046830}
   - component: {fileID: 487046829}
+  - component: {fileID: 487046831}
   m_Layer: 5
   m_Name: LoadingCanvas
   m_TagString: Untagged
@@ -239,7 +240,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loadingProgress: {fileID: 11400000, guid: cf2022f6db33ab64085b2ab6331502db, type: 2}
-  asteroidProgress: 0
 --- !u!114 &487046830
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -273,6 +273,19 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 8aa017d4bca76c24ebce811ab530907f, type: 2}
   - {fileID: 2100000, guid: b358bf4bf2886d6479e2fd3c16ea0477, type: 2}
   currentStatus: {fileID: 595050521}
+--- !u!114 &487046831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 487046824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95f974a6f8d2f574290c5e06d9b47302, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loadingProgress: {fileID: 11400000, guid: cf2022f6db33ab64085b2ab6331502db, type: 2}
 --- !u!1 &532880787
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,9 +13,8 @@ public class LoadingScript : MonoBehaviour
     private LoadLevel _levelLoader;
     public Text currentStatus;
 
-    private void Start()
+    private void Awake()
     {
-        DontDestroyOnLoad(this);
         _levelLoader = GetComponent<LoadLevel>();
         _pictureRange = 1f/images.Count;
         _levelLoader.LevelLoad(CameraPointer.GetSceneIndex());
@@ -41,16 +40,4 @@ public class LoadingScript : MonoBehaviour
         }
         
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }

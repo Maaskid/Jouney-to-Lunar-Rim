@@ -212,7 +212,7 @@ public class CameraPointer : MonoBehaviour
                 ActivateInformation(6, (int)SceneIndexes.Level6);
                 break;
             case "startLevel":
-                SceneManager.LoadScene(9);
+                SceneManager.LoadScene((int)SceneIndexes.LevelLoading);
                 break;
         }
     }
