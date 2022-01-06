@@ -6,28 +6,48 @@
   <component name="ChangeListManager">
     <list default="true" id="edeeebc7-fdf5-4d19-907d-7ec5db58b2a0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Journey to Lunar Rim/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Journey to Lunar Rim/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Dialog.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Dialog/Freya_Core.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Dialog/Freya_Core.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Dialog/Level1.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Dialog/Minister_Baker.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Dialog/Minister_Baker.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Dialog/Test_Sprechblase.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Dialog/Test_Sprechblase.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LevelLoading.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LevelLoading.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Story/First Fule.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Story/First Fule/f1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Story/First Fule/f1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Story/First Fule/f2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Story/First Fule/f2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Story/First Fule/f3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Story/First Fule/f3.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Story/First Shield/sh2.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Story/First Shield/sh2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Story/Level 2/lz5.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Story/Level 2/lz5.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Story/Level 3/ld5.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Story/Level 3/ld5.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Story/Level 4/lv1.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Story/Level 4/lv1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Story/Level 4/lv4.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Story/Level 4/lv4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Story/Level 5/lf7.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Story/Level 5/lf7.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Story/Level 5/lf8.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Story/Level 5/lf8.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Story/Start/s10.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Story/Start/s10.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Story/Start/s6.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Story/Start/s6.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Meshes/Container/Container_Blau.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Meshes/Container/Container_Blau.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Meshes/Container/Container_Gelb.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Meshes/Container/Container_Gelb.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Meshes/Container/Container_Grün.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Meshes/Container/Container_Grün.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Meshes/Container/Container_Lila.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Meshes/Container/Container_Lila.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Meshes/Container/Container_Orange.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Meshes/Container/Container_Orange.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Meshes/Container/Container_Rot.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Meshes/Container/Container_Rot.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Archiv.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Archiv.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/level 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/level 1.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/level 2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/level 2.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/level 3.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/level 3.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/level 4.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/level 4.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/level 5.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/level 5.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/level 6.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/level 6.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/menu.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Loading Progress.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Loading Progress.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/LoadingProgress.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/LoadingProgress.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/LoadingProgress.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/LoadingProgress.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DisplayPillar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DisplayPillar.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/KeepMe.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/KeepMe.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/LoadLevel/LoadLevel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LoadLevel/LoadLevel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/LoadLevel/LoadingScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LoadLevel/LoadingScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LoadLevel/SceneIndexes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LoadLevel/SceneIndexes.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Menu/CameraPointer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Menu/CameraPointer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlaceAsteroids.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlaceAsteroids.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stats/DisplayPlayerStats.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Stats/DisplayPlayerStats.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/ApiUpdaterCheck.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/ApiUpdaterCheck.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe0.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe1.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe1.log" afterDir="false" />
@@ -35,7 +55,6 @@
       <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe3.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe3.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe4.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe4.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe5.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe5.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -58,10 +77,10 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/LoadLevel/LoadingScript.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/07c89f7520694139991332d3cf930d4813bc00/fb/72555c10/SceneManager.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/DisplayPillar.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/ScriptableObjects/LoadingProgress.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/07c89f7520694139991332d3cf930d4813bc00/5a/50270211/GameObject.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/07c89f7520694139991332d3cf930d4813bc00/0e/660da4ec/WaitForSeconds.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/UIBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/ScriptableObjects/Scripts/Chapter.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/KeepMe.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/07c89f7520694139991332d3cf930d4813bc00/24/1671ce7b/SetupCoroutine.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -98,10 +117,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="16388">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="4296">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="16388" />
+      <option name="pid" value="4296" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -148,6 +167,8 @@
       <workItem from="1641326108114" duration="341000" />
       <workItem from="1641398641440" duration="4879000" />
       <workItem from="1641404191264" duration="3236000" />
+      <workItem from="1641416620797" duration="4828000" />
+      <workItem from="1641461925086" duration="11919000" />
     </task>
     <servers />
   </component>

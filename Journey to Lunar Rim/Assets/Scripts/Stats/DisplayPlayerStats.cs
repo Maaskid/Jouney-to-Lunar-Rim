@@ -1,5 +1,8 @@
 using System.Collections;
+using ScriptableObjects.Scripts;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace Stats
@@ -10,9 +13,6 @@ namespace Stats
 
         public Material[] tankMaterials;
         public Material[] schildMaterials;
-        public Sprite[] dialogueSprites;
-
-        public Image freyaCore, ministerBaker;
 
         public GameObject windowLeft;
         public GameObject windowMiddle;
@@ -24,7 +24,14 @@ namespace Stats
         public Material wmMaterial;
         public Material wrMaterial;
         public Material alphaMaterial;
-
+        
+        public Image freyaCore, ministerBaker;
+        public GameObject dialogueScreen;
+        public Chapter startSequence;
+        public Chapter currentChapter;
+        public SceneIndexes nextScene;
+        public LoadingProgress loadingProgress;
+        
         /**
          * Displays both, Tank and Schaden stats, once in the beginning
          */
@@ -32,6 +39,12 @@ namespace Stats
         {
             DisplayTankStats();
             DisplaySchadenStats();
+        }
+
+        public void CheckToShowStartSequence()
+        {
+            if (currentChapter.chapterName.Equals(ChapterNames.Level1))
+                StartCoroutine(ShowStartSequence());
         }
 
         /**
@@ -130,22 +143,83 @@ namespace Stats
             }
         }
 
-        public IEnumerator ShowDialogues(int level)
+        private IEnumerator ShowStartSequence()
         {
+            dialogueScreen.SetActive(true);
+            
             var isDone = false;
             var index = 0;
+            
             while (!isDone)
             {
-                yield return new WaitForSeconds(3f);
-                freyaCore.sprite = dialogueSprites[index];
-
-                if (index == dialogueSprites.Length-1)
+                yield return new WaitForSeconds(5f);
+                index++;
+                if (index == startSequence.container.Count)
                 {
                     isDone = true;
                 }
-
-                index++;
+                else
+                {
+                    if (startSequence.container[index].speaker==SpeakerNames.Freya)
+                    {
+                        ministerBaker.gameObject.SetActive(false);
+                        freyaCore.sprite = startSequence.container[index].sprite;
+                        freyaCore.gameObject.SetActive(true);
+                    }
+                    else
+                    {
+                        freyaCore.gameObject.SetActive(false);
+                        ministerBaker.sprite = startSequence.container[index].sprite;
+                        ministerBaker.gameObject.SetActive(true);
+                    }
+                }
             }
+            
+            //Zustand für EndSequence vorbereiten
+            freyaCore.gameObject.SetActive(false);
+            ministerBaker.gameObject.SetActive(true);
+            dialogueScreen.SetActive(false);
+
+            loadingProgress.startSequencePlayed = true;
+        }
+        
+        public IEnumerator ShowDialogues()
+        {
+            dialogueScreen.SetActive(true);
+            var isDone = false;
+            var index = 0;
+            
+            while (!isDone)
+            {
+                yield return new WaitForSeconds(5f);
+                index++;
+                if (index == currentChapter.container.Count)
+                {
+                    isDone = true;
+                }
+                else
+                {
+                    if (currentChapter.container[index].speaker==SpeakerNames.Freya)
+                    {
+                        ministerBaker.gameObject.SetActive(false);
+                        freyaCore.sprite = currentChapter.container[index].sprite;
+                        freyaCore.gameObject.SetActive(true);
+                    }
+                    else
+                    {
+                        freyaCore.gameObject.SetActive(false);
+                        ministerBaker.sprite = currentChapter.container[index].sprite;
+                        ministerBaker.gameObject.SetActive(true);
+                    }
+                }
+            }
+
+            loadingProgress.sceneToLoad = nextScene;
+            if (!currentChapter.chapterName.Equals(ChapterNames.Level6))
+                SceneManager.LoadScene((int)SceneIndexes.LevelLoading);
+            else
+                SceneManager.LoadScene((int)nextScene);
+            
         }
     }
 }

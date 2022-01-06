@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bff001b9ba2cf374f8ebe81fc7cb9be8, type: 3}
+  m_Name: Chapter First Booster
+  m_EditorClassIdentifier: 
+  chapterName: 7
+  container:
+  - sprite: {fileID: 21300000, guid: db2007ff72c817649b1759ac27f50d1e, type: 3}
+    speaker: 0
+  - sprite: {fileID: 21300000, guid: 57a21619b3f78eb49a98f47baceacff4, type: 3}
+    speaker: 1
+  - sprite: {fileID: 21300000, guid: cc78c1412a6411b4aaaf3c86aef1219c, type: 3}
+    speaker: 0

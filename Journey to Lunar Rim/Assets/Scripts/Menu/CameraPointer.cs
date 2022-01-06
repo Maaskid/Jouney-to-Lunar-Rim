@@ -19,6 +19,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using ScriptableObjects.Scripts;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -33,14 +34,8 @@ public class CameraPointer : MonoBehaviour
     public List<GameObject> ignore;
     public List<GameObject> volumeBars;
     public List<GameObject> sfxBars;
-    public GameObject level1;
-    public GameObject level2;
-    public GameObject level3;
-    public GameObject level4;
-    public GameObject level5;
-    public GameObject level6;
-
-    public List<GameObject> levels;
+    public LoadingProgress loadingProgress;
+    public List<GameObject> levelDescriptions;
 
     private const float _maxDistance = 50;
     private const float _capSizeGrowing = 1;
@@ -58,19 +53,23 @@ public class CameraPointer : MonoBehaviour
     private bool _level6;
     private int _volume = -1;
     private int _sfx = -1;
-    private LoadLevel _levelLoader;
     
     private int _levelToLoad;
     
     private AudioManager _audioManager;
-    
-    private static int _sceneIndex = (int)SceneIndexes.Level1;
-    
+
+    private void Awake()
+    {
+        if (loadingProgress!=null)
+        {
+            loadingProgress.ResetProgress();
+        }
+    }
+
     public void Start()
     {
         _myRenderer = GetComponent<Renderer>();
         _audioManager = GetComponent<AudioManager>();
-        _levelLoader = GetComponent<LoadLevel>();
         SetMaterial(false);
     }
 
@@ -132,7 +131,7 @@ public class CameraPointer : MonoBehaviour
         {
             case "play":
                 /* open level scene 1 */
-                _sceneIndex = (int)SceneIndexes.Level1;
+                loadingProgress.sceneToLoad = SceneIndexes.Level1;
                 SceneManager.LoadScene(9);
                 break;
             case "archiv":
@@ -194,22 +193,22 @@ public class CameraPointer : MonoBehaviour
                 _archiv = false;
                 break;
             case "level1":
-                ActivateInformation(1, (int)SceneIndexes.Level1);
+                ActivateInformation(1, SceneIndexes.Level1);
                 break;
             case "level2":
-                ActivateInformation(2, (int)SceneIndexes.Level2);
+                ActivateInformation(2, SceneIndexes.Level2);
                 break;
             case "level3":
-                ActivateInformation(3, (int)SceneIndexes.Level3);
+                ActivateInformation(3, SceneIndexes.Level3);
                 break;
             case "level4":
-                ActivateInformation(4, (int)SceneIndexes.Level4);
+                ActivateInformation(4, SceneIndexes.Level4);
                 break;
             case "level5":
-                ActivateInformation(5, (int)SceneIndexes.Level5);
+                ActivateInformation(5, SceneIndexes.Level5);
                 break;
             case "level6":
-                ActivateInformation(6, (int)SceneIndexes.Level6);
+                ActivateInformation(6, SceneIndexes.Level6);
                 break;
             case "startLevel":
                 SceneManager.LoadScene((int)SceneIndexes.LevelLoading);
@@ -217,19 +216,19 @@ public class CameraPointer : MonoBehaviour
         }
     }
 
-    private void ActivateInformation(int containerIndex, int sceneIndex)
+    private void ActivateInformation(int containerIndex, SceneIndexes sceneIndex)
     {
-        foreach (var levelInfo in levels)
+        foreach (var levelInfo in levelDescriptions)
         {
             if (levelInfo.name.Contains(containerIndex.ToString()))
             {
                 levelInfo.SetActive(true);
-                break;
+                continue;
             }
             levelInfo.SetActive(false);
         }
-
-        _sceneIndex = sceneIndex;
+        loadingProgress.sceneToLoad = sceneIndex;
+        Debug.Log((int)sceneIndex);
         ignore.Remove(GameObject.Find("Start"));
     }
 
@@ -256,12 +255,6 @@ public class CameraPointer : MonoBehaviour
         if (inactiveMaterial != null && activeMaterial != null)
         {
             _myRenderer.material = isEntered ? activeMaterial : inactiveMaterial;
-
         } 
-    }
-
-    public static int GetSceneIndex()
-    {
-        return _sceneIndex;
     }
 }

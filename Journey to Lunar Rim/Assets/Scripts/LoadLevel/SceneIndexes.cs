@@ -11,3 +11,25 @@ public enum SceneIndexes
     Level6 = 8,
     LevelLoading = 9
 }
+
+public enum ChapterNames
+{
+    Start = 0,
+    Level1 = SceneIndexes.Level1,
+    Level2 = SceneIndexes.Level2,
+    Level3 = SceneIndexes.Level3,
+    Level4 = SceneIndexes.Level4,
+    Level5 = SceneIndexes.Level5,
+    Level6 = SceneIndexes.Level6,
+    FirstBooster = 7,
+    FirstFuel = 8,
+    FirstMeteorCrash = 9,
+    FirstShield = 10
+}
+
+
+public enum SpeakerNames
+{
+    Freya = 0,
+    Baker = 1
+}

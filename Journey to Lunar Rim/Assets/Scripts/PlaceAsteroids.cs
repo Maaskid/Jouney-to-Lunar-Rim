@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using ScriptableObjects;
+using ScriptableObjects.Scripts;
+using Stats;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
@@ -137,6 +139,7 @@ public class PlaceAsteroids : MonoBehaviour
         yield return new WaitForSeconds(.5f);
         
         loadingProgress.isDone = true;
+        player.GetComponent<DisplayPlayerStats>().CheckToShowStartSequence();
         StopCoroutine(PlaceAsteroidsAtPosition());
     }
 

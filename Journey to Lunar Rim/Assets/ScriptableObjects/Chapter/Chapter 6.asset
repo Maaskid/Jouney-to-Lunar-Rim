@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bff001b9ba2cf374f8ebe81fc7cb9be8, type: 3}
+  m_Name: Chapter 6
+  m_EditorClassIdentifier: 
+  chapterName: 8
+  container:
+  - sprite: {fileID: 21300000, guid: 35fad464638ae4342b640500ad7a1f4a, type: 3}
+    speaker: 0
+  - sprite: {fileID: 21300000, guid: e4ecbb78713d0a04ab1956c6c1f9cab3, type: 3}
+    speaker: 1
+  - sprite: {fileID: 21300000, guid: 756fd9051ef0aee489149af147ef12eb, type: 3}
+    speaker: 0
+  - sprite: {fileID: 21300000, guid: 77920d9ff7670df479449d40f2694058, type: 3}
+    speaker: 1
+  - sprite: {fileID: 21300000, guid: eb464ae4326cad74b90e9b92afc0416b, type: 3}
+    speaker: 0
+  - sprite: {fileID: 21300000, guid: 4a50eb44346184945aaedfa044a635af, type: 3}
+    speaker: 1
+  - sprite: {fileID: 21300000, guid: 5f9200972a4bb2e4386bd3b4678e2833, type: 3}
+    speaker: 1

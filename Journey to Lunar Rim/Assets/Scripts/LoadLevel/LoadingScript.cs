@@ -15,9 +15,7 @@ public class LoadingScript : MonoBehaviour
 
     private void Awake()
     {
-        _levelLoader = GetComponent<LoadLevel>();
         _pictureRange = 1f/images.Count;
-        _levelLoader.LevelLoad(CameraPointer.GetSceneIndex());
     }
 
     public void LoadingBar(float progress, int count)

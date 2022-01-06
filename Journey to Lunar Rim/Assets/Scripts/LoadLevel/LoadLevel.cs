@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using ScriptableObjects;
+using ScriptableObjects.Scripts;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -16,10 +17,11 @@ public class LoadLevel : MonoBehaviour
 
     private void Awake()
     {
-        loadingProgress.Reset();
+        loadingProgress.ResetProgress();
+        LevelLoad((int)loadingProgress.sceneToLoad);
     }
 
-    public void LevelLoad(int sceneIndex)
+    private void LevelLoad(int sceneIndex)
     {
         StartCoroutine(LoadAsync(sceneIndex));
         StartCoroutine(GetTotalProgress());

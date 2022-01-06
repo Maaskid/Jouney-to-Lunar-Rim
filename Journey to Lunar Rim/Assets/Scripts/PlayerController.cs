@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using ScriptableObjects;
+using ScriptableObjects.Scripts;
 using Stats;
 using UnityEngine;
 
@@ -41,7 +42,7 @@ public class PlayerController : MonoBehaviour
     [Header("===Other Stuff===")]
     public GameObject endScreen;
     
-    public bool collisionState = false;
+    public bool collisionState;
     public bool beginJourney;
     public LoadingProgress loadingProgress;
     
@@ -51,12 +52,11 @@ public class PlayerController : MonoBehaviour
         maxTank = tank;
         maxLives = lives;
         boostGet = speed * 2;
-        // endScreen.SetActive(false);
     }
 
     void FixedUpdate()
     {
-        if (!loadingProgress.isDone)
+        if (!loadingProgress.isDone || !loadingProgress.startSequencePlayed)
             return;
         HandleMovement();
         GameLost();
@@ -197,8 +197,7 @@ public class PlayerController : MonoBehaviour
             {
                 Debug.Log("Artifact eingesammelt");
                 // Destroy(collision.collider.gameObject);
-                endScreen.SetActive(true);
-                GetComponent<DisplayPlayerStats>().StartCoroutine(GetComponent<DisplayPlayerStats>().ShowDialogues(0));
+                GetComponent<DisplayPlayerStats>().StartCoroutine(GetComponent<DisplayPlayerStats>().ShowDialogues());
                 isEnd = true;
             }
     }

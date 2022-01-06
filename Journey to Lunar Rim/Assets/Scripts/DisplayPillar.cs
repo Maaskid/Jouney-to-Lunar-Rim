@@ -32,6 +32,6 @@ public class DisplayPillar : MonoBehaviour
             displayedItem.transform.position -= new Vector3(0f, .1f * Time.deltaTime, 0f);
         }
         
-        Debug.Log(_goUp);
+        // Debug.Log(_goUp);
     }
 }

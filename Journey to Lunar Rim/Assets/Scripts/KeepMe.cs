@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using ScriptableObjects;
+using ScriptableObjects.Scripts;
 using UnityEngine;
 
 public class KeepMe : MonoBehaviour
