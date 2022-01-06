@@ -24,7 +24,8 @@ public enum ChapterNames
     FirstBooster = 7,
     FirstFuel = 8,
     FirstMeteorCrash = 9,
-    FirstShield = 10
+    FirstShield = 10,
+    Death = 11
 }
 
 

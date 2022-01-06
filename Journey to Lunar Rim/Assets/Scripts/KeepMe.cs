@@ -7,9 +7,15 @@ using UnityEngine;
 
 public class KeepMe : MonoBehaviour
 {
+    public static KeepMe Instance;
     public LoadingProgress loadingProgress;
     private void Start()
     {
+        if (Instance == null)
+            Instance = this;
+        else
+            Destroy(gameObject);
+        
         DontDestroyOnLoad(gameObject);
     }
 

@@ -1,18 +1,13 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using ScriptableObjects;
 using ScriptableObjects.Scripts;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class LoadLevel : MonoBehaviour
 {
     private AsyncOperation _operation;
     public LoadingProgress loadingProgress;
-
-
+    
     private float _totalSceneProgress, _totalSpawnProgress, _totalProgress;
 
     private void Awake()

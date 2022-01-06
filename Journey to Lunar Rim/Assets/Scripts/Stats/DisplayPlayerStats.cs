@@ -177,7 +177,9 @@ namespace Stats
             
             //Zustand für EndSequence vorbereiten
             freyaCore.gameObject.SetActive(false);
+            freyaCore.sprite = currentChapter.container[1].sprite;
             ministerBaker.gameObject.SetActive(true);
+            ministerBaker.sprite = currentChapter.container[0].sprite;
             dialogueScreen.SetActive(false);
 
             loadingProgress.startSequencePlayed = true;

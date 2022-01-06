@@ -182,6 +182,7 @@ public class PlayerController : MonoBehaviour
 
             if(collision.collider.tag == "Fuel"){
                 tank = maxTank;
+                GetComponent<DisplayPlayerStats>().DisplayTankStats();
                 Destroy(collision.collider.gameObject);
             }
 

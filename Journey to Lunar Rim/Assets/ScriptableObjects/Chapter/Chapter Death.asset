@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bff001b9ba2cf374f8ebe81fc7cb9be8, type: 3}
+  m_Name: Chapter Death
+  m_EditorClassIdentifier: 
+  chapterName: 11
+  container:
+  - sprite: {fileID: 21300000, guid: 2f0dec13c6b207740ad0f7a397b9a890, type: 3}
+    speaker: 0
+  - sprite: {fileID: 21300000, guid: 553429a829d53a2428ff0cab37de7e4d, type: 3}
+    speaker: 1
+  - sprite: {fileID: 21300000, guid: 9e31d704b99905c45bb64ca49b85472d, type: 3}
+    speaker: 0

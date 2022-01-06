@@ -132,7 +132,7 @@ public class CameraPointer : MonoBehaviour
             case "play":
                 /* open level scene 1 */
                 loadingProgress.sceneToLoad = SceneIndexes.Level1;
-                SceneManager.LoadScene(9);
+                SceneManager.LoadSceneAsync((int)SceneIndexes.LevelLoading);
                 break;
             case "archiv":
                 /* load "archiv" scene */
@@ -211,7 +211,7 @@ public class CameraPointer : MonoBehaviour
                 ActivateInformation(6, SceneIndexes.Level6);
                 break;
             case "startLevel":
-                SceneManager.LoadScene((int)SceneIndexes.LevelLoading);
+                SceneManager.LoadSceneAsync((int)SceneIndexes.LevelLoading);
                 break;
         }
     }
