@@ -6,7 +6,7 @@ namespace ScriptableObjects.Scripts
     public class LoadingProgress : ScriptableObject
     {
         public float spawnProgress;
-        public bool scriptActive, isDone, startSequencePlayed;
+        public bool scriptActive, isDone, playStartSequence, dead, missionAccomplished, retry;
         public int count;
         public SceneIndexes sceneToLoad;
 
@@ -16,15 +16,22 @@ namespace ScriptableObjects.Scripts
             count = 0;
             scriptActive = false;
             isDone = false;
+            dead = false;
+            missionAccomplished = false;
 
-            if (!sceneToLoad.Equals(SceneIndexes.Level1))
+            if (!sceneToLoad.Equals(SceneIndexes.Level1) || retry)
             {
-                startSequencePlayed = true;
+                playStartSequence = false;
             }
             else
             {
-                startSequencePlayed = false;
+                playStartSequence = true;
             }
+        }
+
+        public void ResetRetry()
+        {
+            retry = false;
         }
     }
 }

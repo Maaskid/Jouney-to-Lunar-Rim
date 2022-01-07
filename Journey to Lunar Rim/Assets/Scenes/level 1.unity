@@ -202,27 +202,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2335029593109099656, guid: 6c578784c88bc6a46be9d95fd8f695c5, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2.4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2335029593109099656, guid: 6c578784c88bc6a46be9d95fd8f695c5, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2.4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2335029593109099656, guid: 6c578784c88bc6a46be9d95fd8f695c5, type: 3}
       propertyPath: m_LocalScale.z
-      value: 2.4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2335029593109099656, guid: 6c578784c88bc6a46be9d95fd8f695c5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 192
       objectReference: {fileID: 0}
     - target: {fileID: 2335029593109099656, guid: 6c578784c88bc6a46be9d95fd8f695c5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 11
+      value: -132
       objectReference: {fileID: 0}
     - target: {fileID: 2335029593109099656, guid: 6c578784c88bc6a46be9d95fd8f695c5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1500
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 2335029593109099656, guid: 6c578784c88bc6a46be9d95fd8f695c5, type: 3}
       propertyPath: m_LocalRotation.w
@@ -603,16 +603,16 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 2816e8bb41cc78644b1a2000be7bb736, type: 2}
   - {fileID: 2100000, guid: 5d5c32e6b6caf364fbada1a64d07ba53, type: 2}
   - {fileID: 2100000, guid: ddf35dcdbe4d89947b6b899083b5f0f5, type: 2}
+  rendererLeft: {fileID: 2098059492}
   schildMaterials:
   - {fileID: 2100000, guid: ad6d72a3081b2c14b998d8969e684f0a, type: 2}
   - {fileID: 2100000, guid: 5019a02a8d15a824380a0805513371ce, type: 2}
   - {fileID: 2100000, guid: 6e64ca0d939c99340a5eb92b8ef95b3d, type: 2}
   - {fileID: 2100000, guid: db5f4b9581d7a4349a327452598ccb11, type: 2}
+  rendererRight: {fileID: 854881507}
   windowLeft: {fileID: 1591867488}
   windowMiddle: {fileID: 1599904335}
   windowRight: {fileID: 452491396}
-  rendererLeft: {fileID: 2098059492}
-  rendererRight: {fileID: 854881507}
   wlMaterial: {fileID: 2100000, guid: 0eeb34d73d16e4f4196fb34a6631fe96, type: 2}
   wmMaterial: {fileID: 2100000, guid: df3c98c262751bc4084dc69ad7f655b2, type: 2}
   wrMaterial: {fileID: 2100000, guid: 4aba9d5212b1f68429122bdb010e385e, type: 2}
@@ -622,6 +622,7 @@ MonoBehaviour:
   dialogueScreen: {fileID: 818202220}
   startSequence: {fileID: 11400000, guid: 0397e058ba2844e48882478342a2217c, type: 2}
   currentChapter: {fileID: 11400000, guid: e146f96b35d21b543b9a80da6872c520, type: 2}
+  deathSequence: {fileID: 11400000, guid: 5b05327a953828f4eae96cf6bcae24d9, type: 2}
   nextScene: 4
   loadingProgress: {fileID: 11400000, guid: cf2022f6db33ab64085b2ab6331502db, type: 2}
 --- !u!54 &671635188
@@ -1096,6 +1097,10 @@ PrefabInstance:
       propertyPath: m_CullingMask.m_Bits
       value: 55
       objectReference: {fileID: 0}
+    - target: {fileID: 3687598896761482655, guid: 13b600ef701928a43976d5096de4f9f4, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3914811465215292849, guid: 13b600ef701928a43976d5096de4f9f4, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
@@ -1117,7 +1122,7 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: 6208d73375c30a74781d305c518878ed, type: 2}
     m_RemovedComponents:
-    - {fileID: 2352221145439309458, guid: 13b600ef701928a43976d5096de4f9f4, type: 3}
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 13b600ef701928a43976d5096de4f9f4, type: 3}
 --- !u!20 &1599904334 stripped
 Camera:

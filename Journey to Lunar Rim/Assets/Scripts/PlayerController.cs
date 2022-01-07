@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField, Range(1f, 5f)]
     public float collisionSpeed = 2f;
 
-    [Header("===Other Stuff===")]
+    [Header("=== Other Stuff ===")]
     public GameObject endScreen;
     
     public bool collisionState;
@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (!loadingProgress.isDone || !loadingProgress.startSequencePlayed)
+        if (!loadingProgress.isDone || loadingProgress.playStartSequence || loadingProgress.dead || loadingProgress.missionAccomplished)
             return;
         HandleMovement();
         GameLost();
@@ -140,22 +140,17 @@ public class PlayerController : MonoBehaviour
         else{
             tank = 0;
         }
-        
         GetComponent<DisplayPlayerStats>().DisplayTankStats();
     }
 
-    void GameLost(){
-        if(lives == 0){
-            speed = 0;
-            Debug.Log("GAME LOST!!");
-            return;
-        }
-        if(tank == 0){
-            speed = 0;
-            Debug.Log("GAME LOST!!");
-            return;
-        }
-        return;
+    void GameLost()
+    {
+        if (lives != 0 && tank != 0) return;
+        
+        speed = 0;
+        // Debug.Log("GAME LOST!!");
+        loadingProgress.dead = true;
+        GetComponent<DisplayPlayerStats>().StartCoroutine(GetComponent<DisplayPlayerStats>().DeathSequence());
     }
 
     void OnCollisionEnter(Collision collision){
@@ -198,8 +193,9 @@ public class PlayerController : MonoBehaviour
             {
                 Debug.Log("Artifact eingesammelt");
                 // Destroy(collision.collider.gameObject);
-                GetComponent<DisplayPlayerStats>().StartCoroutine(GetComponent<DisplayPlayerStats>().ShowDialogues());
                 isEnd = true;
+                loadingProgress.missionAccomplished = true;
+                GetComponent<DisplayPlayerStats>().StartCoroutine(GetComponent<DisplayPlayerStats>().ShowDialogues());
             }
     }
 

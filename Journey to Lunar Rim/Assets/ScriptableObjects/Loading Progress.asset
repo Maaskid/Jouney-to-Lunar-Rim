@@ -12,9 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 507e1f74f36f3f6449e3f3ef88995eb6, type: 3}
   m_Name: Loading Progress
   m_EditorClassIdentifier: 
-  spawnProgress: 0
-  scriptActive: 0
-  isDone: 0
-  startSequencePlayed: 0
-  count: 0
-  sceneToLoad: 3
+  spawnProgress: 0.9996
+  scriptActive: 1
+  isDone: 1
+  playStartSequence: 0
+  dead: 0
+  missionAccomplished: 0
+  retry: 1
+  count: 2499
+  sceneToLoad: 4

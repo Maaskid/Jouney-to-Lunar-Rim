@@ -9,7 +9,8 @@ public enum SceneIndexes
     Level4 = 6,
     Level5 = 7,
     Level6 = 8,
-    LevelLoading = 9
+    LevelLoading = 9,
+    Death = 10
 }
 
 public enum ChapterNames

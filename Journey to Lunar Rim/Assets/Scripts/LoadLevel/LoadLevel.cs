@@ -54,7 +54,6 @@ public class LoadLevel : MonoBehaviour
                 _totalSpawnProgress = Mathf.Clamp01(loadingProgress.spawnProgress);
             }
             
-            Debug.Log(_totalSceneProgress + " " + _totalSpawnProgress);
             _totalProgress = Mathf.Clamp01((_totalSceneProgress + _totalSpawnProgress) / 2f);
             UpdateProgressUI();
             yield return null;

@@ -40,7 +40,6 @@ public class PlaceAsteroids : MonoBehaviour
         s_collider.radius = radius;
         s_collider.isTrigger = true;
         DestroyFarAsteroids();
-
     }
 
     void Update()
@@ -124,7 +123,6 @@ public class PlaceAsteroids : MonoBehaviour
 
         _pos = positions.ToArray();
         StartCoroutine(PlaceAsteroidsAtPosition());
-        StopCoroutine(Place(size));
     }
 
     private IEnumerator PlaceAsteroidsAtPosition()
@@ -140,7 +138,6 @@ public class PlaceAsteroids : MonoBehaviour
         
         loadingProgress.isDone = true;
         player.GetComponent<DisplayPlayerStats>().CheckToShowStartSequence();
-        StopCoroutine(PlaceAsteroidsAtPosition());
     }
 
     void DestroyFarAsteroids()

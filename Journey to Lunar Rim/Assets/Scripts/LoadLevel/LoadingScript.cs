@@ -20,7 +20,6 @@ public class LoadingScript : MonoBehaviour
 
     public void LoadingBar(float progress, int count)
     {
-        Debug.Log(progress + " <?> " + _pictureRange + " * " + (_index + 1));
         transform.GetChild(1).GetComponent<Image>().material = images[_index];
         if (progress > _pictureRange * (_index + 1))
         {

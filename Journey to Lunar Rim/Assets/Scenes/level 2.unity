@@ -534,15 +534,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7819702697994176602, guid: e6aa9ca216077624bb13c9e263c87e84, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2.4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7819702697994176602, guid: e6aa9ca216077624bb13c9e263c87e84, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2.4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7819702697994176602, guid: e6aa9ca216077624bb13c9e263c87e84, type: 3}
       propertyPath: m_LocalScale.z
-      value: 2.4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7819702697994176602, guid: e6aa9ca216077624bb13c9e263c87e84, type: 3}
       propertyPath: m_LocalPosition.x
@@ -782,16 +782,16 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 2816e8bb41cc78644b1a2000be7bb736, type: 2}
   - {fileID: 2100000, guid: 5d5c32e6b6caf364fbada1a64d07ba53, type: 2}
   - {fileID: 2100000, guid: ddf35dcdbe4d89947b6b899083b5f0f5, type: 2}
+  rendererLeft: {fileID: 2098059492}
   schildMaterials:
   - {fileID: 2100000, guid: ad6d72a3081b2c14b998d8969e684f0a, type: 2}
   - {fileID: 2100000, guid: 5019a02a8d15a824380a0805513371ce, type: 2}
   - {fileID: 2100000, guid: 6e64ca0d939c99340a5eb92b8ef95b3d, type: 2}
   - {fileID: 2100000, guid: db5f4b9581d7a4349a327452598ccb11, type: 2}
+  rendererRight: {fileID: 854881507}
   windowLeft: {fileID: 1591867488}
   windowMiddle: {fileID: 1599904335}
   windowRight: {fileID: 452491396}
-  rendererLeft: {fileID: 2098059492}
-  rendererRight: {fileID: 854881507}
   wlMaterial: {fileID: 2100000, guid: 0eeb34d73d16e4f4196fb34a6631fe96, type: 2}
   wmMaterial: {fileID: 2100000, guid: df3c98c262751bc4084dc69ad7f655b2, type: 2}
   wrMaterial: {fileID: 2100000, guid: 4aba9d5212b1f68429122bdb010e385e, type: 2}
@@ -801,6 +801,7 @@ MonoBehaviour:
   dialogueScreen: {fileID: 466615179}
   startSequence: {fileID: 0}
   currentChapter: {fileID: 11400000, guid: 333abfcd78450094fa8a39134d397d98, type: 2}
+  deathSequence: {fileID: 11400000, guid: 5b05327a953828f4eae96cf6bcae24d9, type: 2}
   nextScene: 5
   loadingProgress: {fileID: 11400000, guid: cf2022f6db33ab64085b2ab6331502db, type: 2}
 --- !u!54 &671635188
@@ -906,6 +907,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -9007014499054220266, guid: e6aa9ca216077624bb13c9e263c87e84, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7480191462020944608, guid: e6aa9ca216077624bb13c9e263c87e84, type: 3}
       propertyPath: m_Name
       value: game_Container_Rot (1)

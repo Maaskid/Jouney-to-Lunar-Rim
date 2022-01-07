@@ -10,28 +10,38 @@ namespace Stats
     public class DisplayPlayerStats : MonoBehaviour
     {
         //public PlayerStats playerStats;
-
+        [Header("__Tank__")]
         public Material[] tankMaterials;
-        public Material[] schildMaterials;
+        public MeshRenderer rendererLeft;
 
+        [Header("__Schild__")]
+        public Material[] schildMaterials;
+        public MeshRenderer rendererRight;
+
+        [Header("__Warning__")]
         public GameObject windowLeft;
         public GameObject windowMiddle;
         public GameObject windowRight;
-
-        public MeshRenderer rendererLeft;
-        public MeshRenderer rendererRight;
         public Material wlMaterial;
         public Material wmMaterial;
         public Material wrMaterial;
         public Material alphaMaterial;
         
-        public Image freyaCore, ministerBaker;
+        [Header("__Story__")]
+        public Image freyaCore;
+        public Image ministerBaker;
         public GameObject dialogueScreen;
         public Chapter startSequence;
         public Chapter currentChapter;
+        public Chapter deathSequence;
         public SceneIndexes nextScene;
+
+        [Header("__Loading Progress__")]
         public LoadingProgress loadingProgress;
         
+        
+        private bool _isDone;
+        private int _index;
         /**
          * Displays both, Tank and Schaden stats, once in the beginning
          */
@@ -43,7 +53,7 @@ namespace Stats
 
         public void CheckToShowStartSequence()
         {
-            if (currentChapter.chapterName.Equals(ChapterNames.Level1))
+            if (loadingProgress.playStartSequence)
                 StartCoroutine(ShowStartSequence());
         }
 
@@ -56,10 +66,10 @@ namespace Stats
             float runtime = gameObject.GetComponent<PlayerController>().tank;
             float max = gameObject.GetComponent<PlayerController>().maxTank;
             
-            // [.., 0] → Tank leer, TODO invoke GameOverscreen
+            // [.., 0] → Tank leer
             if (runtime <= 0)
             {
-                Debug.Log("GameOver");
+                // Debug.Log("GameOver");
                 rendererLeft.material = tankMaterials[0];
                 ShowWarning(1); // show warning
             }
@@ -94,7 +104,7 @@ namespace Stats
         {
             int runtime = gameObject.GetComponent<PlayerController>().lives;
 
-            Debug.Log("Lives: " + runtime);
+            // Debug.Log("Lives: " + runtime);
 
             switch(runtime){
                 case 0:
@@ -182,46 +192,90 @@ namespace Stats
             ministerBaker.sprite = currentChapter.container[0].sprite;
             dialogueScreen.SetActive(false);
 
-            loadingProgress.startSequencePlayed = true;
+            loadingProgress.playStartSequence = false;
         }
         
         public IEnumerator ShowDialogues()
         {
-            dialogueScreen.SetActive(true);
-            var isDone = false;
             var index = 0;
             
-            while (!isDone)
+            if (currentChapter.container[index].speaker.Equals(SpeakerNames.Freya))
+            {
+                FreyaSpeaks(currentChapter, index);
+            }
+            else
+            {
+                BakerSpeaks(currentChapter, index);
+            }
+            dialogueScreen.SetActive(true);
+
+            while (index < currentChapter.container.Count-1)
             {
                 yield return new WaitForSeconds(5f);
                 index++;
-                if (index == currentChapter.container.Count)
+                if (currentChapter.container[index].speaker==SpeakerNames.Freya)
                 {
-                    isDone = true;
+                    FreyaSpeaks(currentChapter, index);
                 }
                 else
                 {
-                    if (currentChapter.container[index].speaker==SpeakerNames.Freya)
-                    {
-                        ministerBaker.gameObject.SetActive(false);
-                        freyaCore.sprite = currentChapter.container[index].sprite;
-                        freyaCore.gameObject.SetActive(true);
-                    }
-                    else
-                    {
-                        freyaCore.gameObject.SetActive(false);
-                        ministerBaker.sprite = currentChapter.container[index].sprite;
-                        ministerBaker.gameObject.SetActive(true);
-                    }
+                    BakerSpeaks(currentChapter, index);
                 }
             }
-
+            
+            yield return new WaitForSeconds(5f);
             loadingProgress.sceneToLoad = nextScene;
+            loadingProgress.ResetRetry();
+            
             if (!currentChapter.chapterName.Equals(ChapterNames.Level6))
                 SceneManager.LoadScene((int)SceneIndexes.LevelLoading);
             else
                 SceneManager.LoadScene((int)nextScene);
             
         }
+        
+        public IEnumerator DeathSequence()
+        {
+            var counter = 0;
+
+            freyaCore.gameObject.SetActive(true);
+            freyaCore.sprite = deathSequence.container[counter].sprite;
+            ministerBaker.gameObject.SetActive(false);
+            dialogueScreen.SetActive(true);
+            
+            while (counter < deathSequence.container.Count-1)
+            {
+                yield return new WaitForSeconds(5f);
+                counter++;
+
+                if (deathSequence.container[counter].speaker.Equals(SpeakerNames.Baker))
+                {
+                    BakerSpeaks(deathSequence, counter);
+                }
+                else
+                {
+                    FreyaSpeaks(deathSequence, counter);
+                }
+            }
+
+            yield return new WaitForSeconds(5f);
+            Debug.Log("Dead");
+            SceneManager.LoadScene((int) SceneIndexes.Death);
+        }
+
+        private void FreyaSpeaks(Chapter chapter, int index)
+        {
+            ministerBaker.gameObject.SetActive(false);
+            freyaCore.sprite = chapter.container[index].sprite;
+            freyaCore.gameObject.SetActive(true);
+        }
+
+        private void BakerSpeaks(Chapter chapter, int index)
+        {
+            freyaCore.gameObject.SetActive(false);
+            ministerBaker.sprite = chapter.container[index].sprite;
+            ministerBaker.gameObject.SetActive(true);
+        }
+        
     }
 }

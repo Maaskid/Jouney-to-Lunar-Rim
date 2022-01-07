@@ -87,7 +87,10 @@ public class CameraPointer : MonoBehaviour
             if (_gazedAtObject != hit.transform.gameObject)
             {
                 // New GameObject.
-                _gazedAtObject?.SendMessage("OnPointerExit");
+                if (_gazedAtObject!=null)
+                {
+                    _gazedAtObject?.SendMessage("OnPointerExit");
+                }
                 _gazedAtObject = hit.transform.gameObject;
                 _gazedAtObject.SendMessage("OnPointerEnter");
             }
@@ -193,25 +196,40 @@ public class CameraPointer : MonoBehaviour
                 _archiv = false;
                 break;
             case "level1":
+                loadingProgress.ResetRetry();
                 ActivateInformation(1, SceneIndexes.Level1);
                 break;
             case "level2":
+                loadingProgress.ResetRetry();
                 ActivateInformation(2, SceneIndexes.Level2);
                 break;
             case "level3":
+                loadingProgress.ResetRetry();
                 ActivateInformation(3, SceneIndexes.Level3);
                 break;
             case "level4":
+                loadingProgress.ResetRetry();
                 ActivateInformation(4, SceneIndexes.Level4);
                 break;
             case "level5":
+                loadingProgress.ResetRetry();
                 ActivateInformation(5, SceneIndexes.Level5);
                 break;
             case "level6":
+                loadingProgress.ResetRetry();
                 ActivateInformation(6, SceneIndexes.Level6);
                 break;
             case "startLevel":
+                loadingProgress.ResetRetry();
                 SceneManager.LoadSceneAsync((int)SceneIndexes.LevelLoading);
+                break;
+            case "retry":
+                loadingProgress.retry = true;
+                SceneManager.LoadSceneAsync((int) SceneIndexes.LevelLoading);
+                break;
+            case "home":
+                loadingProgress.ResetRetry();
+                SceneManager.LoadScene((int)SceneIndexes.Menu);
                 break;
         }
     }
