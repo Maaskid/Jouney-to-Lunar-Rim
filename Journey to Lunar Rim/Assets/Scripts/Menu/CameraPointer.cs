@@ -45,17 +45,7 @@ public class CameraPointer : MonoBehaviour
     private Renderer _myRenderer;
     private bool _options;
     private bool _archiv;
-    private bool _level1;
-    private bool _level2;
-    private bool _level3;
-    private bool _level4;
-    private bool _level5;
-    private bool _level6;
-    private int _volume = -1;
-    private int _sfx = -1;
-    
-    private int _levelToLoad;
-    
+
     private AudioManager _audioManager;
 
     private void Awake()
@@ -69,7 +59,13 @@ public class CameraPointer : MonoBehaviour
     public void Start()
     {
         _myRenderer = GetComponent<Renderer>();
-        _audioManager = GetComponent<AudioManager>();
+        _audioManager = FindObjectOfType<AudioManager>();
+        if (volumeBars.Count != 0 && sfxBars.Count != 0)
+        {
+            DisplayVolume(volumeBars, loadingProgress.musicVolume);
+            DisplayVolume(sfxBars, loadingProgress.sfxVolume);
+        }
+        
         SetMaterial(false);
     }
 
@@ -133,103 +129,190 @@ public class CameraPointer : MonoBehaviour
         switch (gazedAtObject.tag)
         {
             case "play":
+                _audioManager.PlayOneShot(SoundNames.Button1.ToString());
                 /* open level scene 1 */
                 loadingProgress.sceneToLoad = SceneIndexes.Level1;
+                _audioManager.Stop(SoundNames.MenuTheme.ToString());
+                _audioManager.Play(SoundNames.InGameTheme.ToString());
                 SceneManager.LoadSceneAsync((int)SceneIndexes.LevelLoading);
+                Reset();
                 break;
             case "archiv":
+                _audioManager.PlayOneShot(SoundNames.Button1.ToString());
                 /* load "archiv" scene */
                 _archiv = true;
                 SceneManager.LoadScene((int)SceneIndexes.Archiv);
+                Reset();
                 break;
             case "pillar": /*zoom to item on pillar*/ break;
             case "exit":
+                _audioManager.PlayOneShot(SoundNames.Button1.ToString());
                 /* quit game */
                 Application.Quit();
+                Reset();
                 break;
             case "options":
+                _audioManager.PlayOneShot(SoundNames.Button1.ToString());
                 /* load "options" scene */
                 _options = true;
                 SceneManager.LoadScene((int)SceneIndexes.Options);
+                Reset();
                 break;
             case "volume+":
-                /* make next bar visible */
-                if (_volume < 5)
+                _audioManager.PlayOneShot(SoundNames.Button1.ToString());
+                if (loadingProgress.musicVolume < 5)
                 {
-                    _volume++;
-                    volumeBars[_volume].SetActive(true);
+                    loadingProgress.musicVolume += 1;
+                    _audioManager.VolumeUp(SoundType.Music);
+                    DisplayVolume(volumeBars, loadingProgress.musicVolume);
                 }
                 Reset();
-                _audioManager.VolumeUp("soundtrack");
                 break;
             case "volume-":
-                /* make next bar invisible */
-                if (_volume >= 0)
+                _audioManager.PlayOneShot(SoundNames.Button1.ToString());
+                if (loadingProgress.musicVolume > 0)
                 {
-                    volumeBars[_volume].SetActive(false);
-                    _volume--;
+                    loadingProgress.musicVolume -= 1;
+                    _audioManager.VolumeDown(SoundType.Music);
+                    DisplayVolume(volumeBars, loadingProgress.musicVolume);
                 }
                 Reset();
-                _audioManager.VolumeUp("soundtrack");
                 break;
             case "sfx+": 
-                if (_sfx < 5)
+                _audioManager.PlayOneShot(SoundNames.Button1.ToString());
+                if (loadingProgress.sfxVolume < 5)
                 {
-                    _sfx++;
-                    sfxBars[_sfx].SetActive(true);
+                    loadingProgress.sfxVolume += 1;
+                    _audioManager.VolumeUp(SoundType.Sfx);
+                    DisplayVolume(sfxBars, loadingProgress.sfxVolume);
                 }
                 Reset();
-                _audioManager.VolumeUp("soundtrack");
                 break;
-            case "sfx-": 
-                if (_sfx >= 0)
+            case "sfx-":
+                _audioManager.PlayOneShot(SoundNames.Button1.ToString());
+                if (loadingProgress.sfxVolume > 0)
                 {
-                    sfxBars[_sfx].SetActive(false);
-                    _sfx--;
+                    loadingProgress.sfxVolume -= 1;
+                    _audioManager.VolumeDown(SoundType.Sfx);
+                    DisplayVolume(sfxBars, loadingProgress.sfxVolume);
                 }
                 Reset();
-                _audioManager.VolumeUp("soundtrack");
                 break;
             case "back":
+                _audioManager.PlayOneShot(SoundNames.Button1.ToString());
                 SceneManager.LoadScene((int)SceneIndexes.Menu);
                 _options = false;
                 _archiv = false;
+                Reset();
                 break;
             case "level1":
+                _audioManager.PlayOneShot(SoundNames.Button1.ToString());
                 loadingProgress.ResetRetry();
                 ActivateInformation(1, SceneIndexes.Level1);
+                Reset();
                 break;
             case "level2":
+                _audioManager.PlayOneShot(SoundNames.Button1.ToString());
                 loadingProgress.ResetRetry();
                 ActivateInformation(2, SceneIndexes.Level2);
+                Reset();
                 break;
             case "level3":
+                _audioManager.PlayOneShot(SoundNames.Button1.ToString());
                 loadingProgress.ResetRetry();
                 ActivateInformation(3, SceneIndexes.Level3);
+                Reset();
                 break;
             case "level4":
+                _audioManager.PlayOneShot(SoundNames.Button1.ToString());
                 loadingProgress.ResetRetry();
                 ActivateInformation(4, SceneIndexes.Level4);
+                Reset();
                 break;
             case "level5":
+                _audioManager.PlayOneShot(SoundNames.Button1.ToString());
                 loadingProgress.ResetRetry();
                 ActivateInformation(5, SceneIndexes.Level5);
+                Reset();
                 break;
             case "level6":
+                _audioManager.PlayOneShot(SoundNames.Button1.ToString());
                 loadingProgress.ResetRetry();
                 ActivateInformation(6, SceneIndexes.Level6);
+                Reset();
                 break;
             case "startLevel":
+                _audioManager.PlayOneShot(SoundNames.Button1.ToString());
                 loadingProgress.ResetRetry();
+                _audioManager.Stop(SoundNames.MenuTheme.ToString());
+                _audioManager.Play(SoundNames.InGameTheme.ToString());
                 SceneManager.LoadSceneAsync((int)SceneIndexes.LevelLoading);
+                Reset();
                 break;
             case "retry":
+                _audioManager.PlayOneShot(SoundNames.Button1.ToString());
                 loadingProgress.retry = true;
                 SceneManager.LoadSceneAsync((int) SceneIndexes.LevelLoading);
+                Reset();
                 break;
             case "home":
+                _audioManager.PlayOneShot(SoundNames.Button1.ToString());
                 loadingProgress.ResetRetry();
                 SceneManager.LoadScene((int)SceneIndexes.Menu);
+                Reset();
+                break;
+        }
+    }
+
+    private void DisplayVolume(List<GameObject> bar, float volume)
+    {
+        switch (volume)
+        {
+            case 0:
+                foreach (var tick in bar)
+                {
+                    tick.SetActive(false);
+                }
+                break;
+            case 1:
+                for (var i = 4; i > 0; i--)
+                {
+                    bar[i].SetActive(false);
+                }
+                bar[0].SetActive(true);
+                break;
+            case 2:
+                for (var i = 4; i > 1; i--)
+                {
+                    bar[i].SetActive(false);
+                }
+                for (var i = 1; i >= 0; i--)
+                {
+                    bar[i].SetActive(true);
+                }
+                break;
+            case 3:
+                for (var i = 4; i > 2; i--)
+                {
+                    bar[i].SetActive(false);
+                }
+                for (var i = 2; i >= 0; i--)
+                {
+                    bar[i].SetActive(true);
+                }
+                break;
+            case 4:
+                bar[4].SetActive(false);
+                for (var i = 3; i >= 0; i--)
+                {
+                    bar[i].SetActive(true);
+                }
+                break;
+            case 5:
+                foreach (var tick in bar)
+                {
+                    tick.SetActive(true);
+                }
                 break;
         }
     }

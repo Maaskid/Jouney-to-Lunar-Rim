@@ -29,9 +29,30 @@ public enum ChapterNames
     Death = 11
 }
 
-
 public enum SpeakerNames
 {
     Freya = 0,
     Baker = 1
+}
+
+public enum SoundNames
+{
+    Button1,
+    Button2,
+    Button3,
+    MenuTheme,
+    InGameTheme,
+    Audiolog,
+    MeteorCrash,
+    Warning,
+    Warp,
+    ContainerCollected1,
+    ContainerCollected2,
+    GameOver
+}
+
+public enum SoundType
+{
+    Music,
+    Sfx
 }

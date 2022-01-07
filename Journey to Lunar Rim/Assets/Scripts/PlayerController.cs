@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using ScriptableObjects;
@@ -45,9 +46,14 @@ public class PlayerController : MonoBehaviour
     public bool collisionState;
     public bool beginJourney;
     public LoadingProgress loadingProgress;
-    
-    
-    
+    private AudioManager _audioManager;
+
+
+    private void Awake()
+    {
+        _audioManager = FindObjectOfType<AudioManager>();
+    }
+
     void Start(){
         maxTank = tank;
         maxLives = lives;
@@ -157,6 +163,7 @@ public class PlayerController : MonoBehaviour
         Debug.Log("Kollidiert");
             Debug.Log(collision.collider.name);
             if(collision.collider.tag == "Rock"){
+                _audioManager.PlayOneShot(SoundNames.MeteorCrash.ToString());
                 ParticleSystem part = Instantiate(rockExplosion, collision.collider.gameObject.transform.position, collision.collider.gameObject.transform.rotation);
                 part.Play();
 
@@ -171,17 +178,20 @@ public class PlayerController : MonoBehaviour
             }
 
             if(collision.collider.tag == "Boost"){
+                _audioManager.PlayOneShot(SoundNames.Warp.ToString());
                 isBoosting = true;
                 Destroy(collision.collider.gameObject);
             }
 
             if(collision.collider.tag == "Fuel"){
+                _audioManager.PlayOneShot(SoundNames.ContainerCollected2.ToString());
                 tank = maxTank;
                 GetComponent<DisplayPlayerStats>().DisplayTankStats();
                 Destroy(collision.collider.gameObject);
             }
 
             if(collision.collider.tag == "Shield"){
+                _audioManager.PlayOneShot(SoundNames.ContainerCollected2.ToString());
                 if(lives < maxLives){
                     lives += lifeGet;
                 }
@@ -191,8 +201,10 @@ public class PlayerController : MonoBehaviour
 
             if (collision.collider.tag.Equals("Artifact"))
             {
+                _audioManager.PlayOneShot(SoundNames.ContainerCollected1.ToString());
                 Debug.Log("Artifact eingesammelt");
                 // Destroy(collision.collider.gameObject);
+                collision.collider.enabled = false;
                 isEnd = true;
                 loadingProgress.missionAccomplished = true;
                 GetComponent<DisplayPlayerStats>().StartCoroutine(GetComponent<DisplayPlayerStats>().ShowDialogues());

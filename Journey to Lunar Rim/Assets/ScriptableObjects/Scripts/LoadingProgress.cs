@@ -10,6 +10,9 @@ namespace ScriptableObjects.Scripts
         public int count;
         public SceneIndexes sceneToLoad;
 
+        public float musicVolume = 5;
+        public float sfxVolume = 5;
+
         public void ResetProgress()
         {
             spawnProgress = 0;
@@ -29,9 +32,31 @@ namespace ScriptableObjects.Scripts
             }
         }
 
+        public void ResetVolume()
+        {
+            musicVolume = 5;
+            sfxVolume = 5;
+        }
+
         public void ResetRetry()
         {
             retry = false;
+        }
+
+        public void QuitReset()
+        {
+            spawnProgress = 0;
+            scriptActive = false;
+            isDone = false;
+            playStartSequence = true;
+            dead = false;
+            missionAccomplished = false;
+            retry = false;
+            count = 0;
+            sceneToLoad = SceneIndexes.Level1;
+
+            musicVolume = 5;
+            sfxVolume = 5;
         }
     }
 }

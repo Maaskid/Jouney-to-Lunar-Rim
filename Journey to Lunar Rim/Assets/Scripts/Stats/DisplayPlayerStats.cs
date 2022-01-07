@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using ScriptableObjects.Scripts;
 using UnityEditor;
@@ -38,10 +39,16 @@ namespace Stats
 
         [Header("__Loading Progress__")]
         public LoadingProgress loadingProgress;
-        
-        
-        private bool _isDone;
-        private int _index;
+
+        private AudioManager _audioManager;
+
+        private bool _warnTank, _warnSchaden;
+
+        private void Awake()
+        {
+            _audioManager = FindObjectOfType<AudioManager>();
+        }
+
         /**
          * Displays both, Tank and Schaden stats, once in the beginning
          */
@@ -54,7 +61,10 @@ namespace Stats
         public void CheckToShowStartSequence()
         {
             if (loadingProgress.playStartSequence)
+            {
+                _audioManager.PlayOneShot(SoundNames.Audiolog.ToString());
                 StartCoroutine(ShowStartSequence());
+            }
         }
 
         /**
@@ -63,37 +73,39 @@ namespace Stats
          */
         public void DisplayTankStats()
         {
-            float runtime = gameObject.GetComponent<PlayerController>().tank;
-            float max = gameObject.GetComponent<PlayerController>().maxTank;
+            var runtime = gameObject.GetComponent<PlayerController>().tank;
+            var max = gameObject.GetComponent<PlayerController>().maxTank;
             
-            // [.., 0] → Tank leer
             if (runtime <= 0)
             {
-                // Debug.Log("GameOver");
                 rendererLeft.material = tankMaterials[0];
-                ShowWarning(1); // show warning
+                _warnTank = true;// show warning
             }
-            // [0+, 25%] → Tank 1/4 = 1
-            else if (0 < runtime && runtime <= max * 0.25) // max * 0 is always 0
+            
+            else if (0 < runtime && runtime <= max * 0.25)
             {
                 rendererLeft.material = tankMaterials[1];
-                ShowWarning(1); // show warning
+                _warnTank = true;// show warning
             }
-            // [25+%, 50%] → Tank 1/2 = 2
+            
             else if (max * 0.25 < runtime && runtime <= max * 0.5)
             {
                 rendererLeft.material = tankMaterials[2];
+                _warnTank = false;
             }
-            // [50+%, 75%] → Tank 3/4 = 3
+            
             else if (max * 0.5 < runtime && runtime <= max * 0.75)
             {
                 rendererLeft.material = tankMaterials[3];
+                _warnTank = false;
             }
-            // [75+%, 100%] → Tank 1 = 4
+            
             else if (max * 0.75 < runtime && runtime <= max)
             {
                 rendererLeft.material = tankMaterials[4];
+                _warnTank = false;
             }
+            Warn();
         }
 
         /**
@@ -102,54 +114,49 @@ namespace Stats
          */
         public void DisplaySchadenStats()
         {
-            int runtime = gameObject.GetComponent<PlayerController>().lives;
-
-            // Debug.Log("Lives: " + runtime);
+            var runtime = gameObject.GetComponent<PlayerController>().lives;
 
             switch(runtime){
                 case 0:
                     rendererRight.material = schildMaterials[0];
-                    ShowWarning(1);
+                    _warnSchaden = true;
                 break;
                 case 1:
                     rendererRight.material = schildMaterials[1];
-                    ShowWarning(1);
+                    _warnSchaden = true;
                 break;
                 case 2:
                     rendererRight.material = schildMaterials[2];
-                    ShowWarning(0);
+                    _warnSchaden = false;
                 break;
                 case 3:
                     rendererRight.material = schildMaterials[3];
-                    ShowWarning(0);
+                    _warnSchaden = false;
                 break;
             }
-
+            
+            Warn();
         }
 
-        /**
-         * Extra function for better readability within calling functions.
-         * Either shows or hides warning on the windows, depenting on the current damage.
-         */
-        private void ShowWarning(int decision)
+
+        private void Warn()
         {
-            switch (decision)
+            if (_warnSchaden || _warnTank)
             {
-                case 0: // hide warning
-                    windowLeft.GetComponent<MeshRenderer>().material = alphaMaterial;
-                    windowMiddle.GetComponent<MeshRenderer>().material = alphaMaterial;
-                    windowRight.GetComponent<MeshRenderer>().material = alphaMaterial;
-                    break;
-                case 1: // show warning
-                    windowLeft.GetComponent<MeshRenderer>().material = wlMaterial;
-                    windowMiddle.GetComponent<MeshRenderer>().material = wmMaterial;
-                    windowRight.GetComponent<MeshRenderer>().material = wrMaterial;
-                    break;
-                default:
-                    windowLeft.GetComponent<MeshRenderer>().material = alphaMaterial;
-                    windowMiddle.GetComponent<MeshRenderer>().material = alphaMaterial;
-                    windowRight.GetComponent<MeshRenderer>().material = alphaMaterial;
-                    break;
+                if (!_audioManager.GetSource(SoundNames.Warning).isPlaying)
+                    _audioManager.PlayOneShot(SoundNames.Warning.ToString());
+                
+                windowLeft.GetComponent<MeshRenderer>().material = wlMaterial;
+                windowMiddle.GetComponent<MeshRenderer>().material = wmMaterial;
+                windowRight.GetComponent<MeshRenderer>().material = wrMaterial;
+            }
+            else
+            {
+                if (_audioManager.GetSource(SoundNames.Warning).isPlaying)
+                    _audioManager.Stop(SoundNames.Warning.ToString());
+                windowLeft.GetComponent<MeshRenderer>().material = alphaMaterial;
+                windowMiddle.GetComponent<MeshRenderer>().material = alphaMaterial;
+                windowRight.GetComponent<MeshRenderer>().material = alphaMaterial;
             }
         }
 
@@ -193,10 +200,15 @@ namespace Stats
             dialogueScreen.SetActive(false);
 
             loadingProgress.playStartSequence = false;
+            _audioManager.PlayOneShot(SoundNames.Audiolog.ToString());
         }
         
         public IEnumerator ShowDialogues()
         {
+            yield return new WaitForSeconds(_audioManager.GetClip(SoundNames.ContainerCollected1).length);
+            _audioManager.PlayOneShot(SoundNames.Audiolog.ToString());
+            yield return new WaitForSeconds(_audioManager.GetClip(SoundNames.Audiolog).length);
+            
             var index = 0;
             
             if (currentChapter.container[index].speaker.Equals(SpeakerNames.Freya))
@@ -232,10 +244,21 @@ namespace Stats
             else
                 SceneManager.LoadScene((int)nextScene);
             
+            _audioManager.PlayOneShot(SoundNames.Audiolog.ToString());
+
+            yield return new WaitForSeconds(1.5f);
         }
         
         public IEnumerator DeathSequence()
         {
+            _audioManager.Stop(SoundNames.Warning.ToString());
+            yield return new WaitForSeconds(1f);
+            
+            _audioManager.PlayOneShot(SoundNames.Audiolog.ToString());
+            yield return new WaitForSeconds(_audioManager.GetClip(SoundNames.Audiolog).length);
+            
+            _audioManager.PlayOneShot(SoundNames.GameOver.ToString());
+            
             var counter = 0;
 
             freyaCore.gameObject.SetActive(true);
@@ -257,9 +280,12 @@ namespace Stats
                     FreyaSpeaks(deathSequence, counter);
                 }
             }
-
-            yield return new WaitForSeconds(5f);
+            _audioManager.PlayOneShot(SoundNames.Audiolog.ToString());
+            yield return new WaitForSeconds(_audioManager.GetClip(SoundNames.Audiolog).length);
             Debug.Log("Dead");
+            yield return new WaitForSeconds(1.5f);
+            _audioManager.Stop(SoundNames.InGameTheme.ToString());
+            _audioManager.Play(SoundNames.MenuTheme.ToString());
             SceneManager.LoadScene((int) SceneIndexes.Death);
         }
 

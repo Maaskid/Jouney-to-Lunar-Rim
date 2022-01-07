@@ -6,6 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="edeeebc7-fdf5-4d19-907d-7ec5db58b2a0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Journey to Lunar Rim/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Journey to Lunar Rim/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/AudioPlayer/AudioManager.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/AudioPlayer/AudioManager.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/LevelLoading.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/LevelLoading.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Options.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Options.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Playertesti.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Playertesti.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/level 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/level 1.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/level 2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/level 2.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/level 3.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/level 3.unity" afterDir="false" />
@@ -13,23 +18,25 @@
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/level 5.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/level 5.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/level 6.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/level 6.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/menu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Loading Progress.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Loading Progress.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/movement Testing.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/movement Testing.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/ScriptableObjects/Scripts/LoadingProgress.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ScriptableObjects/Scripts/LoadingProgress.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LoadLevel/LoadLevel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LoadLevel/LoadLevel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LoadLevel/LoadingScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LoadLevel/LoadingScript.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Audio/AudioManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Audio/AudioManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Audio/Sound.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Audio/Sound.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/LoadLevel/SceneIndexes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LoadLevel/SceneIndexes.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Menu/CameraPointer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Menu/CameraPointer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlaceAsteroids.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlaceAsteroids.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Stats/DisplayPlayerStats.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Stats/DisplayPlayerStats.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SoundEffects/PlayerDeath.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SoundEffects/PlayerDeath.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SoundEffects/Ship_Flying.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SoundEffects/Ship_Flying.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/ApiUpdaterCheck.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/ApiUpdaterCheck.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe0.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe1.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe1.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe2.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe2.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe3.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe3.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe4.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe4.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe5.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe5.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -51,11 +58,14 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/LoadLevel/LoadingScript.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/07c89f7520694139991332d3cf930d4813bc00/fb/72555c10/SceneManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/7117d168a9ec4e518e0de7d9c98bd09af200/dc/c79b41ed/AudioSource.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/DisplayPillar.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/07c89f7520694139991332d3cf930d4813bc00/5a/50270211/GameObject.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/07c89f7520694139991332d3cf930d4813bc00/0e/660da4ec/WaitForSeconds.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/EventSystem/UIBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/ScriptableObjects/Scripts/Chapter.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/695d1cc93cca45069c528c15c9fdd7493e2800/b9/ba261cec/Array.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/07c89f7520694139991332d3cf930d4813bc00/55/a976be2b/UnitySynchronizationContext.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/KeepMe.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/07c89f7520694139991332d3cf930d4813bc00/24/1671ce7b/SetupCoroutine.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -92,10 +102,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="13316">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="13316" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -147,6 +157,8 @@
       <workItem from="1641476746722" duration="5916000" />
       <workItem from="1641501178944" duration="732000" />
       <workItem from="1641502124888" duration="13271000" />
+      <workItem from="1641549146340" duration="31459000" />
+      <workItem from="1641592719953" duration="1501000" />
     </task>
     <servers />
   </component>

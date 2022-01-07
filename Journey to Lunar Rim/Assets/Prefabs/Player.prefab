@@ -399,7 +399,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3687598896761482626}
-  - {fileID: 4416177843659901332}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -416,6 +415,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCam: {fileID: 3687598896761482648}
+  isEnd: 0
   speed: 1
   sidewaysspeed: 2
   shipSpeed: 0
@@ -428,6 +428,7 @@ MonoBehaviour:
   rockExplosion: {fileID: 0}
   collisionAccele: 0.5
   collisionSpeed: 2
+  endScreen: {fileID: 0}
   collisionState: 0
   beginJourney: 0
   loadingProgress: {fileID: 0}
@@ -482,6 +483,7 @@ Transform:
   - {fileID: 5204404083939981282}
   - {fileID: 1315247177363072416}
   - {fileID: 1228038489128766906}
+  - {fileID: 4416177843659901332}
   m_Father: {fileID: 3687598896645602875}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -580,12 +582,8 @@ MonoBehaviour:
   ignore: []
   volumeBars: []
   sfxBars: []
-  level1: {fileID: 0}
-  level2: {fileID: 0}
-  level3: {fileID: 0}
-  level4: {fileID: 0}
-  level5: {fileID: 0}
-  level6: {fileID: 0}
+  loadingProgress: {fileID: 0}
+  levelDescriptions: []
 --- !u!1 &3788836842011707564
 GameObject:
   m_ObjectHideFlags: 0
@@ -951,12 +949,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4519495886080830153}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 3687598896645602875}
-  m_RootOrder: 1
+  m_Father: {fileID: 3687598896761482626}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!108 &2973816616605077559
 Light:

@@ -189,63 +189,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &238465286
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6733650506364223559, guid: 151d92a523d32ff4ca404b061ef797e7, type: 3}
-      propertyPath: m_Name
-      value: AudioManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 6733650506364223561, guid: 151d92a523d32ff4ca404b061ef797e7, type: 3}
-      propertyPath: m_RootOrder
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 6733650506364223561, guid: 151d92a523d32ff4ca404b061ef797e7, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6733650506364223561, guid: 151d92a523d32ff4ca404b061ef797e7, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6733650506364223561, guid: 151d92a523d32ff4ca404b061ef797e7, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6733650506364223561, guid: 151d92a523d32ff4ca404b061ef797e7, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6733650506364223561, guid: 151d92a523d32ff4ca404b061ef797e7, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6733650506364223561, guid: 151d92a523d32ff4ca404b061ef797e7, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6733650506364223561, guid: 151d92a523d32ff4ca404b061ef797e7, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6733650506364223561, guid: 151d92a523d32ff4ca404b061ef797e7, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6733650506364223561, guid: 151d92a523d32ff4ca404b061ef797e7, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6733650506364223561, guid: 151d92a523d32ff4ca404b061ef797e7, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 151d92a523d32ff4ca404b061ef797e7, type: 3}
 --- !u!1 &291897772
 GameObject:
   m_ObjectHideFlags: 0
@@ -275,9 +218,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27d7abd4cc0041a4a8ab1c40aed5c55e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  size: 100
+  loadingProgress: {fileID: 0}
+  count: 0
+  player: {fileID: 0}
+  radius: 0
   numberOfAsteroids: 100
-  collisionBoxSizeMod: 0.2
   asteroids:
   - {fileID: 7950313416819077489, guid: 6676773ca38f0b049a3f115ea92ba73a, type: 3}
   - {fileID: 797011283537164161, guid: b90591e314e23c64e95e62ef16c383a9, type: 3}
@@ -289,6 +234,8 @@ MonoBehaviour:
   - {fileID: 7064125151310054179, guid: b3cd393c9a67d2f42917715c800d7cec, type: 3}
   - {fileID: 6576562661872307475, guid: 89c8516ad5b8e714084872aa2a6d30ae, type: 3}
   - {fileID: 6212257529923484149, guid: 0d7a887e266b0ae4a97a6f394658c04d, type: 3}
+  spawnAngle: 45
+  spawnFrequence: 3
 --- !u!4 &291897774
 Transform:
   m_ObjectHideFlags: 0
@@ -901,18 +848,28 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 2816e8bb41cc78644b1a2000be7bb736, type: 2}
   - {fileID: 2100000, guid: 5d5c32e6b6caf364fbada1a64d07ba53, type: 2}
   - {fileID: 2100000, guid: ddf35dcdbe4d89947b6b899083b5f0f5, type: 2}
+  rendererLeft: {fileID: 1449820502}
   schildMaterials:
   - {fileID: 2100000, guid: ad6d72a3081b2c14b998d8969e684f0a, type: 2}
   - {fileID: 2100000, guid: 5019a02a8d15a824380a0805513371ce, type: 2}
   - {fileID: 2100000, guid: 6e64ca0d939c99340a5eb92b8ef95b3d, type: 2}
   - {fileID: 2100000, guid: db5f4b9581d7a4349a327452598ccb11, type: 2}
-  windowRight: {fileID: 787381962}
-  windowLeft: {fileID: 634735861}
-  rendererLeft: {fileID: 1449820502}
   rendererRight: {fileID: 868916280}
+  windowLeft: {fileID: 634735861}
+  windowMiddle: {fileID: 0}
+  windowRight: {fileID: 787381962}
   wlMaterial: {fileID: 2100000, guid: 0eeb34d73d16e4f4196fb34a6631fe96, type: 2}
+  wmMaterial: {fileID: 0}
   wrMaterial: {fileID: 2100000, guid: 4aba9d5212b1f68429122bdb010e385e, type: 2}
   alphaMaterial: {fileID: 2100000, guid: bd361fd5cb1877544aa3cb64711a8795, type: 2}
+  freyaCore: {fileID: 0}
+  ministerBaker: {fileID: 0}
+  dialogueScreen: {fileID: 0}
+  startSequence: {fileID: 0}
+  currentChapter: {fileID: 0}
+  deathSequence: {fileID: 0}
+  nextScene: 0
+  loadingProgress: {fileID: 0}
 --- !u!54 &671635188
 Rigidbody:
   m_ObjectHideFlags: 0

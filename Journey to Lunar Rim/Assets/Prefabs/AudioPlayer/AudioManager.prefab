@@ -43,4 +43,98 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c9857d4db7eff24eb2e30e435a1b363, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sounds: []
+  sounds:
+  - name: Button1
+    type: 1
+    clip: {fileID: 8300000, guid: 91d902d1b4ce87449ac389f2d8b8d709, type: 3}
+    loop: 0
+    pitch: 1
+    spatialBlend: 0
+    source: {fileID: 0}
+  - name: Button2
+    type: 1
+    clip: {fileID: 8300000, guid: bb60f4f26d6e69d4e8fb6867ef3a5c0c, type: 3}
+    loop: 0
+    pitch: 1
+    spatialBlend: 0
+    source: {fileID: 0}
+  - name: Button3
+    type: 1
+    clip: {fileID: 8300000, guid: 2d5550ef6ddd5584fafd1b0f0faef05f, type: 3}
+    loop: 0
+    pitch: 1
+    spatialBlend: 0
+    source: {fileID: 0}
+  - name: MenuTheme
+    type: 0
+    clip: {fileID: 8300000, guid: eedb7b673c3898c4dbbcb11a1f1ff265, type: 3}
+    loop: 1
+    pitch: 1
+    spatialBlend: 0
+    source: {fileID: 0}
+  - name: InGameTheme
+    type: 0
+    clip: {fileID: 8300000, guid: 7818d4b6c0c59ec4581721f89db7fca8, type: 3}
+    loop: 1
+    pitch: 1
+    spatialBlend: 0
+    source: {fileID: 0}
+  - name: Audiolog
+    type: 1
+    clip: {fileID: 8300000, guid: 58f292f56a367ad41883bbceaa00167d, type: 3}
+    loop: 0
+    pitch: 1
+    spatialBlend: 0
+    source: {fileID: 0}
+  - name: MeteorCrash
+    type: 1
+    clip: {fileID: 8300000, guid: 67c653f8b5e27f3478042989cbe79092, type: 3}
+    loop: 0
+    pitch: 1
+    spatialBlend: 0
+    source: {fileID: 0}
+  - name: Warning
+    type: 1
+    clip: {fileID: 8300000, guid: fe0ba1b7057d9e9489a3135c5ffd0b62, type: 3}
+    loop: 0
+    pitch: 1
+    spatialBlend: 0
+    source: {fileID: 0}
+  - name: Warp
+    type: 1
+    clip: {fileID: 8300000, guid: 092b9263460f8814683f180126935457, type: 3}
+    loop: 0
+    pitch: 1
+    spatialBlend: 0
+    source: {fileID: 0}
+  - name: ContainerCollected1
+    type: 1
+    clip: {fileID: 8300000, guid: 0305d2ed147348c4ebc6995dd6f7559c, type: 3}
+    loop: 0
+    pitch: 1
+    spatialBlend: 0
+    source: {fileID: 0}
+  - name: ContainerCollected2
+    type: 1
+    clip: {fileID: 8300000, guid: b5d4f05ef3da5f14ab6276509541bf04, type: 3}
+    loop: 0
+    pitch: 1
+    spatialBlend: 0
+    source: {fileID: 0}
+  - name: GameOver
+    type: 1
+    clip: {fileID: 8300000, guid: 78246bd269bf95c44970e8cd50a98fa7, type: 3}
+    loop: 0
+    pitch: 1
+    spatialBlend: 0
+    source: {fileID: 0}
+  clips:
+  - {fileID: 8300000, guid: 58f292f56a367ad41883bbceaa00167d, type: 3}
+  - {fileID: 8300000, guid: 91d902d1b4ce87449ac389f2d8b8d709, type: 3}
+  - {fileID: 8300000, guid: 0305d2ed147348c4ebc6995dd6f7559c, type: 3}
+  - {fileID: 8300000, guid: b5d4f05ef3da5f14ab6276509541bf04, type: 3}
+  - {fileID: 8300000, guid: 78246bd269bf95c44970e8cd50a98fa7, type: 3}
+  - {fileID: 8300000, guid: 67c653f8b5e27f3478042989cbe79092, type: 3}
+  - {fileID: 8300000, guid: fe0ba1b7057d9e9489a3135c5ffd0b62, type: 3}
+  - {fileID: 8300000, guid: 092b9263460f8814683f180126935457, type: 3}
+  loadingProgress: {fileID: 11400000, guid: cf2022f6db33ab64085b2ab6331502db, type: 2}

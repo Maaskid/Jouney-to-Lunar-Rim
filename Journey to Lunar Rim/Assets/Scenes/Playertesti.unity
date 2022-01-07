@@ -325,7 +325,7 @@ RectTransform:
   - {fileID: 1834423179}
   - {fileID: 1102869487}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -363,91 +363,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!1001 &238465286
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6733650506364223559, guid: 151d92a523d32ff4ca404b061ef797e7, type: 3}
-      propertyPath: m_Name
-      value: AudioManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 6733650506364223560, guid: 151d92a523d32ff4ca404b061ef797e7, type: 3}
-      propertyPath: sounds.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6733650506364223560, guid: 151d92a523d32ff4ca404b061ef797e7, type: 3}
-      propertyPath: sounds.Array.data[0].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: b4db65761009f4e42bf832e216c10fc8, type: 3}
-    - target: {fileID: 6733650506364223560, guid: 151d92a523d32ff4ca404b061ef797e7, type: 3}
-      propertyPath: sounds.Array.data[0].name
-      value: Death
-      objectReference: {fileID: 0}
-    - target: {fileID: 6733650506364223560, guid: 151d92a523d32ff4ca404b061ef797e7, type: 3}
-      propertyPath: sounds.Array.data[1].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: a9309a130f9b4374db3d0f56586151a1, type: 3}
-    - target: {fileID: 6733650506364223560, guid: 151d92a523d32ff4ca404b061ef797e7, type: 3}
-      propertyPath: sounds.Array.data[1].name
-      value: Flying
-      objectReference: {fileID: 0}
-    - target: {fileID: 6733650506364223560, guid: 151d92a523d32ff4ca404b061ef797e7, type: 3}
-      propertyPath: sounds.Array.data[0].volume
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6733650506364223560, guid: 151d92a523d32ff4ca404b061ef797e7, type: 3}
-      propertyPath: sounds.Array.data[1].volume
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6733650506364223561, guid: 151d92a523d32ff4ca404b061ef797e7, type: 3}
-      propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6733650506364223561, guid: 151d92a523d32ff4ca404b061ef797e7, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6733650506364223561, guid: 151d92a523d32ff4ca404b061ef797e7, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6733650506364223561, guid: 151d92a523d32ff4ca404b061ef797e7, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6733650506364223561, guid: 151d92a523d32ff4ca404b061ef797e7, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6733650506364223561, guid: 151d92a523d32ff4ca404b061ef797e7, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6733650506364223561, guid: 151d92a523d32ff4ca404b061ef797e7, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6733650506364223561, guid: 151d92a523d32ff4ca404b061ef797e7, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6733650506364223561, guid: 151d92a523d32ff4ca404b061ef797e7, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6733650506364223561, guid: 151d92a523d32ff4ca404b061ef797e7, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6733650506364223561, guid: 151d92a523d32ff4ca404b061ef797e7, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 151d92a523d32ff4ca404b061ef797e7, type: 3}
 --- !u!1 &291897772
 GameObject:
   m_ObjectHideFlags: 0
@@ -478,7 +393,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loadingProgress: {fileID: 0}
-  _count: 0
+  count: 0
   player: {fileID: 671635184}
   radius: 500
   numberOfAsteroids: 2500
@@ -633,26 +548,28 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 2816e8bb41cc78644b1a2000be7bb736, type: 2}
   - {fileID: 2100000, guid: 5d5c32e6b6caf364fbada1a64d07ba53, type: 2}
   - {fileID: 2100000, guid: ddf35dcdbe4d89947b6b899083b5f0f5, type: 2}
+  rendererLeft: {fileID: 2098059492}
   schildMaterials:
   - {fileID: 2100000, guid: ad6d72a3081b2c14b998d8969e684f0a, type: 2}
   - {fileID: 2100000, guid: 5019a02a8d15a824380a0805513371ce, type: 2}
   - {fileID: 2100000, guid: 6e64ca0d939c99340a5eb92b8ef95b3d, type: 2}
   - {fileID: 2100000, guid: db5f4b9581d7a4349a327452598ccb11, type: 2}
-  dialogueSprites:
-  - {fileID: 21300000, guid: 5c71820afc7fd7244888430f77ff7322, type: 3}
-  - {fileID: 21300000, guid: 9a56709a095d0534cb9b2f87122d22fa, type: 3}
-  - {fileID: 21300000, guid: 397ef6c1caa7f714c86b62c428294aa1, type: 3}
-  freyaCore: {fileID: 1834423180}
-  ministerBaker: {fileID: 1102869488}
+  rendererRight: {fileID: 854881507}
   windowLeft: {fileID: 1591867488}
   windowMiddle: {fileID: 2048424835}
   windowRight: {fileID: 452491396}
-  rendererLeft: {fileID: 2098059492}
-  rendererRight: {fileID: 854881507}
   wlMaterial: {fileID: 2100000, guid: 0eeb34d73d16e4f4196fb34a6631fe96, type: 2}
   wmMaterial: {fileID: 2100000, guid: df3c98c262751bc4084dc69ad7f655b2, type: 2}
   wrMaterial: {fileID: 2100000, guid: 4aba9d5212b1f68429122bdb010e385e, type: 2}
   alphaMaterial: {fileID: 2100000, guid: bd361fd5cb1877544aa3cb64711a8795, type: 2}
+  freyaCore: {fileID: 1834423180}
+  ministerBaker: {fileID: 1102869488}
+  dialogueScreen: {fileID: 0}
+  startSequence: {fileID: 0}
+  currentChapter: {fileID: 0}
+  deathSequence: {fileID: 0}
+  nextScene: 0
+  loadingProgress: {fileID: 0}
 --- !u!54 &671635188
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -678,7 +595,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2335029593109099656, guid: 6c578784c88bc6a46be9d95fd8f695c5, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2335029593109099656, guid: 6c578784c88bc6a46be9d95fd8f695c5, type: 3}
       propertyPath: m_LocalPosition.x
