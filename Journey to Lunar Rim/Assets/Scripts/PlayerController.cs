@@ -208,7 +208,7 @@ public class PlayerController : MonoBehaviour
                 Debug.Log("Artifact eingesammelt");
                 // Destroy(collision.collider.gameObject);
                 collision.collider.enabled = false;
-                collision.collider.transform.position = transform.GetChild(1).transform.position;
+                collision.collider.transform.position = transform.GetChild(0).GetChild(0).transform.position;
                 isEnd = true;
                 loadingProgress.missionAccomplished = true;
                 GetComponent<DisplayPlayerStats>().StartCoroutine(GetComponent<DisplayPlayerStats>().ShowDialogues());
