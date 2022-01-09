@@ -201,10 +201,14 @@ public class PlayerController : MonoBehaviour
 
             if (collision.collider.tag.Equals("Artifact"))
             {
+                if (_audioManager.GetSource(SoundNames.Warning).isPlaying)
+                    _audioManager.Stop(SoundNames.Warning.ToString());
+
                 _audioManager.PlayOneShot(SoundNames.ContainerCollected1.ToString());
                 Debug.Log("Artifact eingesammelt");
                 // Destroy(collision.collider.gameObject);
                 collision.collider.enabled = false;
+                collision.collider.transform.position = transform.GetChild(1).transform.position;
                 isEnd = true;
                 loadingProgress.missionAccomplished = true;
                 GetComponent<DisplayPlayerStats>().StartCoroutine(GetComponent<DisplayPlayerStats>().ShowDialogues());
